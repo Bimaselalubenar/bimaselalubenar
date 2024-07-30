@@ -1,0 +1,23 @@
+.fit-cover {
+  object-fit: cover;
+}
+
+.scrollbarnone::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar {
+  padding: 16px;
+}
+
+.buttondashboard {
+  background: #ffffff;
+  color: rgb(55, 99, 244);
+  padding: 16px;
+  border: 0px solid var(--bs-nav-pills-link-active-bg) ;
+  border-top-width: 0px;
+  border-right-width: 4px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+}
+
