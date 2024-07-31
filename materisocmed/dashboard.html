@@ -113,6 +113,49 @@
       }
     });
   </script>
+
+<script>
+    // Fungsi untuk menampilkan SweetAlert
+    function showAlert() {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Screenshot Dilarang!',
+        text: 'Anda tidak diperbolehkan mengambil screenshot atau mencetak konten ini.',
+        confirmButtonText: 'OK'
+      });
+    }
+
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      // Melarang kombinasi tombol PrintScreen, Windows + Print Screen, Ctrl + P, Shift + Windows + S
+      if (e.key === 'PrintScreen' || 
+          (e.ctrlKey && e.key === 'p') || 
+          (e.shiftKey && (e.metaKey || e.keyCode === 91 || e.keyCode === 92) && e.key === 'S') || 
+          (e.key === 'PrintScreen' && (e.metaKey || e.keyCode === 91 || e.keyCode === 92)) ||
+          e.key === 'Meta') {
+        e.preventDefault();
+        showAlert();
+      }
+    });
+
+    // Deteksi tombol PrintScreen dan Windows + Print Screen
+    document.addEventListener('keyup', function(e) {
+      if (e.key === 'PrintScreen' || (e.key === 'PrintScreen' && (e.metaKey || e.keyCode === 91 || e.keyCode === 92))) {
+        navigator.clipboard.writeText('');
+        showAlert();
+      }
+    });
+
+    // Deteksi perubahan visibilitas halaman (untuk aktivitas tangkapan layar)
+    document.addEventListener('visibilitychange', function() {
+      if (document.visibilityState === 'hidden') {
+        showAlert();
+      }
+    });
+  </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Dashboard MPM Motor HO🔐</title>
     <link rel="canonical" href="https://bimaselalubenar.my.id/materisocmed/dashboard.html">
@@ -337,7 +380,17 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
                                 </svg></button>
                         </div>
                     </div>
-                </div>
+                </div><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8913081554574910"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-8913081554574910"
+     data-ad-slot="1035153873"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
                 <div class="col-12 col-sm-11 col-xxl-5" style="max-width: 450px;height: auto;border-radius: 16px;overflow: hidden;">
                     <div class="card"><img class="card-img-top w-100 d-block fit-cover" alt="black ipad beside apple keyboard and apple magic mouse" style="height: 200px;" src="../assets/img/dashboard/Tools.jpg">
                         <div class="card-body align-items-stretch p-4 text-wrap" style="gap: 10px;height: auto;">

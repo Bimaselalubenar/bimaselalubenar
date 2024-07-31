@@ -113,6 +113,49 @@
       }
     });
   </script>
+
+<script>
+    // Fungsi untuk menampilkan SweetAlert
+    function showAlert() {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Screenshot Dilarang!',
+        text: 'Anda tidak diperbolehkan mengambil screenshot atau mencetak konten ini.',
+        confirmButtonText: 'OK'
+      });
+    }
+
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      // Melarang kombinasi tombol PrintScreen, Windows + Print Screen, Ctrl + P, Shift + Windows + S
+      if (e.key === 'PrintScreen' || 
+          (e.ctrlKey && e.key === 'p') || 
+          (e.shiftKey && (e.metaKey || e.keyCode === 91 || e.keyCode === 92) && e.key === 'S') || 
+          (e.key === 'PrintScreen' && (e.metaKey || e.keyCode === 91 || e.keyCode === 92)) ||
+          e.key === 'Meta') {
+        e.preventDefault();
+        showAlert();
+      }
+    });
+
+    // Deteksi tombol PrintScreen dan Windows + Print Screen
+    document.addEventListener('keyup', function(e) {
+      if (e.key === 'PrintScreen' || (e.key === 'PrintScreen' && (e.metaKey || e.keyCode === 91 || e.keyCode === 92))) {
+        navigator.clipboard.writeText('');
+        showAlert();
+      }
+    });
+
+    // Deteksi perubahan visibilitas halaman (untuk aktivitas tangkapan layar)
+    document.addEventListener('visibilitychange', function() {
+      if (document.visibilityState === 'hidden') {
+        showAlert();
+      }
+    });
+  </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Log-in Dashboard</title>
     <link rel="canonical" href="https://bimaselalubenar.my.id/materisocmed/">
