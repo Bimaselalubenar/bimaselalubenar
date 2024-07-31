@@ -76,6 +76,50 @@
       });
     });
   </script>
+
+
+<script>
+    // Fungsi untuk menampilkan SweetAlert
+    function showAlert() {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Screenshot Dilarang!',
+        text: 'Anda tidak diperbolehkan mengambil screenshot atau mencetak konten ini.',
+        confirmButtonText: 'OK'
+      });
+    }
+
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      // Melarang kombinasi tombol PrintScreen, Windows + Print Screen, Ctrl + P, Shift + Windows + S
+      if (e.key === 'PrintScreen' || 
+          (e.ctrlKey && e.key === 'p') || 
+          (e.shiftKey && (e.metaKey || e.keyCode === 91 || e.keyCode === 92) && e.key === 'S') || 
+          (e.key === 'PrintScreen' && (e.metaKey || e.keyCode === 91 || e.keyCode === 92)) ||
+          e.key === 'Meta') {
+        e.preventDefault();
+        showAlert();
+      }
+    });
+
+    // Deteksi tombol PrintScreen dan Windows + Print Screen
+    document.addEventListener('keyup', function(e) {
+      if (e.key === 'PrintScreen' || (e.key === 'PrintScreen' && (e.metaKey || e.keyCode === 91 || e.keyCode === 92))) {
+        navigator.clipboard.writeText('');
+        showAlert();
+      }
+    });
+
+    // Deteksi perubahan visibilitas halaman (untuk aktivitas tangkapan layar)
+    document.addEventListener('visibilitychange', function() {
+      if (document.visibilityState === 'hidden') {
+        showAlert();
+      }
+    });
+  </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Services - Brand</title>
     <link rel="canonical" href="https://bimaselalubenar.my.id/About.html">
@@ -177,7 +221,7 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
                     <li class="nav-item"><a class="nav-link" href="Skill.html">Keahlian</a></li>
                     <li class="nav-item"><a class="nav-link" href="Contacts.html">Contact</a></li>
                     <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">Lainnya&nbsp;&nbsp;</a>
-                        <div class="dropdown-menu" style="margin-bottom: 16px;margin-top: 10px;padding-right: 12px;padding-left: 12px;width: auto;margin-left: 0px;padding-top: 12px;padding-bottom: 12px;"><a class="dropdown-item" href="#" style="background: rgba(25,90,220,0);color: rgb(105,105,105);padding: 0;padding-top: 0;padding-right: 0;padding-bottom: 0;padding-left: 0;width: auto;margin-bottom: 3px;">Web Service</a><a class="dropdown-item" href="materisocmed/dashboard.html" style="background: rgba(25,90,220,0);color: rgb(105,105,105);padding: 0;padding-top: 0;padding-right: 0;padding-bottom: 0;padding-left: 0;width: auto;margin-bottom: 3px;">MPM Motor</a></div>
+                        <div class="dropdown-menu" style="margin-bottom: 10px;margin-top: 10px;padding: 0px;width: auto;"><a class="dropdown-item" href="web-service.html" style="background: rgba(25,90,220,0);color: rgb(105,105,105);width: auto;margin-bottom: 7px;padding-top: 10px;padding-bottom: 10px;">Web Service</a><a class="dropdown-item" href="materisocmed/dashboard.html" style="background: rgba(25,90,220,0);color: rgb(105,105,105);width: auto;margin-bottom: 7px;padding-top: 10px;padding-bottom: 10px;">MPM Motor</a></div>
                     </li>
                 </ul>
                 <div></div><a class="btn btn-primary shadow" role="button" href="signup.html">Sign up</a>
@@ -228,7 +272,7 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
                     <h3 class="fs-6 fw-bold">Services</h3>
                     <ul class="list-unstyled">
                         <li style="margin-bottom: 6px;"><a href="#">Web design</a></li>
-                        <li style="margin-bottom: 6px;"><a href="#">Development</a></li>
+                        <li style="margin-bottom: 6px;"><a href="web-service.html">Web service</a></li>
                         <li style="margin-bottom: 6px;"><a href="#">Hosting</a></li>
                     </ul>
                 </div>
@@ -267,6 +311,7 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/OneSignalSDKWorker.js"></script>
     <script src="assets/js/dashboard-socmed-bold-and-bright.js"></script>
+    <script src="assets/js/formbima/bima-berlangganan.js"></script>
     <script src="assets/js/formbima/form-bima.js"></script>
     <script src="assets/js/login/login.js"></script>
 </body>

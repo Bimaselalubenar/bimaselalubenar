@@ -76,6 +76,50 @@
       });
     });
   </script>
+
+
+<script>
+    // Fungsi untuk menampilkan SweetAlert
+    function showAlert() {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Screenshot Dilarang!',
+        text: 'Anda tidak diperbolehkan mengambil screenshot atau mencetak konten ini.',
+        confirmButtonText: 'OK'
+      });
+    }
+
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      // Melarang kombinasi tombol PrintScreen, Windows + Print Screen, Ctrl + P, Shift + Windows + S
+      if (e.key === 'PrintScreen' || 
+          (e.ctrlKey && e.key === 'p') || 
+          (e.shiftKey && (e.metaKey || e.keyCode === 91 || e.keyCode === 92) && e.key === 'S') || 
+          (e.key === 'PrintScreen' && (e.metaKey || e.keyCode === 91 || e.keyCode === 92)) ||
+          e.key === 'Meta') {
+        e.preventDefault();
+        showAlert();
+      }
+    });
+
+    // Deteksi tombol PrintScreen dan Windows + Print Screen
+    document.addEventListener('keyup', function(e) {
+      if (e.key === 'PrintScreen' || (e.key === 'PrintScreen' && (e.metaKey || e.keyCode === 91 || e.keyCode === 92))) {
+        navigator.clipboard.writeText('');
+        showAlert();
+      }
+    });
+
+    // Deteksi perubahan visibilitas halaman (untuk aktivitas tangkapan layar)
+    document.addEventListener('visibilitychange', function() {
+      if (document.visibilityState === 'hidden') {
+        showAlert();
+      }
+    });
+  </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Bimaselalubenar</title>
     <link rel="canonical" href="https://bimaselalubenar.my.id/">
@@ -185,7 +229,7 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
                     <li class="nav-item"><a class="nav-link" href="Skill.html">Keahlian</a></li>
                     <li class="nav-item"><a class="nav-link" href="Contacts.html">Contact</a></li>
                     <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">Lainnya&nbsp;&nbsp;</a>
-                        <div class="dropdown-menu" style="margin-bottom: 16px;margin-top: 10px;padding-right: 12px;padding-left: 12px;width: auto;margin-left: 0px;padding-top: 12px;padding-bottom: 12px;"><a class="dropdown-item" href="#" style="background: rgba(25,90,220,0);color: rgb(105,105,105);padding: 0;padding-top: 0;padding-right: 0;padding-bottom: 0;padding-left: 0;width: auto;margin-bottom: 3px;">Web Service</a><a class="dropdown-item" href="materisocmed/dashboard.html" style="background: rgba(25,90,220,0);color: rgb(105,105,105);padding: 0;padding-top: 0;padding-right: 0;padding-bottom: 0;padding-left: 0;width: auto;margin-bottom: 3px;">MPM Motor</a></div>
+                        <div class="dropdown-menu" style="margin-bottom: 10px;margin-top: 10px;padding: 0px;width: auto;"><a class="dropdown-item" href="web-service.html" style="background: rgba(25,90,220,0);color: rgb(105,105,105);width: auto;margin-bottom: 7px;padding-top: 10px;padding-bottom: 10px;">Web Service</a><a class="dropdown-item" href="materisocmed/dashboard.html" style="background: rgba(25,90,220,0);color: rgb(105,105,105);width: auto;margin-bottom: 7px;padding-top: 10px;padding-bottom: 10px;">MPM Motor</a></div>
                     </li>
                 </ul>
                 <div></div><a class="btn btn-primary shadow" role="button" href="signup.html">Sign up</a>
@@ -324,7 +368,7 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
                                         <path d="M10.6 9a9 9 0 0 1 4.4 4.4"></path>
                                     </svg></div>
                                 <h5 class="fw-bold card-title" style="margin-top: 46px;">Pengembangan Website Kustom</h5>
-                                <p class="text-muted card-text mb-4">Kami menawarkan layanan pengembangan website kustom yang sesuai dengan kebutuhan bisnis Anda. Mulai dari desain hingga implementasi, kami akan memastikan website Anda terlihat profesional dan fungsional.</p><button class="btn btn-primary shadow" type="button">Baca artikel &gt;</button>
+                                <p class="text-muted card-text mb-4">Kami menawarkan layanan pengembangan website kustom yang sesuai dengan kebutuhan bisnis Anda. Mulai dari desain hingga implementasi, kami akan memastikan website Anda terlihat profesional dan fungsional.</p><a class="btn btn-primary shadow" role="button">Baca artikel &gt;</a>
                             </div>
                         </div>
                     </div>
@@ -335,7 +379,7 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
                                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
                                     </svg></div>
                                 <h5 class="fw-bold card-title" style="margin-top: 46px;">Optimasi SEO</h5>
-                                <p class="text-muted card-text mb-4">Meningkatkan visibilitas website Anda di mesin pencari dengan layanan optimasi SEO kami. Kami akan membantu Anda mendapatkan peringkat yang lebih baik di hasil pencarian dan menarik lebih banyak pengunjung.</p><button class="btn btn-primary shadow" type="button">Baca artikel &gt;</button>
+                                <p class="text-muted card-text mb-4">Meningkatkan visibilitas website Anda di mesin pencari dengan layanan optimasi SEO kami. Kami akan membantu Anda mendapatkan peringkat yang lebih baik di hasil pencarian dan menarik lebih banyak pengunjung.</p><a class="btn btn-primary shadow" role="button">Baca artikel &gt;</a>
                             </div>
                         </div>
                     </div>
@@ -346,7 +390,7 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
                                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"></path>
                                     </svg></div>
                                 <h5 class="fw-bold card-title" style="margin-top: 46px;">Pengembangan E-commerce</h5>
-                                <p class="text-muted card-text mb-4">Jadikan bisnis online Anda sukses dengan layanan pengembangan e-commerce kami. Kami akan membangun toko online yang aman, mudah digunakan, dan menarik bagi pelanggan Anda.</p><button class="btn btn-primary shadow" type="button">Baca artikel &gt;</button>
+                                <p class="text-muted card-text mb-4">Jadikan bisnis online Anda sukses dengan layanan pengembangan e-commerce kami. Kami akan membangun toko online yang aman, mudah digunakan, dan menarik bagi pelanggan Anda.</p><a class="btn btn-primary shadow" role="button">Baca artikel &gt;</a>
                             </div>
                         </div>
                     </div>
@@ -358,7 +402,7 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
                                         <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"></path>
                                     </svg></div>
                                 <h5 class="fw-bold card-title" style="margin-top: 46px;">Pemeliharaan dan Dukungan</h5>
-                                <p class="text-muted card-text mb-4">Kami menawarkan layanan pemeliharaan dan dukungan untuk memastikan website Anda selalu berjalan dengan lancar. Dari pembaruan rutin hingga pemecahan masalah, kami siap membantu Anda.</p><button class="btn btn-primary shadow" type="button">Baca artikel &gt;</button>
+                                <p class="text-muted card-text mb-4">Kami menawarkan layanan pemeliharaan dan dukungan untuk memastikan website Anda selalu berjalan dengan lancar. Dari pembaruan rutin hingga pemecahan masalah, kami siap membantu Anda.</p><a class="btn btn-primary shadow" role="button">Baca artikel &gt;</a>
                             </div>
                         </div>
                     </div>
@@ -384,7 +428,7 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
                             <div class="mb-3"><input class="form-control" type="number" name="nomorWhatsapp" placeholder="Nomor WhatsApp"></div>
                             <div class="mb-3"><textarea class="form-control" id="pesan" name="pesan" rows="6" placeholder="Pesan"></textarea></div>
                             <div style="margin-bottom: 16px;"><span id="status-message"></span></div>
-                            <div><button class="btn btn-primary shadow d-block w-100" id="submit" type="submit" value="submit">Kirim</button></div><script src="./assets/js/formbima/form-bima.js"></script>
+                            <div><button class="btn btn-primary shadow d-block w-100" id="submit-form-bima" type="submit" value="submit">Kirim</button></div><script src="./assets/js/formbima/form-bima.js"></script>
                         </form>
                     </div>
                 </div>
@@ -429,9 +473,11 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
                     <h2 class="fw-bold mb-2">Subscribe to our newsletter</h2>
                     <p class="mb-0">Imperdiet consectetur dolor.</p>
                 </div>
-                <form class="d-flex justify-content-center flex-wrap flex-lg-nowrap" method="post" data-bs-theme="light">
-                    <div class="my-2"><input class="border rounded-pill shadow-sm form-control" type="email" name="email" placeholder="Your Email"></div>
-                    <div class="my-2"><button class="btn btn-primary shadow ms-2" type="submit">Subscribe </button></div>
+                <form class="flex-wrap flex-lg-nowrap" method="post" data-bs-theme="light" name="bima-berlangganan">
+                    <div class="d-md-flex d-lg-flex d-xl-flex d-xxl-flex">
+                        <div class="my-2"><input class="border rounded-pill shadow-sm form-control" type="email" name="email" placeholder="Your Email"></div>
+                        <div id="submit" class="my-2"><button class="btn btn-primary shadow ms-2" id="submit-subscribe" type="submit" value="submit">Subscribe </button></div>
+                    </div><span id="status-message2"></span><script src="./assets/js/formbima/bima-berlangganan.js"></script>
                 </form>
             </div>
         </div>
@@ -443,7 +489,7 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
                     <h3 class="fs-6 fw-bold">Services</h3>
                     <ul class="list-unstyled">
                         <li style="margin-bottom: 6px;"><a href="#">Web design</a></li>
-                        <li style="margin-bottom: 6px;"><a href="#">Development</a></li>
+                        <li style="margin-bottom: 6px;"><a href="web-service.html">Web service</a></li>
                         <li style="margin-bottom: 6px;"><a href="#">Hosting</a></li>
                     </ul>
                 </div>
@@ -482,6 +528,7 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/OneSignalSDKWorker.js"></script>
     <script src="assets/js/dashboard-socmed-bold-and-bright.js"></script>
+    <script src="assets/js/formbima/bima-berlangganan.js"></script>
     <script src="assets/js/formbima/form-bima.js"></script>
     <script src="assets/js/login/login.js"></script>
 </body>
