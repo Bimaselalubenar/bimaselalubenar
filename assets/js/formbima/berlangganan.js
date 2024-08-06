@@ -6,71 +6,23 @@ form1.addEventListener('submit', e => {
     e.preventDefault();
 
     statusMessage1.innerHTML = "Email sedang divalidasi...";
+    statusMessage1.style.color = "blue"; // Mengatur warna teks menjadi biru untuk validasi
 
     setTimeout(() => {
         statusMessage1.innerHTML = "Tunggu sebentar...";
+        statusMessage1.style.color = "orange"; // Mengatur warna teks menjadi oranye untuk menunggu
     }, 2000);
 
     setTimeout(() => {
         fetch(scriptURL1, { method: 'POST', body: new FormData(form1) })
             .then(response => {
                 statusMessage1.innerHTML = "Anda berhasil berlangganan";
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Lakukan Pembayaran',
-                    text: 'Tunggu follow up pembayaran',
-                    imageUrl: 'https://bimaselalubenar.my.id/assets/img/gopay/qris.jpg',
-                    imageWidth: 400, // Lebar gambar (disesuaikan jika perlu)
-                    imageAlt: 'Gambar Berhasil',
-                    html: `
-                        <p>Lakukan pembayaran</p>
-                        <a>Sebesar 35.000</a>
-                        <a>✅ Lakukan konfirmasi ke admin</a>
-                        <a>✅ Kirim bukti pembayaran</a>
-                        <a href="https://gopay.co.id/app/scanqr?deeplink_source=request_money" class="swal2-confirm swal2-styled">Bayar dengan Gopay</a>
-                    `,
-                    customClass: {
-                        image: 'swal-image',
-                        confirmButton: 'swal-confirm-button'
-                    },
-                    didOpen: () => {
-                        // Menambahkan style CSS untuk gambar
-                        const swalImage = document.querySelector('.swal2-image');
-                        if (swalImage) {
-                            swalImage.style.width = '100%';
-                            swalImage.style.height = 'auto';
-                        }
-                    }
-                }).then(() => {
-                    window.location.reload();
-                });
+                statusMessage1.style.color = "green"; // Mengatur warna teks menjadi hijau untuk berhasil
             })
             .catch(error => {
                 console.error('Error!', error.message);
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Ada masalah, coba ulangi lagi.',
-                    imageUrl: 'https://via.placeholder.com/400', // Ganti dengan URL gambar error yang sesuai
-                    imageWidth: 400, // Lebar gambar
-                    imageAlt: 'Gambar Error',
-                    html: `
-                        <p>Ada masalah, coba ulangi lagi.</p>
-                        <a href="https://example.com" class="swal2-confirm swal2-styled">Kunjungi Link</a>
-                    `,
-                    customClass: {
-                        image: 'swal-image',
-                        confirmButton: 'swal-confirm-button'
-                    },
-                    didOpen: () => {
-                        // Menambahkan style CSS untuk gambar
-                        const swalImage = document.querySelector('.swal2-image');
-                        if (swalImage) {
-                            swalImage.style.width = '100%';
-                            swalImage.style.height = 'auto';
-                        }
-                    }
-                });
+                statusMessage1.innerHTML = "Ada masalah, coba ulangi lagi.";
+                statusMessage1.style.color = "red"; // Mengatur warna teks menjadi merah untuk error
             });
-    }, 90000);
+    }, 5000);
 });
