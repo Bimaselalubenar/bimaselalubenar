@@ -17,12 +17,30 @@ form1.addEventListener('submit', e => {
                 statusMessage1.innerHTML = "Anda berhasil berlangganan";
                 Swal.fire({
                     icon: 'success',
-                    title: 'Berhasil berlangganan',
+                    title: 'Lakukan Pembayaran',
                     text: 'Tunggu follow up pembayaran',
-                    imageUrl: 'https://bimaselalubenar.my.id/assets/img/gopay/qris.jpg', // Ganti dengan URL gambar yang sesuai
-                    imageWidth: 1080, // Lebar gambar
-                    imageHeight: 1080, // Tinggi gambar
-                    imageAlt: 'Gambar Berhasil', // Deskripsi gambar
+                    imageUrl: 'https://bimaselalubenar.my.id/assets/img/gopay/qris.jpg',
+                    imageWidth: 400, // Lebar gambar (disesuaikan jika perlu)
+                    imageAlt: 'Gambar Berhasil',
+                    html: `
+                        <p>Lakukan pembayaran</p>
+                        <a>Sebesar 35.000</a>
+                        <a>✅ Lakukan konfirmasi ke admin</a>
+                        <a>✅ Kirim bukti pembayaran</a>
+                        <a href="https://gopay.co.id/app/scanqr?deeplink_source=request_money" class="swal2-confirm swal2-styled">Bayar dengan Gopay</a>
+                    `,
+                    customClass: {
+                        image: 'swal-image',
+                        confirmButton: 'swal-confirm-button'
+                    },
+                    didOpen: () => {
+                        // Menambahkan style CSS untuk gambar
+                        const swalImage = document.querySelector('.swal2-image');
+                        if (swalImage) {
+                            swalImage.style.width = '100%';
+                            swalImage.style.height = 'auto';
+                        }
+                    }
                 }).then(() => {
                     window.location.reload();
                 });
@@ -33,10 +51,25 @@ form1.addEventListener('submit', e => {
                     icon: 'error',
                     title: 'Oops...',
                     text: 'Ada masalah, coba ulangi lagi.',
-                    imageUrl: 'URL_GAMBAR_ERROR', // Ganti dengan URL gambar yang sesuai
+                    imageUrl: 'https://via.placeholder.com/400', // Ganti dengan URL gambar error yang sesuai
                     imageWidth: 400, // Lebar gambar
-                    imageHeight: 200, // Tinggi gambar
-                    imageAlt: 'Gambar Error', // Deskripsi gambar
+                    imageAlt: 'Gambar Error',
+                    html: `
+                        <p>Ada masalah, coba ulangi lagi.</p>
+                        <a href="https://example.com" class="swal2-confirm swal2-styled">Kunjungi Link</a>
+                    `,
+                    customClass: {
+                        image: 'swal-image',
+                        confirmButton: 'swal-confirm-button'
+                    },
+                    didOpen: () => {
+                        // Menambahkan style CSS untuk gambar
+                        const swalImage = document.querySelector('.swal2-image');
+                        if (swalImage) {
+                            swalImage.style.width = '100%';
+                            swalImage.style.height = 'auto';
+                        }
+                    }
                 });
             });
     }, 90000);
