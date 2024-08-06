@@ -309,38 +309,42 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
                     <div class="dropdown"><a class="dropdown-toggle link-body-emphasis d-flex align-items-center text-decoration-none" aria-expanded="false" data-bs-toggle="dropdown" role="button"><img class="rounded-circle me-2" alt="" width="32" height="32" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" style="object-fit: cover;"><strong>User</strong>&nbsp;</a>
                         <div class="dropdown-menu shadow text-small" data-popper-placement="top-start" style="overflow: hidden;padding-top: 0px;padding-bottom: 0px;margin-bottom: 17px;"><a class="dropdown-item" style="background: #683aea;color: rgb(255,255,255);padding-bottom: 0px;">Halo 👋</a><a class="dropdown-item" id="userName0" style="background: #683aea;color: rgb(255,255,255);padding-top: 0px;"><strong>user</strong></a><a class="dropdown-item" href="#">Profile</a>
                             <div class="dropdown-divider"></div><a class="dropdown-item" id="logoutButton" href="#">Sign out</a><script>
-        document.getElementById('logoutButton').addEventListener('click', () => {
-            Swal.fire({
-                title: 'Yakin ingin keluar?',
-                text: "anda akan keluar setelah menyetujui!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#FF5733',
-                cancelButtonColor: '#6c757d',
-                confirmButtonText: 'Keluar!',
-                cancelButtonText: 'Batal',
-                background: '#f9f9f9',
-                backdrop: 'rgba(0, 0, 0, 0.5)',
-                customClass: {
-                    title: 'custom-title',
-                    content: 'custom-content'
-                }
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Clear local storage
-                    localStorage.clear();
-                    // Show success message
-                    Swal.fire({
-                        title: 'Logout berhasil',
-                        text: 'Berhasil keluar, anda tidak memiliki akses sekarang.',
-                        icon: 'success',
-                        confirmButtonColor: '#3085d6',
-                        background: '#f9f9f9',
-                    });
-                }
-            });
+    document.getElementById('logoutButton').addEventListener('click', () => {
+        Swal.fire({
+            title: 'Yakin ingin keluar?',
+            text: "anda akan keluar setelah menyetujui!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#FF5733',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: 'Keluar!',
+            cancelButtonText: 'Batal',
+            background: '#f9f9f9',
+            backdrop: 'rgba(0, 0, 0, 0.5)',
+            customClass: {
+                title: 'custom-title',
+                content: 'custom-content'
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Clear local storage
+                localStorage.clear();
+                // Show success message
+                Swal.fire({
+                    title: 'Logout berhasil',
+                    text: 'Berhasil keluar, anda tidak memiliki akses sekarang.',
+                    icon: 'success',
+                    confirmButtonColor: '#3085d6',
+                    background: '#f9f9f9',
+                }).then(() => {
+                    // Redirect to login page
+                    window.location.href = '../materisocmed/index.html';
+                });
+            }
         });
-    </script>
+    });
+</script>
+
                         </div>
                     </div>
                 </div>
