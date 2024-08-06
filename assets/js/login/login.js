@@ -98,6 +98,7 @@ let users = [
     { name: 'AJI ADITYA PRAMANA', email: 'ajiapram4@gmail.com', password: 'ajiap1234', branch: 'KAB PASURUAN', position: 'KAB PASURUAN', cabang: 'MPM SUKOREJO' },
     { name: 'Rizky firmansyah', email: 'firmansyahrizky423@gmail.com', password: 'Rafly22', branch: 'KAB PASURUAN', position: 'SALES ONLINE', cabang: 'Sukorejo' },
     { name: 'Linatul Husna', email: 'linahusna62@gmail.com', password: '123240', branch: 'Pasuruan', position: 'SALES ONLINE', cabang: 'MPM Motor Sukorejo' },
+    { name: 'EKO ARI WIBOWO', email: 'datacrm4245@gmail.com', password: 'sosmedMPMdipo4245', branch: 'JEMBER', position: 'ADMIN CRM', cabang: 'MPM DIPONEGORO JEMBER' },
     { name: '', email: '', password: '', branch: '', position: '', cabang: '' },
     // Rapikan code dengan Shift + Alt + F
 ];
@@ -108,3 +109,26 @@ function getUserByEmail(email) {
 
 // Inisialisasi CAPTCHA saat halaman dimuat
 refreshCaptcha();
+
+// Function to check and disable menu items if not subscribed
+function manageMenuAccessibility() {
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    const subscriptionNote = document.getElementById("subscriptionNote");
+
+    if (!currentUser) return;
+
+    if (currentUser.subscribed) {
+        subscriptionNote.textContent = "Anda sudah berlangganan.";
+    } else {
+        subscriptionNote.textContent = "Anda belum berlangganan. Silakan berlangganan untuk mengakses semua fitur.";
+        document.getElementById("menuItem1").classList.add("disabled");
+        document.getElementById("menuItem2").classList.add("disabled");
+        document.getElementById("menuItem3").classList.add("disabled");
+        document.getElementById("menuItem4").classList.add("disabled");
+    }
+}
+
+// Execute the manageMenuAccessibility function when the dashboard page loads
+if (window.location.pathname.includes("template-digital.html")) {
+    document.addEventListener("DOMContentLoaded", manageMenuAccessibility);
+}
