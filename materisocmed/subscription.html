@@ -200,6 +200,7 @@
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
+    <link rel="stylesheet" href="../assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="../assets/css/animate.min.css">
     <link rel="stylesheet" href="../assets/css/dashboard.css">
     <link rel="stylesheet" href="../assets/css/menu-dashboard.css">
@@ -439,6 +440,20 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
             </div>
             <div class="shadow" style="background: #ffffff;padding: 16px;border-radius: 16px;width: 100%;height: auto;margin-right: 15px;margin-bottom: 15px;">
                 <h6 style="width: 100%;max-width: 400px;padding: 0px;"><strong>Mulai Berlangganan</strong></h6>
+                <form class="text-center" id="loginForm" method="post" style="width: 100%;">
+                    <div class="mb-3"><input class="shadow form-control" type="email" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="bottom" id="email" name="email" placeholder="Email" title="Gunakan akun yang pernah terdaftar"></div>
+                    <div class="mb-3"><input class="shadow form-control" type="password" id="password" name="password" placeholder="Password"></div>
+                    <div class="shadow mb-3" style="display: flex;border-radius: 32px;">
+                        <div id="captcha" style="display: block;width: 100%;padding: .6rem 1.5rem;font-size: 1rem;font-weight: 400;line-height: 1.6;color: var(--bs-body-color);-webkit-appearance: none;-moz-appearance: none;appearance: none;border: var(--bs-border-width) solid var(--bs-border-color);border-radius: var(--bs-border-radius);transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border-top-right-radius: 0px;border-bottom-right-radius: 0px;background: #ffffff;"></div><button class="btn btn-primary text-nowrap d-block" id="refreshCaptcha" type="button" style="width: auto;padding-right: 10px;padding-bottom: 9.6px;padding-left: 10px;border-top-left-radius: 0px;border-bottom-left-radius: 0px;padding-top: 9.6px;display: flex;"><i class="icon ion-refresh"></i>&nbsp;Refresh</button>
+                    </div><label class="form-label" style="color: var(--bs-emphasis-color);">Masukan Captcha</label>
+                    <div class="mb-3"><input class="shadow form-control" type="text" id="captchaInput" name="captchaInput" placeholder="Captcha" required=""></div>
+                    <div class="mb-3"><button class="btn btn-primary shadow d-block w-100" type="submit">Login</button></div>
+                    <p style="margin-bottom: 16px;color: var(--bs-emphasis-color);">Belum punya akun?&nbsp;&nbsp;<button class="btn btn-primary" id="buatAkun" type="button" style="padding: 3px;padding-right: 10px;padding-bottom: 3px;border-radius: 11px;padding-left: 10px;padding-top: 3px;">Buat akun</button></p><script src="akunmpm/upgrade.js"></script>
+                    <div class="d-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="gap: 16px;display: flex;transform-origin: center;margin-bottom: 16px;">
+                        <p style="margin-bottom: 0px;color: var(--bs-emphasis-color);">status</p>
+                        <p id="errorMessage" style="margin-bottom: 0px;background: #ff0000;color: rgb(255,255,255);padding-top: 4px;padding-bottom: 4px;padding-right: 8px;padding-left: 8px;border-radius: 9px;">belum login</p>
+                    </div>
+                </form>
             </div>
             <footer class="bg-primary-gradient">
                 <div class="container py-4 py-lg-5">
