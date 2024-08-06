@@ -434,14 +434,17 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
                 </div>
             </div>
             <div class="shadow" style="background: #ffffff;padding: 16px;border-radius: 16px;width: 100%;height: auto;margin-right: 15px;margin-bottom: 15px;">
-                <h6 style="width: 100%;max-width: 400px;padding: 0px;"><strong>Dashboard Template digital</strong></h6>
-                <div class="d-flex">
-                    <p>status :&nbsp;</p>
-                    <p id="subscriptionNote"></p>
+                <div style="padding: 16px;background: #eaeaea;border-radius: 16px;">
+                    <h6 style="width: 100%;max-width: 400px;padding: 0px;"><strong>Dashboard Template digital</strong></h6>
+                    <div class="d-flex">
+                        <p style="margin-bottom: 5px;">status :&nbsp;</p>
+                        <p id="subscriptionNote" style="margin-bottom: 5px;"></p>
+                        <p id="countdown" style="margin-bottom: 5px;"></p>
+                    </div><button class="btn btn-primary" id="subscribeButton" type="button" style="border-radius: 16px;padding: 0px;padding-top: 6px;padding-bottom: 6px;padding-right: 16px;padding-left: 16px;">Berlangganan</button>
                 </div>
                 <div class="container" id="menu">
                     <div class="row" id="menuItems">
-                        <div class="col-md-3 col-xxl-3" id="menuItem1">
+                        <div class="col-md-3 col-xxl-3">
                             <picture style="width: 100%;height: auto;margin-bottom: 0px;"><img style="width: 100%;height: auto;margin-bottom: 16px;" src="../assets/img/dashboard/paketberlangganan/paket%20canva%201.png"></picture>
                             <p style="margin-bottom: 0px;"><strong>Judul Template</strong></p>
                             <p style="margin-bottom: 0px;">Ukuran</p>
@@ -454,11 +457,11 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
                                     <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path>
                                 </svg><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-tiktok">
                                     <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"></path>
-                                </svg></div><button class="btn btn-primary" type="button">Lihat template</button>
+                                </svg></div><a class="btn btn-primary menu-item" role="button" id="menuItem1" style="width: 100%;" href="https://www.msn.com/id-id/berita/other/enak-banget-perpanjang-sim-mati-tanpa-bikin-baru-ini-ketentuannya/ar-AA1oeUmB?ocid=msedgntp&amp;pc=CNNDDB&amp;cvid=75a6d14424624293a05045f2c03a27ad&amp;ei=7">Lihat template</a>
                         </div>
-                        <div class="col-md-3" id="menuItem2"></div>
-                        <div class="col-md-3" id="menuItem3"></div>
-                        <div class="col-md-3" id="menuItem4"></div>
+                        <div class="col-md-3 menu-item" id="menuItem2"></div>
+                        <div class="col-md-3 menu-item" id="menuItem3"></div>
+                        <div class="col-md-3 menu-item" id="menuItem4"></div>
                     </div>
                 </div>
             </div>
@@ -554,29 +557,78 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
     </script>
 
 <script>
-// Function to check and disable menu items if not subscribed
-function manageMenuAccessibility() {
-    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    const subscriptionNote = document.getElementById("subscriptionNote");
+        function calculateRemainingDays(expiryDate) {
+            const currentDate = new Date();
+            const expiry = new Date(expiryDate);
+            const timeDiff = expiry - currentDate;
+            return Math.ceil(timeDiff / (1000 * 3600 * 24));
+        }
 
-    if (!currentUser) return;
+        function formatCountdown(expiryDate) {
+            const currentDate = new Date();
+            const expiry = new Date(expiryDate);
+            const timeDiff = expiry - currentDate;
 
-    if (currentUser.subscribed) {
-        subscriptionNote.textContent = "Anda sudah berlangganan.";
-    } else {
-        subscriptionNote.textContent = "Anda belum berlangganan. Silakan berlangganan untuk mengakses semua fitur.";
-        document.getElementById("menuItem1").classList.add("disabled");
-        document.getElementById("menuItem2").classList.add("disabled");
-        document.getElementById("menuItem3").classList.add("disabled");
-        document.getElementById("menuItem4").classList.add("disabled");
-    }
-}
+            if (timeDiff <= 0) return "Expired";
 
-// Execute the manageMenuAccessibility function when the dashboard page loads
-if (window.location.pathname.includes("dashboard.html")) {
-    document.addEventListener("DOMContentLoaded", manageMenuAccessibility);
-}
-</script>
+            const days = Math.floor(timeDiff / (1000 * 3600 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 3600 * 24)) / (1000 * 3600));
+            const minutes = Math.floor((timeDiff % (1000 * 3600)) / (1000 * 60));
+            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        function manageMenuAccessibility() {
+            const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+            const subscriptionNote = document.getElementById("subscriptionNote");
+            const countdown = document.getElementById("countdown");
+            const menuItems = document.querySelectorAll(".menu-item");
+
+            if (!currentUser) return;
+
+            if (currentUser.subscribed) {
+                const remainingDays = calculateRemainingDays(currentUser.expiryDate);
+
+                if (remainingDays > 0) {
+                    subscriptionNote.textContent = `Anda sudah berlangganan. Sisa hari berlangganan: ${remainingDays} hari.`;
+                    countdown.textContent = `Sisa waktu: ${formatCountdown(currentUser.expiryDate)}`;
+                    menuItems.forEach(item => {
+                        item.classList.remove("disabled");
+                        item.addEventListener("click", handleMenuClick);
+                    });
+
+                    // Update countdown every second
+                    setInterval(() => {
+                        countdown.textContent = `Sisa waktu: ${formatCountdown(currentUser.expiryDate)}`;
+                    }, 1000);
+                } else {
+                    subscriptionNote.textContent = "Masa berlangganan Anda telah berakhir. Silakan perpanjang berlangganan untuk mengakses semua fitur.";
+                    countdown.textContent = "Expired";
+                    menuItems.forEach(item => {
+                        item.classList.add("disabled");
+                        item.removeEventListener("click", handleMenuClick);
+                    });
+                }
+            } else {
+                subscriptionNote.textContent = "Anda belum berlangganan. Silakan berlangganan untuk mengakses semua fitur.";
+                countdown.textContent = "";
+                menuItems.forEach(item => {
+                    item.classList.add("disabled");
+                    item.removeEventListener("click", handleMenuClick);
+                });
+            }
+        }
+
+        function handleMenuClick(event) {
+            if (event.target.classList.contains("disabled")) {
+                event.preventDefault();
+                alert("Anda tidak memiliki akses untuk menu ini.");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", manageMenuAccessibility);
+    </script>
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/js/bs-init.js"></script>

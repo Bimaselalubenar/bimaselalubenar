@@ -46,7 +46,7 @@ loginForm.addEventListener("submit", function (event) {
 
 // Data akun pengguna
 let users = [
-    { name: 'Bimaselalubenar', email: 'Bimaardiantopramana@gmail.com', password: 'Ardianto23', branch: 'Madiun', position: 'PIC Marketing Digital', cabang: 'MPM Madiun', subscribed: true, expiryDate: '2024-07-01' },
+    { name: 'Bimaselalubenar', email: 'Bimaardiantopramana@gmail.com', password: 'Ardianto23', branch: 'Madiun', position: 'PIC Marketing Digital', cabang: 'MPM Madiun', subscribed: true, expiryDate: '2024-08-30' },
     { name: 'Kusumasum', email: 'Kusumabagas003@gmail.com', password: 'Kusumabagas919191', branch: 'Kota Madiun', position: 'Admin PIC Medsos MSO Madiun', cabang: 'MPM MADIUN', subscribed: false, expiryDate: null },
     { name: 'Sudibyo', email: 'mpm.madiun1@gmail.com', password: 'Pangsud91', branch: 'Kota Madiun', position: 'PDCA', cabang: 'MPM MADIUN' },
     { name: 'Mifta', email: 'mpmngagel.sby@gmail.com', password: 'MPMh0010', branch: 'Kota Surabaya', position: 'PDCA', cabang: 'MPM NGAGEL' },
@@ -109,26 +109,3 @@ function getUserByEmail(email) {
 
 // Inisialisasi CAPTCHA saat halaman dimuat
 refreshCaptcha();
-
-// Function to check and disable menu items if not subscribed
-function manageMenuAccessibility() {
-    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    const subscriptionNote = document.getElementById("subscriptionNote");
-
-    if (!currentUser) return;
-
-    if (currentUser.subscribed) {
-        subscriptionNote.textContent = "Anda sudah berlangganan.";
-    } else {
-        subscriptionNote.textContent = "Anda belum berlangganan. Silakan berlangganan untuk mengakses semua fitur.";
-        document.getElementById("menuItem1").classList.add("disabled");
-        document.getElementById("menuItem2").classList.add("disabled");
-        document.getElementById("menuItem3").classList.add("disabled");
-        document.getElementById("menuItem4").classList.add("disabled");
-    }
-}
-
-// Execute the manageMenuAccessibility function when the dashboard page loads
-if (window.location.pathname.includes("template-digital.html")) {
-    document.addEventListener("DOMContentLoaded", manageMenuAccessibility);
-}
