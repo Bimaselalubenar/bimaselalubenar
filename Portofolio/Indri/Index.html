@@ -157,6 +157,59 @@
     });
   </script>
 
+
+<script>
+    // Fungsi untuk menampilkan SweetAlert
+    function showAlert() {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Tab tertutup🤬!',
+        text: 'Jangan lama lama kalo di tinggal',
+        confirmButtonText: 'OK'
+      });
+    }
+
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      // Melarang kombinasi tombol PrintScreen, Windows + Print Screen, Ctrl + P, Ctrl + S, Shift + Windows + S, dan Ctrl + Shift + C
+      if (e.key === 'PrintScreen' || 
+          (e.ctrlKey && e.key.toLowerCase() === 'p') || 
+          (e.ctrlKey && e.key.toLowerCase() === 's') || 
+          (e.shiftKey && (e.metaKey || e.keyCode === 91 || e.keyCode === 92) && e.key.toLowerCase() === 's') || 
+          (e.key === 'PrintScreen' && (e.metaKey || e.keyCode === 91 || e.keyCode === 92)) ||
+          (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'c') ||
+          e.key === 'Meta') {
+        e.preventDefault();
+        showAlert();
+      }
+    });
+
+    // Deteksi tombol PrintScreen dan Windows + Print Screen
+    document.addEventListener('keyup', function(e) {
+      if (e.key === 'PrintScreen' || (e.key === 'PrintScreen' && (e.metaKey || e.keyCode === 91 || e.keyCode === 92))) {
+        navigator.clipboard.writeText('');
+        showAlert();
+      }
+    });
+
+    // Deteksi perubahan visibilitas halaman (untuk aktivitas tangkapan layar)
+    document.addEventListener('visibilitychange', function() {
+      if (document.visibilityState === 'hidden') {
+        showAlert();
+      }
+    });
+
+    // Melarang saat halaman web tertutup
+    window.addEventListener('unload', function(e) {
+      showAlert();
+    });
+</script>
+
+
+
 <amp-ad width="100vw" height="320"
      type="adsense"
      data-ad-client="ca-pub-8913081554574910"
