@@ -205,6 +205,8 @@
     <link rel="stylesheet" href="../assets/css/animate.min.css">
     <link rel="stylesheet" href="../assets/css/dashboard.css">
     <link rel="stylesheet" href="../assets/css/menu-dashboard.css">
+    <link rel="stylesheet" href="../assets/css/Pricing-Duo-badges.css">
+    <link rel="stylesheet" href="../assets/css/Pricing-Duo-icons.css">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PNZTM564QN"></script>
 <script>
@@ -603,63 +605,71 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
-        const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.onmouseenter = Swal.stopTimer;
-                toast.onmouseleave = Swal.resumeTimer;
-            }
-        });
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+        }
+    });
 
-        window.onload = function() {
-            Toast.fire({
-                icon: "success",
-                title: "Anda berhasil masuk!",
-            });
-        };
-    </script>
+    window.onload = function() {
+        Toast.fire({
+            icon: "success",
+            title: "Anda berhasil masuk!",
+        });
+    };
+</script>
 
 <script>
-        function calculateRemainingDays(expiryDate) {
-            const currentDate = new Date();
-            const expiry = new Date(expiryDate);
-            const timeDiff = expiry - currentDate;
-            return Math.ceil(timeDiff / (1000 * 3600 * 24));
-        }
+    function calculateRemainingDays(expiryDate) {
+        const currentDate = new Date();
+        const expiry = new Date(expiryDate);
+        const timeDiff = expiry - currentDate;
+        return Math.ceil(timeDiff / (1000 * 3600 * 24));
+    }
 
-        function formatCountdown(expiryDate) {
-            const currentDate = new Date();
-            const expiry = new Date(expiryDate);
-            const timeDiff = expiry - currentDate;
+    function formatCountdown(expiryDate) {
+        const currentDate = new Date();
+        const expiry = new Date(expiryDate);
+        const timeDiff = expiry - currentDate;
 
-            if (timeDiff <= 0) return "Expired";
+        if (timeDiff <= 0) return "Expired";
 
-            const days = Math.floor(timeDiff / (1000 * 3600 * 24));
-            const hours = Math.floor((timeDiff % (1000 * 3600 * 24)) / (1000 * 3600));
-            const minutes = Math.floor((timeDiff % (1000 * 3600)) / (1000 * 60));
-            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+        const days = Math.floor(timeDiff / (1000 * 3600 * 24));
+        const hours = Math.floor((timeDiff % (1000 * 3600 * 24)) / (1000 * 3600));
+        const minutes = Math.floor((timeDiff % (1000 * 3600)) / (1000 * 60));
+        const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
-            return `${days}d ${hours}h ${minutes}m ${seconds}s`;
-        }
+        return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
 
-        function manageMenuAccessibility() {
-            const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-            const subscriptionNote = document.getElementById("subscriptionNote");
-            const countdown = document.getElementById("countdown");
-            const menuItems = document.querySelectorAll(".menu-item");
-            const subscribeButton = document.getElementById("subscribeButton");
+    function manageMenuAccessibility() {
+        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        const subscriptionNote = document.getElementById("subscriptionNote");
+        const countdown = document.getElementById("countdown");
+        const menuItems = document.querySelectorAll(".menu-item");
+        const subscribeButton = document.getElementById("subscribeButton");
 
-            if (!currentUser) return;
+        if (!currentUser) return;
 
-            if (currentUser.subscribed) {
+        if (currentUser.subscribed) {
+            if (currentUser.expiryDate === "lifetime") {
+                subscriptionNote.textContent = "Anda memiliki akses berlangganan seumur hidup.";
+                countdown.textContent = "Lifetime access";
+                menuItems.forEach(item => {
+                    item.classList.remove("disabled");
+                    item.addEventListener("click", handleMenuClick);
+                });
+            } else {
                 const remainingDays = calculateRemainingDays(currentUser.expiryDate);
 
                 if (remainingDays > 0) {
-                    subscriptionNote.textContent = `Anda sudah berlangganan. Sisa hari berlangganan: ${remainingDays} hari.`;
+                    subscriptionNote.textContent = `Anda sudah berlangganan. ${remainingDays} hari.`;
                     countdown.textContent = `Sisa waktu: ${formatCountdown(currentUser.expiryDate)}`;
                     menuItems.forEach(item => {
                         item.classList.remove("disabled");
@@ -668,7 +678,7 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
 
                     // Update countdown every second
                     setInterval(() => {
-                        countdown.textContent = `Sisa waktu: ${formatCountdown(currentUser.expiryDate)}`;
+                        countdown.textContent = `Akan selesai : ${formatCountdown(currentUser.expiryDate)}`;
                     }, 1000);
                 } else {
                     subscriptionNote.textContent = "Masa berlangganan Anda telah berakhir. Silakan perpanjang berlangganan untuk mengakses semua fitur.";
@@ -678,29 +688,31 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
                         item.removeEventListener("click", handleMenuClick);
                     });
                 }
-            } else {
-                subscriptionNote.textContent = "Anda belum berlangganan. Silakan berlangganan untuk mengakses semua fitur.";
-                countdown.textContent = "";
-                menuItems.forEach(item => {
-                    item.classList.add("disabled");
-                    item.removeEventListener("click", handleMenuClick);
-                });
             }
-
-            subscribeButton.addEventListener("click", () => {
-                window.location.href = "../materisocmed/subscription.html";
+        } else {
+            subscriptionNote.textContent = "Anda belum berlangganan. Silakan berlangganan untuk mengakses semua fitur.";
+            countdown.textContent = "";
+            menuItems.forEach(item => {
+                item.classList.add("disabled");
+                item.removeEventListener("click", handleMenuClick);
             });
         }
 
-        function handleMenuClick(event) {
-            if (event.target.classList.contains("disabled")) {
-                event.preventDefault();
-                alert("Anda tidak memiliki akses untuk menu ini.");
-            }
-        }
+        subscribeButton.addEventListener("click", () => {
+            window.location.href = "../materisocmed/subscription.html";
+        });
+    }
 
-        document.addEventListener("DOMContentLoaded", manageMenuAccessibility);
-    </script>
+    function handleMenuClick(event) {
+        if (event.target.classList.contains("disabled")) {
+            event.preventDefault();
+            alert("Anda tidak memiliki akses untuk menu ini.");
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", manageMenuAccessibility);
+</script>
+
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/js/bs-init.js"></script>

@@ -16,7 +16,7 @@ form1.addEventListener('submit', e => {
     setTimeout(() => {
         fetch(scriptURL1, { method: 'POST', body: new FormData(form1) })
             .then(response => {
-                statusMessage1.innerHTML = "Anda berhasil berlangganan";
+                statusMessage1.innerHTML = "Pengajuan berhasil! tunggu balasan dari admin";
                 statusMessage1.style.color = "green"; // Mengatur warna teks menjadi hijau untuk berhasil
             })
             .catch(error => {

@@ -47,6 +47,7 @@ loginForm.addEventListener("submit", function (event) {
 // Data akun pengguna
 let users = [
     { name: 'Bimaselalubenar', email: 'Bimaardiantopramana@gmail.com', password: 'Ardianto23', branch: 'Madiun', position: 'PIC Marketing Digital', cabang: 'MPM Madiun', subscribed: true, expiryDate: '2024-08-30' },
+    { name: 'Bimaselalubenar2', email: 'Bimaardiantopramana2@gmail.com', password: 'Ardianto23', branch: 'Madiun', position: 'PIC Marketing Digital', cabang: 'MPM Madiun', subscribed: true, expiryDate: 'lifetime' },
     { name: 'Kusumasum', email: 'Kusumabagas003@gmail.com', password: 'Kusumabagas919191', branch: 'Kota Madiun', position: 'Admin PIC Medsos MSO Madiun', cabang: 'MPM MADIUN', subscribed: false, expiryDate: null },
     { name: 'Sudibyo', email: 'mpm.madiun1@gmail.com', password: 'Pangsud91', branch: 'Kota Madiun', position: 'PDCA', cabang: 'MPM MADIUN' },
     { name: 'Mifta', email: 'mpmngagel.sby@gmail.com', password: 'MPMh0010', branch: 'Kota Surabaya', position: 'PDCA', cabang: 'MPM NGAGEL' },
