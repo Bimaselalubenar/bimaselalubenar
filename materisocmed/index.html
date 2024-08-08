@@ -3,233 +3,299 @@
 
 <head>
     <meta charset="utf-8">
+<!-- app -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- selesai -->
 
-
+<!-- drag off -->
 <script>
-      document.addEventListener('contextmenu', function(event) {
-          event.preventDefault();
-      });
-  </script>
-  
-  <script>
-    document.addEventListener('keydown', function(event) {
+    document.addEventListener('contextmenu', function (event) {
+        event.preventDefault();
+    });
+
+    // Mencegah drag pada semua elemen
+    document.addEventListener('dragstart', function (event) {
+        event.preventDefault();
+    });
+</script>
+<!-- selesai -->
+
+<!-- mematikan inspection -->
+<script>
+    function showAlert(message) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Akses Dilarang!',
+            text: message,
+            confirmButtonText: 'OK'
+        });
+    }
+
+    document.addEventListener('keydown', function (event) {
         // Disable F12
         if (event.keyCode == 123) {
             event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
         }
         // Disable Ctrl+Shift+I
         if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
             event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
         }
         // Disable Ctrl+Shift+J
         if (event.ctrlKey && event.shiftKey && event.keyCode == 74) {
             event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+Shift+C
+        if (event.ctrlKey && event.shiftKey && event.keyCode == 67) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
         }
         // Disable Ctrl+U
         if (event.ctrlKey && event.keyCode == 85) {
             event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+Shift+K (Mozilla Firefox Web Console)
+        if (event.ctrlKey && event.shiftKey && event.keyCode == 75) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+Shift+S (Windows Snipping Tool)
+        if (event.ctrlKey && event.shiftKey && event.keyCode == 83) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+K or Ctrl+F (Search in Developer Tools)
+        if (event.ctrlKey && (event.keyCode == 75 || event.keyCode == 70)) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable F1 (Help in Developer Tools)
+        if (event.keyCode == 112) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+P (File search in Developer Tools)
+        if (event.ctrlKey && event.keyCode == 80) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
         }
     });
-</script>
 
+    document.addEventListener('contextmenu', function (event) {
+        event.preventDefault();
+        showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+    });
+
+    // Mencegah drag pada semua elemen
+    document.addEventListener('dragstart', function (event) {
+        event.preventDefault();
+        showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+    });
+
+    // Mencegah tindakan ketika 3 jari menyentuh layar
+    document.addEventListener('touchstart', function (event) {
+        if (event.touches.length === 3) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan tindakan ini');
+        }
+    });
+
+    // Mencegah penyalinan konten
+    document.addEventListener('copy', function (event) {
+        event.preventDefault();
+        const clipboardText = 'not allowed, web by https://bimaselalubenar.my.id';
+        event.clipboardData.setData('text/plain', clipboardText);
+
+        Swal.fire({
+            icon: 'error',
+            title: 'Tidak di izinkan',
+            text: 'Tidak di izinkan untuk menyalin konten.',
+            footer: '<a href="https://bimaselalubenar.my.id">www.bimaselalubenar.my.id</a>',
+            didOpen: () => {
+                Swal.getContent().insertAdjacentHTML('beforeend', '<p>Note: Copying is not allowed. Web by <a href="https://bimaselalubenar.my.id">https://bimaselalubenar.my.id</a></p>');
+            }
+        });
+    });
+</script>
+<!-- selesai -->
+
+<!-- menonaktifkan pelacakan id -->
 <script>
-  function detectDevTools() {
-      const element = new Image();
-      Object.defineProperty(element, 'id', {
-          get: function () {
-              window.location.href = 'w-w';
-          }
-      });
-      console.log(element);
-  }
+    function detectDevTools() {
+        const element = new Image();
+        Object.defineProperty(element, 'id', {
+            get: function () {
+                window.location.href = 'w-w';
+            }
+        });
+        console.log(element);
+    }
 
-  setInterval(detectDevTools, 1000);
+    setInterval(detectDevTools, 1000);
 </script>
+<!-- selesai -->
 
+<!-- animasi AOS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script>
     AOS.init({
-      duration: 1200
+        duration: 1200
     });</script>
+<!-- Selesai -->
 
+<!-- untuk screen capture -->
 <script>
-    document.addEventListener('copy', function(event) {
-      event.preventDefault();
-      // Set the clipboard text
-      const clipboardText = 'not allowed, web by https://bimaselalubenar.my.id';
-      event.clipboardData.setData('text/plain', clipboardText);
+    function showAlert(message) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Akses Dilarang!',
+            text: message,
+            confirmButtonText: 'OK'
+        });
+    }
 
-      // Show SweetAlert
-      Swal.fire({
-        icon: 'error',
-        title: 'Tidak di izinkan',
-        text: 'Tidak di izinkan untuk menyalin konten.',
-        footer: '<a href="https://bimaselalubenar.my.id">www.bimaselalubenar.my.id</a>',
-        didOpen: () => {
-          Swal.getContent().insertAdjacentHTML('beforeend', '<p>Note: Copying is not allowed. Web by <a href="https://bimaselalubenar.my.id">https://bimaselalubenar.my.id</a></p>');
+    // Fungsi untuk menampilkan SweetAlert khusus untuk screenshot
+    function showScreenshotAlert() {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Screenshot Dilarang!',
+            text: 'Anda tidak diperbolehkan mengambil screenshot atau mencetak konten ini.',
+            confirmButtonText: 'OK'
+        });
+    }
+
+    document.addEventListener('keydown', function(event) {
+        // Disable F12
+        if (event.keyCode == 123) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
         }
-      });
-    });
-  </script>
-
-
-<script>
-    // Fungsi untuk menampilkan SweetAlert
-    function showAlert() {
-      Swal.fire({
-        icon: 'warning',
-        title: 'Screenshot Dilarang!',
-        text: 'Anda tidak diperbolehkan mengambil screenshot atau mencetak konten ini.',
-        confirmButtonText: 'OK'
-      });
-    }
-
-    document.addEventListener('contextmenu', function(e) {
-      e.preventDefault();
-    });
-
-    document.addEventListener('keydown', function(e) {
-      // Melarang kombinasi tombol PrintScreen, Windows + Print Screen, Ctrl + P, Shift + Windows + S
-      if (e.key === 'PrintScreen' || 
-          (e.ctrlKey && e.key === 'p') || 
-          (e.shiftKey && (e.metaKey || e.keyCode === 91 || e.keyCode === 92) && e.key === 'S') || 
-          (e.key === 'PrintScreen' && (e.metaKey || e.keyCode === 91 || e.keyCode === 92)) ||
-          e.key === 'Meta') {
-        e.preventDefault();
-        showAlert();
-      }
-    });
-
-    // Deteksi tombol PrintScreen dan Windows + Print Screen
-    document.addEventListener('keyup', function(e) {
-      if (e.key === 'PrintScreen' || (e.key === 'PrintScreen' && (e.metaKey || e.keyCode === 91 || e.keyCode === 92))) {
-        navigator.clipboard.writeText('');
-        showAlert();
-      }
-    });
-  </script>
-
-<script>
-    // Fungsi untuk menampilkan SweetAlert
-    function showAlert() {
-      Swal.fire({
-        icon: 'warning',
-        title: 'Screenshot Dilarang!',
-        text: 'Anda tidak diperbolehkan mengambil screenshot atau mencetak konten ini.',
-        confirmButtonText: 'OK'
-      });
-    }
-
-    document.addEventListener('contextmenu', function(e) {
-      e.preventDefault();
-    });
-
-    document.addEventListener('keydown', function(e) {
-      // Melarang kombinasi tombol PrintScreen, Windows + Print Screen, Ctrl + P, Shift + Windows + S
-      if (e.key === 'PrintScreen' || 
-          (e.ctrlKey && e.key === 'p') || 
-          (e.shiftKey && (e.metaKey || e.keyCode === 91 || e.keyCode === 92) && e.key === 'S') || 
-          (e.key === 'PrintScreen' && (e.metaKey || e.keyCode === 91 || e.keyCode === 92)) ||
-          e.key === 'Meta') {
-        e.preventDefault();
-        showAlert();
-      }
+        // Disable Ctrl+Shift+I
+        if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+Shift+J
+        if (event.ctrlKey && event.shiftKey && event.keyCode == 74) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+Shift+C
+        if (event.ctrlKey && event.shiftKey && event.keyCode == 67) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+U
+        if (event.ctrlKey && event.keyCode == 85) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+Shift+K (Mozilla Firefox Web Console)
+        if (event.ctrlKey && event.shiftKey && event.keyCode == 75) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+Shift+S (Windows Snipping Tool)
+        if (event.ctrlKey && event.shiftKey && event.keyCode == 83) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+K or Ctrl+F (Search in Developer Tools)
+        if (event.ctrlKey && (event.keyCode == 75 || event.keyCode == 70)) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable F1 (Help in Developer Tools)
+        if (event.keyCode == 112) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+P (File search in Developer Tools)
+        if (event.ctrlKey && event.keyCode == 80) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable PrintScreen and other screenshot combinations
+        if (event.key === 'PrintScreen' ||
+            (event.ctrlKey && event.key === 'p') ||
+            (event.shiftKey && (event.metaKey || event.keyCode === 91 || event.keyCode === 92) && event.key === 'S') ||
+            (event.key === 'PrintScreen' && (event.metaKey || event.keyCode === 91 || event.keyCode === 92)) ||
+            event.key === 'Meta') {
+            event.preventDefault();
+            showScreenshotAlert();
+        }
     });
 
     // Deteksi tombol PrintScreen dan Windows + Print Screen
-    document.addEventListener('keyup', function(e) {
-      if (e.key === 'PrintScreen' || (e.key === 'PrintScreen' && (e.metaKey || e.keyCode === 91 || e.keyCode === 92))) {
-        navigator.clipboard.writeText('');
-        showAlert();
-      }
+    document.addEventListener('keyup', function (event) {
+        if (event.key === 'PrintScreen' || (event.key === 'PrintScreen' && (event.metaKey || event.keyCode === 91 || event.keyCode === 92))) {
+            navigator.clipboard.writeText('');
+            showScreenshotAlert();
+        }
     });
 
-    // Deteksi perubahan visibilitas halaman (untuk aktivitas tangkapan layar)
-    document.addEventListener('visibilitychange', function() {
-      if (document.visibilityState === 'hidden') {
-        showAlert();
-      }
-    });
-  </script>
-
-
-<script>
-    // Fungsi untuk menampilkan SweetAlert
-    function showAlert() {
-      Swal.fire({
-        icon: 'warning',
-        title: 'Tab tertutup🤬!',
-        text: 'Jangan lama lama kalo di tinggal',
-        confirmButtonText: 'OK'
-      });
-    }
-
-    document.addEventListener('contextmenu', function(e) {
-      e.preventDefault();
+    document.addEventListener('contextmenu', function (event) {
+        event.preventDefault();
+        showAlert('Anda tidak dapat melakukan inspeksi ilegal');
     });
 
-    document.addEventListener('keydown', function(e) {
-      // Melarang kombinasi tombol PrintScreen, Windows + Print Screen, Ctrl + P, Ctrl + S, Shift + Windows + S, dan Ctrl + Shift + C
-      if (e.key === 'PrintScreen' || 
-          (e.ctrlKey && e.key.toLowerCase() === 'p') || 
-          (e.ctrlKey && e.key.toLowerCase() === 's') || 
-          (e.shiftKey && (e.metaKey || e.keyCode === 91 || e.keyCode === 92) && e.key.toLowerCase() === 's') || 
-          (e.key === 'PrintScreen' && (e.metaKey || e.keyCode === 91 || e.keyCode === 92)) ||
-          (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'c') ||
-          e.key === 'Meta') {
-        e.preventDefault();
-        showAlert();
-      }
+    // Mencegah drag pada semua elemen
+    document.addEventListener('dragstart', function (event) {
+        event.preventDefault();
+        showAlert('Anda tidak dapat melakukan inspeksi ilegal');
     });
 
-    // Deteksi tombol PrintScreen dan Windows + Print Screen
-    document.addEventListener('keyup', function(e) {
-      if (e.key === 'PrintScreen' || (e.key === 'PrintScreen' && (e.metaKey || e.keyCode === 91 || e.keyCode === 92))) {
-        navigator.clipboard.writeText('');
-        showAlert();
-      }
+    // Mencegah tindakan ketika 3 jari menyentuh layar
+    document.addEventListener('touchstart', function (event) {
+        if (event.touches.length === 3) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan tindakan ini');
+        }
     });
 
-    // Deteksi perubahan visibilitas halaman (untuk aktivitas tangkapan layar)
-    document.addEventListener('visibilitychange', function() {
-      if (document.visibilityState === 'hidden') {
-        showAlert();
-      }
-    });
+    // Mencegah penyalinan konten
+    document.addEventListener('copy', function (event) {
+        event.preventDefault();
+        const clipboardText = 'not allowed, web by https://bimaselalubenar.my.id';
+        event.clipboardData.setData('text/plain', clipboardText);
 
-    // Melarang saat halaman web tertutup
-    window.addEventListener('unload', function(e) {
-      showAlert();
+        Swal.fire({
+            icon: 'error',
+            title: 'Tidak di izinkan',
+            text: 'Tidak di izinkan untuk menyalin konten.',
+            footer: '<a href="https://bimaselalubenar.my.id">www.bimaselalubenar.my.id</a>',
+            didOpen: () => {
+                Swal.getContent().insertAdjacentHTML('beforeend', '<p>Note: Copying is not allowed. Web by <a href="https://bimaselalubenar.my.id">https://bimaselalubenar.my.id</a></p>');
+            }
+        });
     });
 </script>
+<!-- Selesai -->
 
-
-
-<amp-ad width="100vw" height="320"
-     type="adsense"
-     data-ad-client="ca-pub-8913081554574910"
-     data-ad-slot="5303068928"
-     data-auto-format="rspv"
-     data-full-width="">
-  <div overflow=""></div>
+<amp-ad width="100vw" height="320" type="adsense" data-ad-client="ca-pub-8913081554574910" data-ad-slot="5303068928"
+    data-auto-format="rspv" data-full-width="">
+    <div overflow=""></div>
 </amp-ad>
 
 
-
+<!-- onesignal -->
 <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 <script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-      appId: "6ae2ed3c-f763-465d-8648-0538e5f7e40c",
+    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    OneSignalDeferred.push(async function (OneSignal) {
+        await OneSignal.init({
+            appId: "6ae2ed3c-f763-465d-8648-0538e5f7e40c",
+        });
     });
-  });
 </script>
+<!-- selesai -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Login Dashboard</title>
     <meta name="theme-color" content="#7d7878">
@@ -254,11 +320,12 @@
     <link rel="manifest" href="../manifest.json" crossorigin="use-credentials">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/swiper-icons.css">
     <link rel="stylesheet" href="../assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="../assets/css/dashboard.css">
     <link rel="stylesheet" href="../assets/css/menu-dashboard.css">
-    <link rel="stylesheet" href="../assets/css/Pricing-Duo-badges.css">
-    <link rel="stylesheet" href="../assets/css/Pricing-Duo-icons.css">
+    <link rel="stylesheet" href="../assets/css/Simple-Slider-swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/Simple-Slider.css">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PNZTM564QN"></script>
 <script>
@@ -415,7 +482,7 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
                     </div><label class="form-label" style="color: var(--bs-emphasis-color);">Masukan Captcha</label>
                     <div class="mb-3"><input class="shadow form-control" type="text" id="captchaInput" name="captchaInput" placeholder="Captcha" required=""></div>
                     <div class="mb-3"><button class="btn btn-primary shadow d-block w-100" type="submit">Login</button></div>
-                    <p style="margin-bottom: 16px;color: var(--bs-emphasis-color);">Belum punya akun?&nbsp;&nbsp;<button class="btn btn-primary" type="button" style="padding: 3px;padding-right: 10px;padding-bottom: 3px;border-radius: 11px;padding-left: 10px;padding-top: 3px;" data-target="#register" data-toggle="modal">Buat akun</button></p><script src="formbima/register.js"></script>
+                    <p style="margin-bottom: 16px;color: var(--bs-emphasis-color);">Belum punya akun?&nbsp;&nbsp;<button class="btn btn-primary" type="button" style="padding: 3px;padding-right: 10px;padding-bottom: 3px;border-radius: 11px;padding-left: 10px;padding-top: 3px;" data-target="#register" data-toggle="modal"><span style="font-weight: normal !important;">Buat akun</span></button></p><script src="formbima/register.js"></script>
                     <div class="d-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="gap: 16px;display: flex;transform-origin: center;margin-bottom: 16px;">
                         <p style="margin-bottom: 0px;color: var(--bs-emphasis-color);">status</p>
                         <p id="errorMessage" style="margin-bottom: 0px;background: #ff0000;color: rgb(255,255,255);padding-top: 4px;padding-bottom: 4px;padding-right: 8px;padding-left: 8px;border-radius: 9px;">belum login</p>
@@ -510,7 +577,10 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
     <script src="../assets/js/formbima/berlangganan.js"></script>
     <script src="../assets/js/formbima/form-bima.js"></script>
     <script src="../assets/js/formbima/register.js"></script>
+    <script src="../assets/js/inspeksi/inspeksi.js"></script>
     <script src="../assets/js/login/login.js"></script>
+    <script src="../assets/js/Simple-Slider-swiper-bundle.min.js"></script>
+    <script src="../assets/js/Simple-Slider.js"></script>
 </body>
 
 </html>
