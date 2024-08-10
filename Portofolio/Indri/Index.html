@@ -3,6 +3,48 @@
 
 <head>
     <meta charset="utf-8">
+<script>
+        function copyTextById(id) {
+            // Mendapatkan elemen berdasarkan ID
+            var textElement = document.getElementById(id);
+
+            // Membuat elemen input sementara untuk menyalin teks
+            var tempInput = document.createElement("textarea");
+            tempInput.value = textElement.textContent;
+
+            // Menambahkan elemen input sementara ke body
+            document.body.appendChild(tempInput);
+
+            // Menyorot dan menyalin teks dari elemen input sementara
+            tempInput.select();
+            document.execCommand("copy");
+
+            // Menghapus elemen input sementara setelah menyalin teks
+            document.body.removeChild(tempInput);
+
+            // Memberikan umpan balik menggunakan SweetAlert
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: 'Teks berhasil disalin ke clipboard!',
+                confirmButtonText: 'OK'
+            });
+        }
+
+        // Menangkap kejadian keydown untuk mendeteksi Ctrl + C
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && event.key === 'c') {
+                // Menampilkan SweetAlert ketika Ctrl + C ditekan
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Anda menekan Ctrl + C',
+                    text: 'Text berhasil di salin!',
+                    confirmButtonText: 'OK'
+                });
+            }
+        });
+    </script>
+
 <!-- app -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
@@ -105,23 +147,6 @@
             event.preventDefault();
             showAlert('Anda tidak dapat melakukan tindakan ini');
         }
-    });
-
-    // Mencegah penyalinan konten
-    document.addEventListener('copy', function (event) {
-        event.preventDefault();
-        const clipboardText = 'not allowed, web by https://bimaselalubenar.my.id';
-        event.clipboardData.setData('text/plain', clipboardText);
-
-        Swal.fire({
-            icon: 'error',
-            title: 'Tidak di izinkan',
-            text: 'Tidak di izinkan untuk menyalin konten.',
-            footer: '<a href="https://bimaselalubenar.my.id">www.bimaselalubenar.my.id</a>',
-            didOpen: () => {
-                Swal.getContent().insertAdjacentHTML('beforeend', '<p>Note: Copying is not allowed. Web by <a href="https://bimaselalubenar.my.id">https://bimaselalubenar.my.id</a></p>');
-            }
-        });
     });
 </script>
 <!-- selesai -->
@@ -244,23 +269,6 @@
             showAlert('Anda tidak dapat melakukan tindakan ini');
         }
     });
-
-    // Mencegah penyalinan konten
-    document.addEventListener('copy', function (event) {
-        event.preventDefault();
-        const clipboardText = 'not allowed, web by https://bimaselalubenar.my.id';
-        event.clipboardData.setData('text/plain', clipboardText);
-
-        Swal.fire({
-            icon: 'error',
-            title: 'Tidak di izinkan',
-            text: 'Tidak di izinkan untuk menyalin konten.',
-            footer: '<a href="https://bimaselalubenar.my.id">www.bimaselalubenar.my.id</a>',
-            didOpen: () => {
-                Swal.getContent().insertAdjacentHTML('beforeend', '<p>Note: Copying is not allowed. Web by <a href="https://bimaselalubenar.my.id">https://bimaselalubenar.my.id</a></p>');
-            }
-        });
-    });
 </script>
 <!-- Selesai -->
 
@@ -328,6 +336,8 @@
     <link rel="stylesheet" href="../../assets/css/swiper-icons.css">
     <link rel="stylesheet" href="../../assets/css/dashboard.css">
     <link rel="stylesheet" href="../../assets/css/menu-dashboard.css">
+    <link rel="stylesheet" href="../../assets/css/One-Liner-Code-Editor.css">
+    <link rel="stylesheet" href="../../assets/css/PRE.css">
     <link rel="stylesheet" href="../../assets/css/Simple-Slider-swiper-bundle.min.css">
     <link rel="stylesheet" href="../../assets/css/Simple-Slider.css">
 <!-- Google tag (gtag.js) -->
@@ -644,6 +654,7 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
     <script src="../../assets/js/formbima/register.js"></script>
     <script src="../../assets/js/inspeksi/inspeksi.js"></script>
     <script src="../../assets/js/login/login.js"></script>
+    <script src="../../assets/js/One-Liner-Code-Editor-codeeditor.js"></script>
     <script src="../../assets/js/Simple-Slider-swiper-bundle.min.js"></script>
     <script src="../../assets/js/Simple-Slider.js"></script>
 </body>
