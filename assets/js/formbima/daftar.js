@@ -1,6 +1,6 @@
-const scriptURL1 = 'https://script.google.com/macros/s/AKfycbwu85Kj_DIODNcgxmPxf78oaFP6npM6A_C0WmMKm6NNC2FP3hA6pCiNGsA7860_0D34/exec';
-        const form1 = document.getElementById('registerAkun');
-        const statusMessage1 = document.getElementById('status-message');
+const scriptURL1 = 'https://script.google.com/macros/s/AKfycbzr_2rLRbFSMH5gguctrOwTRLdGjdn2Eo_n7L8yBEyHl6G0l5xCuwlFw2CFfgWnE19h/exec';
+        const form1 = document.getElementById('daftarDulu');
+        const statusMessage1 = document.getElementById('status-txt');
 
         form1.addEventListener('submit', e => {
             e.preventDefault();
@@ -14,11 +14,11 @@ const scriptURL1 = 'https://script.google.com/macros/s/AKfycbwu85Kj_DIODNcgxmPxf
             setTimeout(() => {
                 fetch(scriptURL1, { method: 'POST', body: new FormData(form1) })
                     .then(response => {
-                        statusMessage1.innerHTML = "Anda berhasil berlangganan";
+                        statusMessage1.innerHTML = "Anda berhasil mendaftar";
                         Swal.fire({
                             icon: 'success',
-                            title: 'Registrasi berhasil',
-                            text: 'Tunggu 1x24 Jam',
+                            title: 'Data terkirim!',
+                            text: 'Tunggu 1x24 jam, atau lakukan konfirmasi ke admin',
                         }).then(() => {
                             window.location.reload();
                         });
