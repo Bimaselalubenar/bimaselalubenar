@@ -102,6 +102,7 @@ let users = [
     { name: 'Linatul Husna', email: 'linahusna62@gmail.com', password: '123240', branch: 'Pasuruan', position: 'SALES ONLINE', cabang: 'MPM Motor Sukorejo', subscribed: false, expiryDate: '2024-08-30' },
     { name: 'EKO ARI WIBOWO', email: 'datacrm4245@gmail.com', password: 'sosmedMPMdipo4245', branch: 'JEMBER', position: 'ADMIN CRM', cabang: 'MPM DIPONEGORO JEMBER', subscribed: false, expiryDate: '2024-08-30' },
     { name: '', email: '', password: '', branch: '', position: '', cabang: '', subscribed: false, expiryDate: '2024-08-30' },
+    { name: '', email: '', password: '', branch: '', position: '', cabang: '', subscribed: false, expiryDate: '2024-08-30' },
     // Rapikan code dengan Shift + Alt + F
 ];
 
