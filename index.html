@@ -716,76 +716,7 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
                 </div>
             </div>
         </div>
-    </section><script>
-    // Tunggu 2 detik sebelum menampilkan toast pertama
-    setTimeout(function() {
-      var toastElement1 = document.getElementById('liveToast1');
-      var toast1 = new bootstrap.Toast(toastElement1);
-      toast1.show();
-    }, 2000);
-
-    // Tunggu 4 detik sebelum menampilkan toast kedua
-    setTimeout(function() {
-      var toastElement2 = document.getElementById('liveToast2');
-      var toast2 = new bootstrap.Toast(toastElement2);
-      toast2.show();
-    }, 4000);
-  </script><script>
-    window.onload = function() {
-    // Cek apakah nama pengguna sudah disimpan di localStorage
-    if (!localStorage.getItem('username')) {
-        // Jika belum, munculkan SweetAlert untuk meminta nama pengguna
-        Swal.fire({
-            title: 'Masukkan nama Anda',
-            input: 'text',
-            inputPlaceholder: 'Nama',
-            allowOutsideClick: false,
-            inputValidator: (value) => {
-                if (!value) {
-                    return 'Anda harus memasukkan nama!';
-                }
-            }
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // Simpan nama pengguna ke localStorage
-                localStorage.setItem('username', result.value);
-
-                // Tampilkan nama pengguna di halaman
-                document.getElementById('username').innerText = result.value;
-            }
-        });
-    } else {
-        // Ambil nama pengguna dari localStorage
-        let savedUsername = localStorage.getItem('username');
-
-        // Tampilkan nama pengguna di halaman
-        document.getElementById('username').innerText = savedUsername;
-    }
-}
-
-</script>
-    <div class="toast-container" style="right: 0px;bottom: 0px;margin-right: 0px;margin-bottom: 0px;padding-right: 16px;padding-left: 16px;padding-bottom: 16px;position: fixed;">
-        <div class="toast fade bounce animated hide" role="alert" data-bs-autohide="false" data-bs-delay="8000" style="position: relative;background: rgb(255,255,255);box-shadow: 0px 0px 20px 1px rgba(45,45,45,0.52);" id="liveToast1">
-            <div class="toast-header">
-                <picture style="width: 30px;height: 30px;overflow: hidden;border-radius: 50%;margin-bottom: 0px;margin-right: 10px;"><img width="30" height="30" src="assets/img/Page/Profile/Toast.png"></picture><strong class="me-auto">Bimaselalubenar</strong><small>Baru saja</small><button class="btn-close ms-2 mb-1 close" type="button" aria-label="Close" data-bs-dismiss="toast"></button>
-            </div>
-            <div class="toast-body" role="alert">
-                <div class="d-flex">
-                    <p style="margin-bottom: 0px;">Halo!&nbsp;</p>
-                    <p id="username" style="margin-bottom: 0px;font-weight: bold;"></p>
-                </div>
-                <p style="margin-bottom: 0px;">Izinkan notifikasi agar saya dapat mengirimkan informasi menarik!</p>
-            </div>
-        </div>
-        <div class="toast fade bounce animated hide" role="alert" data-bs-autohide="false" data-bs-delay="8000" style="position: relative;background: rgb(255,255,255);box-shadow: 0px 0px 20px 1px rgba(45,45,45,0.52);" id="liveToast2">
-            <div class="toast-header">
-                <picture style="width: 30px;height: 30px;overflow: hidden;border-radius: 50%;margin-bottom: 0px;margin-right: 10px;"><img width="30" height="30" src="assets/img/Page/Profile/Toast.png"></picture><strong class="me-auto">Bimaselalubenar</strong><small>Baru saja</small><button class="btn-close ms-2 mb-1 close" type="button" aria-label="Close" data-bs-dismiss="toast"></button>
-            </div>
-            <div class="toast-body" role="alert">
-                <p style="margin-bottom: 0px;">Kamu perlu apa? aku hanya menyediakan 1 layanan&nbsp;</p><a style="margin-bottom: 0px;background: #2e55e1;color: var(--bs-body-bg);padding: 7px;border-radius: 5px;padding-top: 1px;padding-bottom: 1px;padding-right: 6px;padding-left: 6px;" href="web-service.html">Jasa Web Development</a>
-            </div>
-        </div>
-    </div>
+    </section>
     <footer class="bg-primary-gradient" style="box-shadow: 0px -33px 20px 2px rgba(45,45,45,0.08);border-radius: 0px;">
         <div class="container py-4 py-lg-5" style="border-color: rgba(45,45,45,0);">
             <div class="row justify-content-center">
@@ -837,7 +768,76 @@ window.__h82AlnkH6D91__("WyJwdWItODkxMzA4MTU1NDU3NDkxMCIsW251bGwsbnVsbCxudWxsLCJ
                     </svg></p>
             </div>
         </div>
-    </footer>
+    </footer><script>
+    // Tunggu 2 detik sebelum menampilkan toast pertama
+    setTimeout(function() {
+      var toastElement1 = document.getElementById('liveToast1');
+      var toast1 = new bootstrap.Toast(toastElement1);
+      toast1.show();
+    }, 2000);
+
+    // Tunggu 4 detik sebelum menampilkan toast kedua
+    setTimeout(function() {
+      var toastElement2 = document.getElementById('liveToast2');
+      var toast2 = new bootstrap.Toast(toastElement2);
+      toast2.show();
+    }, 4000);
+  </script><script>
+    window.onload = function() {
+    // Cek apakah nama pengguna sudah disimpan di localStorage
+    if (!localStorage.getItem('username')) {
+        // Jika belum, munculkan SweetAlert untuk meminta nama pengguna
+        Swal.fire({
+            title: 'Masukkan nama Anda',
+            input: 'text',
+            inputPlaceholder: 'Nama',
+            allowOutsideClick: false,
+            inputValidator: (value) => {
+                if (!value) {
+                    return 'Anda harus memasukkan nama!';
+                }
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Simpan nama pengguna ke localStorage
+                localStorage.setItem('username', result.value);
+
+                // Tampilkan nama pengguna di halaman
+                document.getElementById('username').innerText = result.value;
+            }
+        });
+    } else {
+        // Ambil nama pengguna dari localStorage
+        let savedUsername = localStorage.getItem('username');
+
+        // Tampilkan nama pengguna di halaman
+        document.getElementById('username').innerText = savedUsername;
+    }
+}
+
+</script>
+    <div class="toast-container align-content-end scrollbarnone" style="right: 0px;bottom: 0px;margin-right: 0px;margin-bottom: 0px;padding-right: 16px;padding-left: 16px;padding-bottom: 16px;height: 100vh;overflow: hidden;display: block;overflow-y: scroll;padding-top: 16px;position: fixed;">
+        <div class="toast fade bounce animated hide" role="alert" data-bs-autohide="false" data-bs-delay="8000" style="position: relative;background: rgb(255,255,255);box-shadow: 0px 0px 20px 1px rgba(45,45,45,0.52);" id="liveToast1">
+            <div class="toast-header">
+                <picture style="width: 30px;height: 30px;overflow: hidden;border-radius: 50%;margin-bottom: 0px;margin-right: 10px;"><img width="30" height="30" src="assets/img/Page/Profile/Toast.png"></picture><strong class="me-auto">Bimaselalubenar</strong><small>Baru saja</small><button class="btn-close ms-2 mb-1 close" type="button" aria-label="Close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body" role="alert">
+                <div class="d-flex">
+                    <p style="margin-bottom: 0px;">Halo!&nbsp;</p>
+                    <p id="username" style="margin-bottom: 0px;font-weight: bold;"></p>
+                </div>
+                <p style="margin-bottom: 0px;">Izinkan notifikasi agar saya dapat mengirimkan informasi menarik!</p>
+            </div>
+        </div>
+        <div class="toast fade bounce animated hide" role="alert" data-bs-autohide="false" data-bs-delay="8000" style="position: relative;background: rgb(255,255,255);box-shadow: 0px 0px 20px 1px rgba(45,45,45,0.52);" id="liveToast2">
+            <div class="toast-header">
+                <picture style="width: 30px;height: 30px;overflow: hidden;border-radius: 50%;margin-bottom: 0px;margin-right: 10px;"><img width="30" height="30" src="assets/img/Page/Profile/Toast.png"></picture><strong class="me-auto">Bimaselalubenar</strong><small>Baru saja</small><button class="btn-close ms-2 mb-1 close" type="button" aria-label="Close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body" role="alert">
+                <p style="margin-bottom: 0px;">Kamu perlu apa? aku hanya menyediakan 1 layanan&nbsp;</p><a style="margin-bottom: 0px;background: #2e55e1;color: var(--bs-body-bg);padding: 7px;border-radius: 5px;padding-top: 1px;padding-bottom: 1px;padding-right: 6px;padding-left: 6px;" href="web-service.html">Jasa Web Development</a>
+            </div>
+        </div>
+    </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
