@@ -5,3 +5,28 @@
 p {
 }
 
+.btn-animation {
+  color: var(--bs-gray-200);
+  border-width: 2px;
+  border-color: #ffffff;
+}
+
+.btn-animation:hover {
+  color: var(--bs-black);
+  background: var(--bs-white);
+  transition: ease-in;
+}
+
+.btn-default {
+  background: rgb(255,255,255);
+  color: rgb(0,0,0);
+  border-width: 2px;
+  border-color: rgb(0,0,0);
+  transition: ease-in;
+}
+
+.btn-default:hover {
+  color: #ffffff;
+  background: #3763f4;
+}
+
