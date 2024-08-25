@@ -46,7 +46,7 @@ const khodams = [
     { name: "Kuda Laut", meaning: "Makhluk yang penuh kedamaian dan ketenangan. Ia membantu dalam menemukan ketenangan dan kedamaian dalam hidup." },
     { name: "Kupu-kupu Emas", meaning: "Simbol transformasi dan keindahan. Ia membantu dalam proses perubahan dan pencarian jati diri." },
     { name: "Kura-kura Pelindung", meaning: "Simbol kesabaran dan perlindungan. Ia membantu dalam menjaga keselamatan dan memberikan perlindungan." },
-    { name: "Kucing Hitam", meaning: "Makhluk yang penuh misteri dan pesona. Ia membantu dalam melindungi dari bahaya tersembunyi." }
+    { name: "Kucing Hitam", meaning: "Makhluk yang penuh misteri dan pesona. Ia membantu dalam melindungi dari bahaya tersembunyi." },
     { name: "Srigala Bulan", meaning: "Khodam Srigala Bulan, makhluk malam yang memiliki hubungan khusus dengan bulan. Ia memberikan kekuatan dan ketenangan dalam kegelapan." },
     { name: "Harimau Malam", meaning: "Khodam Harimau Malam, pelindung yang beroperasi di malam hari. Ia memberikan keberanian dan kekuatan dalam situasi yang paling menakutkan." },
     { name: "Merak Emas", meaning: "Khodam Merak Emas, simbol kemewahan dan keanggunan. Ia membawa keindahan dan pesona bagi mereka yang didekatinya." },
@@ -94,8 +94,6 @@ const khodams = [
     { name: "Elang Biru", meaning: "Khodam Elang Biru, simbol kebebasan dan penglihatan yang tajam. Ia membantu dalam melihat jauh ke depan dan mengambil keputusan dengan bijak." },
     { name: "Singa Hijau", meaning: "Khodam Singa Hijau, simbol kekuatan dan keseimbangan. Ia membantu dalam menghadapi tantangan dengan kekuatan dan ketenangan." },
     { name: "Naga Emas", meaning: "Khodam Naga Emas, simbol kemakmuran dan kekuatan. Ia membawa kekayaan dan kekuatan bagi mereka yang mempercayainya." },
-    // Tambahkan lebih banyak khodam sesuai keinginan
-    { name: "", meaning: "" },
     // Tambahkan lebih banyak khodam sesuai keinginan
 ];
 
