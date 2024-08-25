@@ -30,3 +30,11 @@ p {
   background: #3763f4;
 }
 
+#input-container, #loading-container, #result-container {
+  display: none;
+}
+
+#input-container {
+  display: block;
+}
+
