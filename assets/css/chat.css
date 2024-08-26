@@ -52,18 +52,13 @@
 #komentar {
   bottom: -0px;
   width: 100%;
-  position: absolute;
+  position: static;
   background: #e6e6e6;
   border-radius: 18px;
   box-shadow: 0px -6px 20px rgb(153,153,153);
   height: auto;
   padding-bottom: 0px;
-  transform: translate(0px) translateY(234px);
-  transition: ease-in;
-}
-
-#komentar:hover {
-  transform: translateY(0px);
+  transform: translate(0px) translateY(0px);
   transition: ease-in;
 }
 
