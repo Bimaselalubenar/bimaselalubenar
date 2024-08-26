@@ -18,7 +18,7 @@ form1.addEventListener('submit', e => {
                 Swal.fire({
                     icon: 'success',
                     title: 'Komentar terkirim!',
-                    text: 'pesan anda sudah terpublish secara umum',
+                    text: 'Pesan Anda sudah terpublish secara umum',
                 }).then(() => {
                     window.location.reload();
                 });
@@ -52,7 +52,7 @@ fetch(spreadsheetUrl)
             komentarElement.textContent = `${item.komentar}`;
 
             const akunsocmedElement = document.createElement('p');
-            akunsocmedElement.textContent = `Threads : @${item.akunsocmed}`;
+            akunsocmedElement.innerHTML = `Threads: <a href="https://www.threads.net/${item.akunsocmed}" target="_blank">@${item.akunsocmed}</a>`;
 
             const dateElement = document.createElement('p');
             dateElement.classList.add('date');
