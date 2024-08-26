@@ -183,7 +183,7 @@
                 <form id="khodam-form" class="d-flex" style="gap: 10px;margin-bottom: 23px;"><input class="form-control" type="text" id="name" name="name" placeholder="Nama kamu" required="" style="padding-left: 14px;padding-right: 14px;"><button class="btn text-nowrap btn-outline-warning" type="submit" style="border-radius: 16px;padding-right: 14px;padding-left: 14px;">Cek Khodam&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-search">
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
                         </svg></button></form><label class="form-label" style="color: var(--bs-body-bg);">&nbsp; &nbsp;Update?</label>
-                <div class="accordion" role="tablist" id="accordion-1">
+                <div class="accordion" role="tablist" id="accordion-1" style="margin-bottom: 16px;">
                     <div class="accordion-item">
                         <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-1" aria-expanded="false" aria-controls="accordion-1 .item-1" name="name" placeholder="Nama kamu" required="" style="padding-left: 14px;padding-right: 14px;">Apa yang baru? 4.1</button></h2>
                         <div class="accordion-collapse collapse item-1" role="tabpanel" data-bs-parent="#accordion-1">
@@ -203,7 +203,16 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div><label class="form-label" style="color: var(--bs-body-bg);">Berikan jajan developer</label>
+        <div><button class="btn text-nowrap btn-outline-warning" type="submit" style="border-radius: 16px;padding-right: 14px;padding-left: 14px;margin-right: 16px;">Donasi&nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-cash-coin" style="width: 16px;height: 16px;">
+                    <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8m5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0"></path>
+                    <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"></path>
+                    <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1z"></path>
+                    <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"></path>
+                </svg></button><button class="btn text-nowrap btn-outline-warning" type="submit" style="border-radius: 16px;padding-right: 14px;padding-left: 14px;" data-bs-target="#offcanvas-list" data-bs-toggle="offcanvas">Komentar&nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-chat-dots" style="width: 16px;height: 16px;">
+                    <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"></path>
+                    <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2"></path>
+                </svg></button></div>
         <div id="loading-container" style="width: 100%;max-width: 600px;">
             <div class="d-flex flex-column justify-content-center align-items-center"><label class="form-label" style="color: var(--bs-body-bg);">Loading...</label>
                 <lottie-player id="lottie-animation" src="https://ik.imagekit.io/3ij6aly19/bankdata-bimaselalubenar/Loading_ori.json?updatedAt=1719062977344" mode="bounce" loop="" autoplay="" style="height: auto;width: 150px;" speed="3.6"></lottie-player>
@@ -241,7 +250,7 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
     </div>
-    <div class="d-flex flex-column" style="bottom: 0px;position: relative;width: 100%;text-align: center;background: rgba(0,0,0,0.87);color: var(--bs-body-bg);margin-bottom: 0px;padding-bottom: 52px;padding-top: 12px;"><span style="font-size: 12px;">Develop by <a href="https://www.instagram.com/bimaselalubenar" target="_blank"><span style="color: rgb(255, 245, 0);">@Bimaselalubenar</span></a></span><span style="font-size: 12px;">Made with ❤️ ©️2024</span></div><script src="../assets/js/App/cekkhodam.js">
+    <div class="d-flex flex-column" style="bottom: 0px;position: relative;width: 100%;text-align: center;background: rgba(0,0,0,0.87);color: var(--bs-body-bg);margin-bottom: 0px;padding-bottom: 52px;padding-top: 12px;"><span style="font-size: 12px;">Development by <a href="https://www.instagram.com/bimaselalubenar" target="_blank"><span style="color: rgb(255, 245, 0);">@Bimaselalubenar</span></a></span><span style="font-size: 12px;">Made with ❤️ ©️2024</span></div><script src="../assets/js/App/cekkhodam.js">
 </script>
 
 <style>
@@ -254,6 +263,22 @@
 </style>
 
 <script type='text/javascript' src='https://assets.trakteer.id/js/trbtn-overlay.min.js'></script><script type='text/javascript' class='troverlay'>(function() {var trbtnId = trbtnOverlay.init('Sawer','#be1e2d','https://trakteer.id/bimaselalubenar/tip/embed/modal','https://cdn.trakteer.id/images/embed/trbtn-icon.png?date=18-11-2023','40','floating-right');trbtnOverlay.draw(trbtnId);})();</script>
+    <div class="offcanvas offcanvas-start" tabindex="-1" data-bs-backdrop="false" id="offcanvas-list">
+        <div class="offcanvas-header"><a class="link-body-emphasis d-flex align-items-center me-md-auto mb-3 mb-md-0 text-decoration-none" href="/"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-bookmark-dash me-3" style="font-size: 25px;">
+                    <path fill-rule="evenodd" d="M5.5 6.5A.5.5 0 0 1 6 6h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5"></path>
+                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"></path>
+                </svg><span class="fs-4">Comment</span></a><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="offcanvas"></button></div>
+        <div class="offcanvas-body d-flex flex-column justify-content-between p-0 scrollbarnone">
+            <div id="messages" class="scrollbarnone"></div>
+            <form id="komentar" style="width: 100%;" method="post" target="_self">
+                <div class="mb-3">
+                    <div class="gap-2" style="padding-right: 10px;padding-left: 10px;"><label class="form-label">Tulis komentar kamu</label><input class="form-control" type="text" name="Nama" placeholder="Nama" style="margin: 0px;margin-bottom: 8px;padding: 0px;padding-top: 4px;padding-bottom: 4px;padding-right: 10px;padding-left: 10px;border-radius: 8px;"><input class="form-control" type="text" name="Akunsocmed" placeholder="Link Socmed" style="margin: 0px;margin-bottom: 8px;padding: 0px;padding-top: 4px;padding-bottom: 4px;padding-right: 10px;padding-left: 10px;border-radius: 8px;"><input class="form-control" type="text" name="Komentar" placeholder="Komentar" style="margin: 0px;margin-bottom: 8px;padding: 0px;padding-top: 4px;padding-bottom: 4px;padding-right: 10px;padding-left: 10px;border-radius: 8px;">
+                        <div class="d-flex flex-column d-flex"><label class="form-label" id="status-txt" style="font-size: 13px;"></label><button class="btn btn-primary" type="submit" style="margin: 0px;margin-bottom: 8px;padding: 0px;padding-top: 4px;padding-bottom: 4px;padding-right: 10px;padding-left: 10px;border-radius: 8px;">Kirim</button></div>
+                    </div>
+                </div>
+            </form><script src="../assets/js/login/comment-umum.js"></script>
+        </div>
+    </div>
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/js/lottie-player.min.js"></script>
@@ -265,6 +290,7 @@
     <script src="../assets/js/formbima/daftar.js"></script>
     <script src="../assets/js/formbima/form-bima.js"></script>
     <script src="../assets/js/inspeksi/inspeksi.js"></script>
+    <script src="../assets/js/login/comment-umum.js"></script>
     <script src="../assets/js/login/comment.js"></script>
     <script src="../assets/js/login/login.js"></script>
     <script src="../assets/js/One-Liner-Code-Editor-codeeditor.js"></script>
