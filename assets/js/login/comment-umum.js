@@ -52,7 +52,7 @@ fetch(spreadsheetUrl)
             komentarElement.textContent = `${item.komentar}`;
 
             const akunsocmedElement = document.createElement('p');
-            akunsocmedElement.textContent = `${item.akunsocmed}`;
+            akunsocmedElement.textContent = `Threads : @${item.akunsocmed}`;
 
             const dateElement = document.createElement('p');
             dateElement.classList.add('date');
