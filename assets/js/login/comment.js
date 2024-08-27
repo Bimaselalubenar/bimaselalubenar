@@ -1,5 +1,5 @@
 const scriptURL1 = 'https://script.google.com/macros/s/AKfycbxXTN8rkv1lA4xWyBNKpCikzOVRUUrjgeNHI3eyDBG9dDEoVt7mfNcuVVvgxwqpqPeF/exec';
-        const form1 = document.getElementById('komentar');
+        const form1 = document.getElementById('chat');
         const statusMessage1 = document.getElementById('status-txt');
 
         form1.addEventListener('submit', e => {
