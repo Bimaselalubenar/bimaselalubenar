@@ -2,11 +2,12 @@
   .b-cekberatbadan {
     padding: 16px;
     margin-bottom: 16px;
+    background: rgb(19,93,98);
   }
 }
 
 .b-cekberatbadan {
-  background: #56d5dd;
+  background: #f9e814;
   border-radius: 16px;
   margin-bottom: 16px;
 }
@@ -52,7 +53,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 
 .result {
   display: none;
-  background: #1eced9;
+  background: #f9e214;
   border-radius: 16px;
   padding-top: 16px;
   padding-bottom: 16px;
@@ -66,5 +67,17 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   margin-bottom: 16px;
   border-radius: 16px;
   height: auto;
+}
+
+.btn-cektinggibadan {
+  color: #c99d00;
+  border-radius: 10px;
+  border: 2px solid #c99d00 ;
+}
+
+.btn-cektinggibadan:hover {
+  color: #000000;
+  background: #ffffff00;
+  border-color: #000000;
 }
 
