@@ -67,6 +67,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   margin-bottom: 16px;
   border-radius: 16px;
   height: auto;
+  box-shadow: 2px 2px 12px rgba(45,45,45,0.43);
 }
 
 .btn-cektinggibadan {
@@ -79,5 +80,24 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   color: #000000;
   background: #ffffff00;
   border-color: #000000;
+}
+
+.load-pengeluaran {
+  height: 40px;
+  width: 40px;
+}
+
+.output {
+  display: none;
+  padding: 10px;
+  background: #ffffff;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  height: auto;
+  box-shadow: 2px 2px 12px rgba(45,45,45,0.43);
+}
+
+.output, .loading, .error {
+  /*display: none;*/
 }
 
