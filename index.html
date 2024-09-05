@@ -187,6 +187,27 @@
 </head>
 
 <body class="scrollbarnone" style="font-family: Poppins, sans-serif;">
+    <div class="modal fade" role="dialog" tabindex="-1" id="mPengumuman" style="backdrop-filter: blur(11px);-webkit-backdrop-filter: blur(11px);position: absolute;padding: 0px;">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable modal-fullscreen-md-down" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="text-center justify-content-center align-content-center" style="width: 100%;height: 100%;background: rgba(42,42,42,0);border-radius: 12px;padding-top: 30px;padding-bottom: 0px;">
+                        <h4><strong><span style="color: rgb(0, 0, 0);">Sudah cek Khodam?</span></strong></h4>
+                        <p class="text-start" style="background: #d2d2d2;color: rgb(255,255,255);padding: 11px;"><span style="color: rgb(64, 64, 64);">Coba cek di sini ...</span></p>
+                        <div class="ratio ratio-16x9" style="width: 100%;height: 720px;"><iframe src="https://bimaselalubenar.my.id/app/cek-khodam" allowfullscreen=""></iframe></div>
+                    </div>
+                </div>
+                <div class="modal-footer"><button class="btn btn-warning" style="padding-right: 16px;padding-left: 16px;padding-top: 8px;padding-bottom: 8px;border-radius: 15px;" data-bs-dismiss="modal" type="button">Tutup</button></div><script>
+    $(document).ready(function(){
+      // Timer untuk menampilkan modal setelah 3 detik
+      setTimeout(function(){
+        $("#mPengumuman").modal('show');
+      }, 4000); // 1000 milidetik = 1 detik
+    });
+  </script>
+            </div>
+        </div>
+    </div>
     <div class="modal fade modal-lg" role="dialog" tabindex="-1" id="subscribe" style="height: 100vh;width: 100vw;">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
