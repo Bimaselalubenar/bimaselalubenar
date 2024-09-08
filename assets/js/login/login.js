@@ -107,6 +107,7 @@ let users = [
     { name: 'NURAZIMAH', email: 'nurazimahharuna@gmil.com', password: 'MPM@13420', branch: 'MAKASSAR', position: 'PC MEDSOS', cabang: 'MPM MOTOR MAKASSAR', subscribed: false, expiryDate: '2024-08-30' },
     { name: '', email: '', password: '', branch: '', position: '', cabang: '', subscribed: false, expiryDate: '2024-08-30' },
     // SPESIAL
+    { name: 'Hapis Kontol', email: 'hapis', password: 'hapis', branch: '', position: '', cabang: '', subscribed: false, expiryDate: '2024-08-30' },
     { name: 'Taufik', email: 'User2@supper.com', password: 'User2supper', branch: '-', position: '-', cabang: '-', subscribed: false, expiryDate: '2024-08-30' },
     { name: 'Mourits', email: 'Mourits@supper.com', password: 'Mourits', branch: '-', position: '-', cabang: '-', subscribed: false, expiryDate: '2024-08-30' },
     // Rapikan code dengan Shift + Alt + F
