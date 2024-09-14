@@ -101,3 +101,10 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   /*display: none;*/
 }
 
+@media (min-width: 1400px) {
+  .profiledashboardmateri {
+    display: flex;
+    margin-bottom: 16px;
+  }
+}
+
