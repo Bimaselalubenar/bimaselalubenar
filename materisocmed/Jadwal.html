@@ -648,7 +648,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
             <div class="shadow" style="background: #ffffff;padding: 16px;border-radius: 16px;width: 100%;height: auto;margin-right: 15px;margin-bottom: 15px;">
                 <h5 style="width: 100%;max-width: 400px;padding: 0px;"><strong>Materi socmed terjadwal</strong></h5>
-                <h6 style="width: 100%;padding: 0px;margin-bottom: 16px;">Di mohon untuk segera di unduh sebelum waktu habis, jika waktu habis materi tidak dapat di unduh maupun di akses.</h6><button class="btn btn-primary" type="button" style="color: var(--bs-btn-disabled-color);background: #0026ee;padding-top: 8px;padding-bottom: 8px;padding-right: 16px;padding-left: 16px;border-radius: 16px;margin-bottom: 16px;" data-toggle="modal" data-target="#showRule">Lihat rule<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20" fill="none" style="font-size: 22px;margin-left: 10px;">
+                <h6 style="width: 100%;padding: 0px;margin-bottom: 16px;">Di mohon untuk segera di unduh sebelum waktu habis, jika waktu habis materi tidak dapat di unduh maupun di akses.</h6><button class="btn btn-primary" id="aturan" type="button" style="color: var(--bs-btn-disabled-color);background: #0026ee;padding-top: 8px;padding-bottom: 8px;padding-right: 16px;padding-left: 16px;border-radius: 16px;margin-bottom: 16px;" data-toggle="modal" data-target="#showRule">Lihat rule<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20" fill="none" style="font-size: 22px;margin-left: 10px;">
 
                         <path d="M10 12C11.1046 12 12 11.1046 12 10C12 8.89543 11.1046 8 10 8C8.89544 8 8.00001 8.89543 8.00001 10C8.00001 11.1046 8.89544 12 10 12Z" fill="currentColor"></path>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M0.457764 10C1.73202 5.94291 5.52232 3 9.99997 3C14.4776 3 18.2679 5.94288 19.5422 9.99996C18.2679 14.0571 14.4776 17 9.99995 17C5.52232 17 1.73204 14.0571 0.457764 10ZM14 10C14 12.2091 12.2091 14 10 14C7.79087 14 6.00001 12.2091 6.00001 10C6.00001 7.79086 7.79087 6 10 6C12.2091 6 14 7.79086 14 10Z" fill="currentColor"></path>
@@ -954,6 +954,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 users: ['Bimaselalubenar'],
                 positions: ['PDCA']
             },
+            
+            // Template
+            aturan: {
+                users: ['Bimaselalubenar',''],      // Nama pengguna yang memiliki akses
+                positions: ['PDCA','SALES ONLINE']  // Posisi yang memiliki akses
+            },
+            
         };
 
         // Fungsi untuk menonaktifkan tombol dalam div
@@ -1014,6 +1021,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         // Halaman Dashboard
         checkAccessForDiv('privatadmin', accessControl.privatadmin.users, accessControl.privatadmin.positions);
         checkAccessForDiv('privatadmin2', accessControl.privatadmin2.users, accessControl.privatadmin2.positions);
+    
+        // Halaman Dashboard
+        checkAccessForDiv('aturan', accessControl.aturan.users, accessControl.aturan.positions);
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
