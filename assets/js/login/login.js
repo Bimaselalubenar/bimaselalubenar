@@ -99,6 +99,7 @@ let users = [
     { name: 'Puspia cwantik', email: 'puspiaku@gmail.com', password: 'puspus', branch: 'MADIUN', position: 'COUNTER SALES', cabang: 'MPM MADIUN', subscribed: false, expiryDate: '2024-08-30' },
     { name: 'Ahmad Khoirun', email: 'ahmadkhoirun92@gmail.com', password: 'uunmpm92', branch: 'Tuban', position: 'PIC SOCMED', cabang: 'Tuban', subscribed: false, expiryDate: '2024-08-30' },
 	{ name: 'Reny Kusumawati', email: 'renykusumawati146@gmail.com', password: '12345678', branch: 'Kota Madiun', position: 'Management Call', cabang: 'MPM Madiun', subscribed: false, expiryDate: '2024-08-30' },
+    { name: 'Rizallo Novega', email: 'rizallo.rn@gmail.com', password: 'DarkenD123', branch: 'Ponorogo', position: 'Admin PDCA', cabang: 'MPM MOTOR PONOROGO', subscribed: false, expiryDate: '2024-08-30' },
     { name: '', email: '', password: '', branch: '', position: '', cabang: '', subscribed: false, expiryDate: '2024-08-30' },
     // SALES BATCH 1 & 2
     { name: 'DEDE MARLINA', email: 'dedechubbii@gmail.com', password: 'Dedempm203', branch: 'Kota Tangerang', position: 'Sales Online Batch 2', cabang: 'MPM Motor Tangerang', subscribed: false, expiryDate: '2024-08-30' },
