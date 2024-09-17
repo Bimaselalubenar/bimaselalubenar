@@ -37,6 +37,14 @@ loginForm.addEventListener("submit", function (event) {
     }
 
     if (user && user.password === password) {
+        // Google Analytics Event Tracking
+        gtag('event', 'login', {
+            'event_category': 'User',
+            'event_label': email,
+            'value': 1
+        });
+        // Akhir dari penambahan event tracking
+
         localStorage.setItem("currentUser", JSON.stringify(user));
         window.location.href = "dashboard.html";
     } else {
