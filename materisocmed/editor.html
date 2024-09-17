@@ -226,7 +226,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <ul class="nav nav-pills flex-column mb-auto">
                         <li class="nav-item"><a class="nav-link link-body-emphasis" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" href="dashboard.html" title="Dashboard"><i class="fa fa-dashboard" style="width: 21px;height: 21px;font-size: 21px;margin-right: 16px;"></i> Dashboard</a></li>
                         <li class="nav-item"><a class="nav-link link-body-emphasis" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" href="Jadwal.html" title="Jadwal"><i class="fa fa-calendar" style="width: 21px;height: 21px;font-size: 21px;margin-right: 16px;"></i> Jadwal</a></li>
-                        <li class="nav-item"><a class="nav-link link-body-emphasis" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" href="template-digital.html" title="Template Canva"><i class="fa fa-paint-brush" style="width: 21px;height: 21px;font-size: 21px;margin-right: 16px;"></i> Template Digital (belum siap)</a></li>
+                        <li class="nav-item" id="menutemplate"><a class="nav-link link-body-emphasis" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" href="template-digital-74dgts8uxc00d.html" title="Template Canva"><i class="fa fa-paint-brush" style="width: 21px;height: 21px;font-size: 21px;margin-right: 16px;"></i> Template Digital (belum siap)</a></li>
                         <li class="nav-item"><a class="nav-link link-body-emphasis" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" href="editor.html" title="Template Canva"><i class="fa fa-object-ungroup" style="width: 21px;height: 21px;font-size: 21px;margin-right: 16px;"></i> Editor</a></li>
                         <li class="nav-item"><a class="nav-link link-body-emphasis" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" href="#" title="Tips &amp; Aticle"><i class="fa fa-newspaper-o" style="width: 21px;height: 21px;font-size: 21px;margin-right: 16px;"></i> Tips &amp; Article</a></li>
                         <li class="nav-item"><a class="nav-link link-body-emphasis" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" href="#" title="Segera hadir"><i class="fa fa-group" style="width: 21px;height: 21px;font-size: 21px;margin-right: 16px;"></i> Update</a></li>
@@ -540,7 +540,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         subscribeButton.addEventListener("click", () => {
-            window.location.href = "../materisocmed/subscription.html";
+            window.location.href = "subscription-74dgts8uxc00d.html";
         });
     }
 
@@ -553,7 +553,93 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     document.addEventListener("DOMContentLoaded", manageMenuAccessibility);
 </script>
-<!-- Toast -->
+
+<script>
+        // Mendapatkan user yang sedang login dari localStorage
+        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+        // Daftar pengguna dan posisi yang memiliki akses ke masing-masing div
+        const accessControl = {
+            
+            // Menu
+            menutemplate: {
+                users: ['Bimaselalubenar', ''],      // Nama pengguna yang memiliki akses
+                positions: ['PDCA']  // Posisi yang memiliki akses
+            },
+            
+            // Dashboard
+            privatadmin: {
+                users: ['Bimaselalubenar',''],      // Nama pengguna yang memiliki akses
+                positions: ['KACAB']  // Posisi yang memiliki akses
+            },
+            
+            privatadmin2: {
+                users: ['Bimaselalubenar'],
+                positions: ['PDCA']
+            },
+        };
+
+        // Fungsi untuk menonaktifkan tombol dalam div
+        function disableButtonsInDiv(div) {
+            const buttons = div.querySelectorAll("button");
+            buttons.forEach(button => {
+                button.disabled = true;  // Disable tombol, tetapi masih bisa mendeteksi klik
+            });
+        }
+
+        // Fungsi untuk menangani interaksi komponen di dalam div yang dibatasi
+        function setupDisabledInteraction(div) {
+            const elements = div.querySelectorAll("button, input, select, textarea"); // Semua elemen interaktif
+            elements.forEach(element => {
+                element.addEventListener("click", function(event) {
+                    event.preventDefault(); // Mencegah interaksi default
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Akses Ditolak',
+                        text: 'Anda tidak memiliki izin untuk mengakses bagian ini!',
+                    });
+                });
+            });
+        }
+
+        // Fungsi untuk menangani klik pada div yang dibatasi
+        function setupDivClickAlert(div) {
+            div.addEventListener("click", function(event) {
+                event.preventDefault(); // Mencegah interaksi default
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Akses Ditolak',
+                    text: 'Anda tidak memiliki izin untuk mengakses bagian ini!',
+                });
+            });
+        }
+
+        // Fungsi untuk memeriksa apakah user yang sedang login memiliki akses berdasarkan nama atau posisi
+        function hasAccess(user, allowedUsers, allowedPositions) {
+            // Cek akses berdasarkan nama atau posisi
+            return allowedUsers.includes(user.name) || allowedPositions.includes(user.position);
+        }
+
+        // Fungsi untuk mengatur akses div berdasarkan currentUser
+        function checkAccessForDiv(divId, allowedUsers, allowedPositions) {
+            const div = document.getElementById(divId);
+            if (!hasAccess(currentUser, allowedUsers, allowedPositions)) {
+                div.classList.add("disabled");  // Menambahkan kelas 'disabled'
+                disableButtonsInDiv(div);       // Menonaktifkan tombol di dalam div
+                setupDisabledInteraction(div);  // Menampilkan alert ketika ada interaksi dengan elemen dalam div
+                setupDivClickAlert(div);        // Menampilkan alert ketika div di-klik
+            }
+        }
+        
+        // Menu
+        checkAccessForDiv('menutemplate', accessControl.menutemplate.users, accessControl.menutemplate.positions);
+        
+        // Halaman Dashboard
+        checkAccessForDiv('privatadmin', accessControl.privatadmin.users, accessControl.privatadmin.positions);
+        checkAccessForDiv('privatadmin2', accessControl.privatadmin2.users, accessControl.privatadmin2.positions);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script><!-- Toast -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 <!-- selesai -->
