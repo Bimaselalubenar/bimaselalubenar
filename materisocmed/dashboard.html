@@ -654,13 +654,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <div class="row d-lg-flex justify-content-lg-start align-items-lg-center" style="background: linear-gradient(#e1881f, #ab5e17), var(--bs-dark-text-emphasis);border-radius: 16px;padding-top: 12px;padding-bottom: 12px;">
                             <div class="col-4 col-sm-3 col-md-3 col-lg-3"><img class="profile-pic" alt="Profile Picture 1" style="width: 100%;height: auto;border-radius: 50%;" src="https://www.pngmart.com/files/23/Profile-PNG-Photo.png" width="350" height="349"></div>
                             <div class="col-8 col-sm-9 col-md-9 d-flex d-lg-flex flex-column justify-content-center align-items-start justify-content-sm-center align-items-sm-start justify-content-md-center align-items-lg-start"><span style="color: var(--bs-body-bg);">Halo!&nbsp;</span><span id="userNameslide" style="color: var(--bs-body-bg);font-weight: bold;"><strong>User</strong></span></div>
-                            <div class="col" style="margin-top: 10px;"><span style="color: var(--bs-body-bg);font-weight: bold;"><span style="font-weight: normal !important;">Status&nbsp;</span></span><span id="subscriptionNote" style="color: var(--bs-body-bg);font-weight: bold;"><span style="font-weight: normal !important;">!@#$%^&amp;</span></span></div>
+                            <div class="col" style="margin-top: 10px;"><span style="color: var(--bs-body-bg);font-weight: bold;"><span style="font-weight: normal !important;">Status&nbsp;</span></span><span class="subscriptionNote" style="color: var(--bs-body-bg);font-weight: bold;"><span style="font-weight: normal !important;">!@#$%^&amp;</span></span></div>
                         </div>
                     </div>
                     <ul class="nav nav-pills flex-column mb-auto">
                         <li class="nav-item"><a class="nav-link link-body-emphasis" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" href="dashboard.html" title="Dashboard"><i class="fa fa-dashboard" style="width: 21px;height: 21px;font-size: 21px;margin-right: 16px;"></i> Dashboard</a></li>
                         <li class="nav-item"><a class="nav-link link-body-emphasis" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" href="Jadwal.html" title="Jadwal"><i class="fa fa-calendar" style="width: 21px;height: 21px;font-size: 21px;margin-right: 16px;"></i> Jadwal</a></li>
-                        <li class="nav-item" id="menutemplate"><a class="nav-link link-body-emphasis" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" href="template-digital-74dgts8uxc00d.html" title="Template Canva"><i class="fa fa-paint-brush" style="width: 21px;height: 21px;font-size: 21px;margin-right: 16px;"></i> Template Digital (belum siap)</a></li>
+                        <li class="nav-item" id="menutemplate"><a class="nav-link link-body-emphasis" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" href="template-digital.html" title="Template Canva"><i class="fa fa-paint-brush" style="width: 21px;height: 21px;font-size: 21px;margin-right: 16px;"></i> Template Digital (belum siap)</a></li>
                         <li class="nav-item"><a class="nav-link link-body-emphasis" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" href="editor.html" title="Template Canva"><i class="fa fa-object-ungroup" style="width: 21px;height: 21px;font-size: 21px;margin-right: 16px;"></i> Editor</a></li>
                         <li class="nav-item"><a class="nav-link link-body-emphasis" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" href="#" title="Tips &amp; Aticle"><i class="fa fa-newspaper-o" style="width: 21px;height: 21px;font-size: 21px;margin-right: 16px;"></i> Tips &amp; Article</a></li>
                         <li class="nav-item"><a class="nav-link link-body-emphasis" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" href="#" title="Segera hadir"><i class="fa fa-group" style="width: 21px;height: 21px;font-size: 21px;margin-right: 16px;"></i> Update</a></li>
@@ -1238,14 +1238,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     function manageMenuAccessibility() {
-        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-        const subscriptionNote = document.getElementById("subscriptionNote");
-        const countdown = document.getElementById("countdown");
-        const menuItems = document.querySelectorAll(".menu-item");
-        const subscribeButton = document.getElementById("subscribeButton");
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    const subscriptionNotes = document.querySelectorAll(".subscriptionNote"); // Ganti id dengan class
+    const countdowns = document.querySelectorAll(".countdown");
+    const menuItems = document.querySelectorAll(".menu-item");
+    const subscribeButton = document.getElementById("subscribeButton");
 
-        if (!currentUser) return;
+    if (!currentUser) return;
 
+    subscriptionNotes.forEach((subscriptionNote, index) => {
+        const countdown = countdowns[index];
         if (currentUser.subscribed) {
             if (currentUser.expiryDate === "lifetime") {
                 subscriptionNote.textContent = "Anda memiliki akses berlangganan seumur hidup.";
@@ -1256,7 +1258,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 });
             } else {
                 const remainingDays = calculateRemainingDays(currentUser.expiryDate);
-
                 if (remainingDays > 0) {
                     subscriptionNote.textContent = `Anda sudah berlangganan. ${remainingDays} hari.`;
                     countdown.textContent = `Sisa waktu: ${formatCountdown(currentUser.expiryDate)}`;
@@ -1286,11 +1287,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 item.removeEventListener("click", handleMenuClick);
             });
         }
+    });
 
-        subscribeButton.addEventListener("click", () => {
-            window.location.href = "subscription-74dgts8uxc00d.html";
-        });
-    }
+    subscribeButton.addEventListener("click", () => {
+        window.location.href = "subscription.html";
+    });
+}
 
     function handleMenuClick(event) {
         if (event.target.classList.contains("disabled")) {
@@ -1301,6 +1303,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     document.addEventListener("DOMContentLoaded", manageMenuAccessibility);
 </script>
+
+
 
 <script>
         // Mendapatkan user yang sedang login dari localStorage
