@@ -827,6 +827,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 users: ['Bimaselalubenar'],
                 positions: ['PDCA']
             },
+            
+            // Template Digital
+            subsoff: {
+                users: ['Bimaselalubenar',''],      // Nama pengguna yang memiliki akses
+                positions: ['PDCA','SALES ONLINE']  // Posisi yang memiliki akses
+            },
         };
 
         // Fungsi untuk menonaktifkan tombol dalam div
@@ -887,6 +893,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         // Halaman Dashboard
         checkAccessForDiv('privatadmin', accessControl.privatadmin.users, accessControl.privatadmin.positions);
         checkAccessForDiv('privatadmin2', accessControl.privatadmin2.users, accessControl.privatadmin2.positions);
+    
+        // Halaman Template Digital
+        checkAccessForDiv('subsoff', accessControl.privatadmin.users, accessControl.privatadmin.positions);
 </script>
 
 
