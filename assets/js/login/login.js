@@ -54,7 +54,7 @@ loginForm.addEventListener("submit", function (event) {
 
 // Data akun pengguna
 let users = [
-    { name: 'Bimaselalubenar', email: 'Bima@gmail.com', password: 'Bima', branch: 'Madiun', position: 'PDCA', cabang: 'MPM Madiun', subscribed: true, expiryDate: '2024-09-30' },
+    { name: 'Bimaselalubenar', email: 'Bima@gmail.com', password: 'Bima', branch: 'Madiun', position: 'PDCA', cabang: 'MPM Madiun', subscribed: false, expiryDate: '2024-08-30' },
     { name: 'Bimaselalubenar2', email: 'Bima2@gmail.com', password: 'Bima2', branch: 'Madiun', position: 'PDCA', cabang: 'MPM Madiun', subscribed: true, expiryDate: 'lifetime' },
     { name: 'Bimaselalubenar3', email: 'Bima3@gmail.com', password: 'Bima3', branch: 'Kota Madiun', position: 'PDCA', cabang: 'MPM MADIUN', subscribed: false, expiryDate: null },
     { name: 'Sudibyo', email: 'mpm.madiun1@gmail.com', password: 'Pangsud91', branch: 'Kota Madiun', position: 'PDCA', cabang: 'MPM MADIUN', subscribed: false, expiryDate: '2024-08-30' },
