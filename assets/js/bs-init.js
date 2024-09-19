@@ -11,6 +11,17 @@ if (window.innerWidth < 768) {
 
 document.addEventListener('DOMContentLoaded', function() {
 
+	var hoverAnimationTriggerList = [].slice.call(document.querySelectorAll('[data-bss-hover-animate]'));
+	var hoverAnimationList = hoverAnimationTriggerList.forEach(function (hoverAnimationEl) {
+		hoverAnimationEl.addEventListener('mouseenter', function(e){ e.target.classList.add('animated', e.target.dataset.bssHoverAnimate) });
+		hoverAnimationEl.addEventListener('mouseleave', function(e){ e.target.classList.remove('animated', e.target.dataset.bssHoverAnimate) });
+	});
+
+	var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bss-tooltip]'));
+	var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+	  return new bootstrap.Tooltip(tooltipTriggerEl);
+	})
+
 	var toastTriggers = document.querySelectorAll('[data-bs-toggle="toast"]');
 
 	for (let toastTrigger of toastTriggers) {
@@ -31,5 +42,11 @@ document.addEventListener('DOMContentLoaded', function() {
 				console.error(e);
 			}
 		})
+	}
+
+	var charts = document.querySelectorAll('[data-bss-chart]');
+
+	for (var chart of charts) {
+		chart.chart = new Chart(chart, JSON.parse(chart.dataset.bssChart));
 	}
 }, false);

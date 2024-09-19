@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="id">
+
+<head>
+    <meta charset="utf-8">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5HHF3VHW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script>
+        function copyTextById(id) {
+            // Mendapatkan elemen berdasarkan ID
+            var textElement = document.getElementById(id);
+
+            // Membuat elemen input sementara untuk menyalin teks
+            var tempInput = document.createElement("textarea");
+            tempInput.value = textElement.textContent;
+
+            // Menambahkan elemen input sementara ke body
+            document.body.appendChild(tempInput);
+
+            // Menyorot dan menyalin teks dari elemen input sementara
+            tempInput.select();
+            document.execCommand("copy");
+
+            // Menghapus elemen input sementara setelah menyalin teks
+            document.body.removeChild(tempInput);
+
+            // Memberikan umpan balik menggunakan SweetAlert
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: 'Teks berhasil disalin ke clipboard!',
+                confirmButtonText: 'OK'
+            });
+        }
+
+        // Menangkap kejadian keydown untuk mendeteksi Ctrl + C
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && event.key === 'c') {
+                // Menampilkan SweetAlert ketika Ctrl + C ditekan
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Anda menekan Ctrl + C',
+                    text: 'Text berhasil di salin!',
+                    confirmButtonText: 'OK'
+                });
+            }
+        });
+    </script>
+
+<!-- app -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- selesai -->
+
+<!-- animasi AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script>
+    AOS.init({
+        duration: 1200
+    });</script>
+<!-- Selesai -->
+
+<!-- onesignal -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "6ae2ed3c-f763-465d-8648-0538e5f7e40c",
+    });
+  });
+</script>
+<!-- selesai -->
+
+<!-- FireBase -->
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAGIm8fs-R4WuUMomDnaklskRsXg-82BfA",
+    authDomain: "bimaselalubenar-boostrap.firebaseapp.com",
+    databaseURL: "https://bimaselalubenar-boostrap-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "bimaselalubenar-boostrap",
+    storageBucket: "bimaselalubenar-boostrap.appspot.com",
+    messagingSenderId: "903484306924",
+    appId: "1:903484306924:web:8b0f8344d12a46fb20bcc9",
+    measurementId: "G-KSFJWG3HM5"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+<!-- selesai -->
+
+<!-- Comment -->
+<script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
+<!-- selesai -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Bimaselalubenar</title>
+    <meta name="theme-color" content="#7d7878">
+    <link rel="canonical" href="https://bimaselalubenar.my.id/app/">
+    <meta property="og:url" content="https://bimaselalubenar.my.id/app/">
+    <meta name="description" content="Saya Fullstack developer dengan pengalaman dalam mengembangkan aplikasi web dari sisi frontend hingga backend.">
+    <meta name="twitter:image" content="https://bimaselalubenar.my.id/assets/img/ceo/materisocmed/CEO Mainweb.png">
+    <meta property="og:title" content="Bimaselalubenar">
+    <meta property="og:description" content="Seorang fullstack developer dengan pengalaman dalam mengembangkan aplikasi web dari sisi frontend hingga backend.">
+    <meta property="og:image" content="https://bimaselalubenar.my.id/assets/img/ceo/materisocmed/CEO Mainweb.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" sizes="137x109" href="../assets/img/Logo/logo2.png">
+    <link rel="icon" type="image/png" sizes="137x109" href="../assets/img/Logo/logo2.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="137x109" href="../assets/img/Logo/logo2.png">
+    <link rel="icon" type="image/png" sizes="137x109" href="../assets/img/Logo/logo2.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="137x109" href="../assets/img/Logo/logo2.png">
+    <link rel="icon" type="image/png" sizes="137x109" href="../assets/img/Logo/logo2.png">
+    <link rel="icon" type="image/png" sizes="137x109" href="../assets/img/Logo/logo2.png">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="manifest" href="../manifest.json" crossorigin="use-credentials">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/swiper-icons.css">
+    <link rel="stylesheet" href="../assets/css/animate.min.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+    <link rel="stylesheet" href="../assets/css/background.css">
+    <link rel="stylesheet" href="../assets/css/Banner-Heading-Image-images.css">
+    <link rel="stylesheet" href="../assets/css/chat.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/menu-dashboard.css">
+    <link rel="stylesheet" href="../assets/css/One-Liner-Code-Editor.css">
+    <link rel="stylesheet" href="../assets/css/PRE.css">
+    <link rel="stylesheet" href="../assets/css/Simple-Slider-swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/Simple-Slider.css">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5HHF3VHW');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Analytic -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PNZTM564QN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PNZTM564QN');
+</script>
+<!-- Selelsai -->
+
+<!-- Google ADS -->
+<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8913081554574910"
+     crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-8913081554574910">
+<!-- Selesai -->
+
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "6ae2ed3c-f763-465d-8648-0538e5f7e40c",
+    });
+  });
+</script>
+
+<!-- Subscribe YT -->
+<script src="https://apis.google.com/js/platform.js"></script>
+
+<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+
+<!-- Fire Base -->
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+<!-- Selesai -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- drag off -->
+<script>
+    document.addEventListener('contextmenu', function (event) {
+        event.preventDefault();
+    });
+
+    // Mencegah drag pada semua elemen
+    document.addEventListener('dragstart', function (event) {
+        event.preventDefault();
+    });
+</script>
+<!-- selesai -->
+
+<!-- mematikan inspection -->
+<script>
+    function showAlert(message) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Akses Dilarang!',
+            text: message,
+            confirmButtonText: 'OK'
+        });
+    }
+
+    document.addEventListener('keydown', function (event) {
+        // Disable F12
+        if (event.keyCode == 123) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+Shift+I
+        if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+Shift+J
+        if (event.ctrlKey && event.shiftKey && event.keyCode == 74) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+Shift+C
+        if (event.ctrlKey && event.shiftKey && event.keyCode == 67) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+U
+        if (event.ctrlKey && event.keyCode == 85) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+Shift+K (Mozilla Firefox Web Console)
+        if (event.ctrlKey && event.shiftKey && event.keyCode == 75) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+Shift+S (Windows Snipping Tool)
+        if (event.ctrlKey && event.shiftKey && event.keyCode == 83) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+K or Ctrl+F (Search in Developer Tools)
+        if (event.ctrlKey && (event.keyCode == 75 || event.keyCode == 70)) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable F1 (Help in Developer Tools)
+        if (event.keyCode == 112) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+P (File search in Developer Tools)
+        if (event.ctrlKey && event.keyCode == 80) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+    });
+
+    document.addEventListener('contextmenu', function (event) {
+        event.preventDefault();
+        showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+    });
+
+    // Mencegah drag pada semua elemen
+    document.addEventListener('dragstart', function (event) {
+        event.preventDefault();
+        showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+    });
+
+    // Mencegah tindakan ketika 3 jari menyentuh layar
+    document.addEventListener('touchstart', function (event) {
+        if (event.touches.length === 3) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan tindakan ini');
+        }
+    });
+
+    // Mencegah penyalinan konten
+    document.addEventListener('copy', function (event) {
+        event.preventDefault();
+        const clipboardText = 'not allowed, web by https://bimaselalubenar.my.id';
+        event.clipboardData.setData('text/plain', clipboardText);
+
+        Swal.fire({
+            icon: 'error',
+            title: 'Tidak di izinkan',
+            text: 'Tidak di izinkan untuk menyalin konten.',
+            footer: '<a href="https://bimaselalubenar.my.id">www.bimaselalubenar.my.id</a>',
+            didOpen: () => {
+                Swal.getContent().insertAdjacentHTML('beforeend', '<p>Note: Copying is not allowed. Web by <a href="https://bimaselalubenar.my.id">https://bimaselalubenar.my.id</a></p>');
+            }
+        });
+    });
+</script>
+<!-- selesai -->
+
+<!-- menonaktifkan pelacakan id -->
+<script>
+    function detectDevTools() {
+        const element = new Image();
+        Object.defineProperty(element, 'id', {
+            get: function () {
+                window.location.href = 'w-w';
+            }
+        });
+        console.log(element);
+    }
+
+    setInterval(detectDevTools, 1000);
+</script>
+<!-- selesai -->
+
+<!-- animasi AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script>
+    AOS.init({
+        duration: 1200
+    });</script>
+<!-- Selesai -->
+
+<!-- untuk screen capture -->
+<script>
+    function showAlert(message) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Akses Dilarang!',
+            text: message,
+            confirmButtonText: 'OK'
+        });
+    }
+
+    // Fungsi untuk menampilkan SweetAlert khusus untuk screenshot
+    function showScreenshotAlert() {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Screenshot Dilarang!',
+            text: 'Anda tidak diperbolehkan mengambil screenshot atau mencetak konten ini.',
+            confirmButtonText: 'OK'
+        });
+    }
+
+    document.addEventListener('keydown', function(event) {
+        // Disable F12
+        if (event.keyCode == 123) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+Shift+I
+        if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+Shift+J
+        if (event.ctrlKey && event.shiftKey && event.keyCode == 74) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+Shift+C
+        if (event.ctrlKey && event.shiftKey && event.keyCode == 67) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+U
+        if (event.ctrlKey && event.keyCode == 85) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+Shift+K (Mozilla Firefox Web Console)
+        if (event.ctrlKey && event.shiftKey && event.keyCode == 75) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+Shift+S (Windows Snipping Tool)
+        if (event.ctrlKey && event.shiftKey && event.keyCode == 83) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+K or Ctrl+F (Search in Developer Tools)
+        if (event.ctrlKey && (event.keyCode == 75 || event.keyCode == 70)) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable F1 (Help in Developer Tools)
+        if (event.keyCode == 112) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable Ctrl+P (File search in Developer Tools)
+        if (event.ctrlKey && event.keyCode == 80) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+        }
+        // Disable PrintScreen and other screenshot combinations
+        if (event.key === 'PrintScreen' ||
+            (event.ctrlKey && event.key === 'p') ||
+            (event.shiftKey && (event.metaKey || event.keyCode === 91 || event.keyCode === 92) && event.key === 'S') ||
+            (event.key === 'PrintScreen' && (event.metaKey || event.keyCode === 91 || event.keyCode === 92)) ||
+            event.key === 'Meta') {
+            event.preventDefault();
+            showScreenshotAlert();
+        }
+    });
+
+    // Deteksi tombol PrintScreen dan Windows + Print Screen
+    document.addEventListener('keyup', function (event) {
+        if (event.key === 'PrintScreen' || (event.key === 'PrintScreen' && (event.metaKey || event.keyCode === 91 || event.keyCode === 92))) {
+            navigator.clipboard.writeText('');
+            showScreenshotAlert();
+        }
+    });
+
+    document.addEventListener('contextmenu', function (event) {
+        event.preventDefault();
+        showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+    });
+
+    // Mencegah drag pada semua elemen
+    document.addEventListener('dragstart', function (event) {
+        event.preventDefault();
+        showAlert('Anda tidak dapat melakukan inspeksi ilegal');
+    });
+
+    // Mencegah tindakan ketika 3 jari menyentuh layar
+    document.addEventListener('touchstart', function (event) {
+        if (event.touches.length === 3) {
+            event.preventDefault();
+            showAlert('Anda tidak dapat melakukan tindakan ini');
+        }
+    });
+
+    // Mencegah penyalinan konten
+    document.addEventListener('copy', function (event) {
+        event.preventDefault();
+        const clipboardText = 'not allowed, web by https://bimaselalubenar.my.id';
+        event.clipboardData.setData('text/plain', clipboardText);
+
+        Swal.fire({
+            icon: 'error',
+            title: 'Tidak di izinkan',
+            text: 'Tidak di izinkan untuk menyalin konten.',
+            footer: '<a href="https://bimaselalubenar.my.id">www.bimaselalubenar.my.id</a>',
+            didOpen: () => {
+                Swal.getContent().insertAdjacentHTML('beforeend', '<p>Note: Copying is not allowed. Web by <a href="https://bimaselalubenar.my.id">https://bimaselalubenar.my.id</a></p>');
+            }
+        });
+    });
+</script>
+<!-- Selesai -->
+
+<amp-ad width="100vw" height="320" type="adsense" data-ad-client="ca-pub-8913081554574910" data-ad-slot="5303068928"
+    data-auto-format="rspv" data-full-width="">
+    <div overflow=""></div>
+</amp-ad>
+</head>
+
+<body>
+    <section style="background: linear-gradient(-126deg, #000000, #3b3b3b);height: 100vh;padding-top: 39px;">
+        <div class="modal fade" role="dialog" tabindex="-1" id="srch">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header d-flex justify-content-between" style="background: linear-gradient(45deg, #f39c12, #e74c3c);">
+                        <h4 class="modal-title" style="color: rgb(255,255,255);">Search Bar</h4><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-x-circle-fill" type="button" aria-label="Close" data-bs-dismiss="modal" style="color: rgb(255,255,255);width: 32px;height: 32px;">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"></path>
+                        </svg>
+                    </div>
+                    <div class="modal-body" style="background: rgba(255,255,255,0);height: auto;max-height: 600px;">
+                        <p>Cari dengan kata kunci</p>
+                        <form class="input-group" style="margin-bottom: 16px;"><input class="form-control" type="text" id="searchInput" placeholder="Cari di sini ..."><button class="btn btn-success d-xxl-flex align-items-xxl-center" id="searchButton" type="button" style="color: rgb(255,255,255);border-top-right-radius: 16px;border-bottom-right-radius: 16px;">&nbsp;Cari</button></form>
+                        <ol id="searchResults" class="list-group" style="display: none;">
+                            <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;">
+                                <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 24px;"><strong>Gambar motor Honda Transparan |</strong></span><span style="color: rgb(255,255,255);">Download gambar motor Honda transparan. dari Honda matic, sport dan cub. download semua unit dengan klik di sini.&nbsp;<a href="https://drive.google.com/drive/folders/1NmGcOpHaxG1NsGl_QgDOhOoWi-U1v2lr?usp=sharing" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a></span></div>
+                            </li>
+                            <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;">
+                                <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 24px;"><strong>Ai ChatGPT |</strong></span><span style="color: rgb(255,255,255);">ChatGPT adalah model AI berbasis deep learning yang dikembangkan oleh OpenAI, dirancang untuk memahami dan menghasilkan teks dalam percakapan manusia.&nbsp;<a href="https://chatgpt.com/" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a></span></div>
+                            </li>
+                            <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;">
+                                <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 24px;"><strong>Materi Promosi MPM Motor: Kumpulan Konten Eksklusif untuk Promosi Honda&nbsp;|</strong></span><span style="color: rgb(255,255,255);">Selamat datang di halaman Materi Sosial Media MPM Motor! Di sini, Anda akan menemukan berbagai konten promosi eksklusif yang didedikasikan untuk mendukung pemasaran motor Honda.&nbsp;<a href="../materisocmed/Jadwal.html" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a></span></div>
+                            </li>
+                            <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;">
+                                <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 24px;"><strong>Cek Khodam: Menemukan Khodam Pendamping Anda&nbsp;|</strong></span><span style="color: rgb(255,255,255);">Selamat datang di halaman Cek Khodam! Layanan ini membantu Anda mengetahui lebih dalam tentang keberadaan khodam pendamping yang mungkin setia menemani Anda dalam kehidupan.&nbsp;<a href="cek-khodam.html" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a></span></div>
+                            </li>
+                            <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;">
+                                <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 24px;"><strong>Chatbot AI&nbsp;|</strong></span><span style="color: rgb(255,255,255);">Membantu dalam layanan pelanggan, menjawab pertanyaan umum, dan memberikan informasi yang relevan. Chatbot juga digunakan untuk personalisasi pengalaman pengguna dalam aplikasi.&nbsp;<a href="https://openai.com/chatgpt" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a></span></div>
+                            </li>
+                            <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;">
+                                <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 24px;"><strong>AI Vision&nbsp;|</strong></span><span style="color: rgb(255,255,255);">Digunakan untuk analisis gambar dan video, seperti pada sistem pengenalan wajah, deteksi objek, serta kendaraan otonom. AI vision juga membantu dalam bidang medis, misalnya untuk mendeteksi kelainan dari hasil scan atau foto medis.&nbsp;<a href="https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a></span></div>
+                            </li>
+                            <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;">
+                                <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 24px;"><strong>Generative AI&nbsp;|</strong></span><span style="color: rgb(255,255,255);">Mampu membuat konten baru seperti teks, gambar, video, dan musik. Generative AI digunakan dalam seni digital, pengembangan produk kreatif, serta simulasi dalam riset ilmiah.&nbsp;<a href="https://openai.com/dall-e-2" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a></span></div>
+                            </li>
+                            <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;">
+                                <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 24px;"><strong>Cek Berat Badan Ideal: Alat Kalkulator untuk Menentukan Berat Badan yang Sehat&nbsp;|</strong></span><span style="color: rgb(255,255,255);">Selamat datang di halaman Cek Berat Badan! Gunakan alat kalkulator kami yang mudah dan praktis untuk mengetahui apakah berat badan Anda sudah ideal berdasarkan tinggi badan dan usia Anda. Alat ini membantu Anda menghitung Indeks Massa Tubuh (IMT) secara otomatis, memberikan gambaran tentang kondisi kesehatan Anda berdasarkan berat badan.&nbsp;<a href="cek-pengeluaran-bulanan.html" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a></span></div>
+                            </li>
+                            <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;">
+                                <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 24px;"><strong>Cek Pengeluaran Bulanan: Alat untuk Mengelola Keuangan dengan Lebih Baik&nbsp;|</strong></span><span style="color: rgb(255,255,255);">Selamat datang di halaman Cek Pengeluaran Bulanan! Aplikasi ini dirancang untuk membantu Anda mengelola dan memantau pengeluaran bulanan secara efektif. Dengan alat ini, Anda dapat mencatat dan menghitung semua pengeluaran rutin Anda, seperti biaya makan, transportasi, tagihan, dan lain-lain.&nbsp;<a href="cek-pengeluaran-bulanan.html" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a></span></div>
+                            </li>
+                            <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;">
+                                <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 24px;"><strong>Bima selalu cek |</strong></span><span style="color: rgb(255,255,255);">Selamat datang di Bima Selalu Benar, platform digital yang menyediakan berbagai alat dan aplikasi praktis untuk membantu Anda dalam kehidupan sehari-hari. Dari cek berat badan, cek pengeluaran bulanan, hingga cek khodam, kami menawarkan solusi yang mudah digunakan dan diakses kapan saja.&nbsp;<a href="https://bimaselalubenar.my.id" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a></span></div>
+                            </li>
+                            <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;">
+                                <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 24px;"><strong>Menggali Komitmen Kami: Misi dan Visi Bimaselalu Benar&nbsp;|</strong></span><span style="color: rgb(255,255,255);">Temukan lebih dalam tentang dedikasi Bimaselalu Benar dalam membimbing masyarakat menuju hidup sehat. Dari program edukatif hingga kegiatan penyuluhan, kami berkomitmen untuk membantu Anda membuat pilihan gaya hidup yang lebih baik dan bermanfaat.&nbsp;<a href="../Tentang.html" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a></span></div>
+                            </li>
+                            <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;">
+                                <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 24px;"><strong>Keahlian Kami: Membangun personal branding yang kuat dengan..&nbsp;|</strong></span><span style="color: rgb(255,255,255);">Jelajahi keahlian Bimaselalu Benar dalam bidang edukasi kesehatan dan pola makan. Dengan pengalaman dan pengetahuan mendalam, kami siap membimbing Anda menuju gaya hidup yang lebih sehat dan seimbang melalui metode dan teknik yang telah terbukti efektif.&nbsp;<a href="../Keahlian.html" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a></span></div>
+                            </li>
+                            <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;">
+                                <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 24px;"><strong>Solusi Digital Terpercaya: Layanan Web dari Bimaselalubenar&nbsp;|</strong></span><span style="color: rgb(255,255,255);">Temukan berbagai layanan web unggulan dari Bimaselalu Benar, mulai dari pengembangan dan pemeliharaan situs web hingga dukungan teknis. Kami menyediakan solusi digital yang inovatif untuk membantu bisnis Anda berkembang dan mencapai potensi maksimal di dunia online.&nbsp;<a href="../web-service.html" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a></span></div>
+                            </li>
+                            <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;">
+                                <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 24px;"><strong>Contoh |</strong></span><span style="color: rgb(255,255,255);">contoh.&nbsp;<a href="cek-khodam.html" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a></span></div>
+                            </li>
+                            <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;">
+                                <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 24px;"><strong>Contoh |</strong></span><span style="color: rgb(255,255,255);">contoh.&nbsp;<a href="cek-khodam.html" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a></span></div>
+                            </li>
+                            <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;">
+                                <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 24px;"><strong>Contoh |</strong></span><span style="color: rgb(255,255,255);">contoh.&nbsp;<a href="cek-khodam.html" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a></span></div>
+                            </li>
+                            <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;">
+                                <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 24px;"><strong>Contoh |</strong></span><span style="color: rgb(255,255,255);">contoh.&nbsp;<a href="cek-khodam.html" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a></span></div>
+                            </li>
+                        </ol><span id="noResultsMessage" style="padding-top: 7px;display: none;color: rgb(255,255,255);background: linear-gradient(-172deg, #ff0000, #230000);padding-bottom: 7px;margin-top: 0px;padding-right: 16px;padding-left: 16px;border-radius: 10px;">Maaf, data tidak di temukan</span><script>
+    document.getElementById('searchButton').addEventListener('click', function() {
+      let input = document.getElementById('searchInput').value.toLowerCase();
+      let items = document.querySelectorAll('#searchResults li');
+      let found = false;
+
+      // Reset hasil sebelumnya
+      items.forEach(function(item) {
+        item.style.display = 'none';
+      });
+      document.getElementById('noResultsMessage').style.display = 'none';
+
+      // Lakukan pencarian
+      if (input.trim() !== "") {
+        items.forEach(function(item) {
+          if (item.innerHTML.toLowerCase().indexOf(input) !== -1) {
+            item.style.display = 'block';
+            found = true;
+          }
+        });
+
+        // Tampilkan hasil atau pesan 'data tidak ditemukan'
+        if (found) {
+          document.getElementById('searchResults').style.display = 'block';
+          document.getElementById('noResultsMessage').style.display = 'none';
+        } else {
+          document.getElementById('searchResults').style.display = 'none';
+          document.getElementById('noResultsMessage').style.display = 'block';
+        }
+      } else {
+        // Jika input kosong, jangan tampilkan apa pun
+        document.getElementById('searchResults').style.display = 'none';
+        document.getElementById('noResultsMessage').style.display = 'none';
+      }
+    });
+  </script>
+                    </div>
+                    <div class="modal-footer" style="background: rgba(255,255,255,0);"><button class="btn btn-danger" type="button" data-bs-dismiss="modal">Close</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="max-width: 600px;">
+            <div class="row">
+                <div class="col-md-12 d-flex d-lg-flex flex-column align-items-center align-items-sm-center align-items-md-center align-items-lg-center align-items-xl-center align-items-xxl-center" style="padding-bottom: 20px;"><img src="../assets/img/Galery/Bima/Bima.webp" style="width: 30%;border-radius: 50%;height: auto;margin-bottom: 16px;">
+                    <h5 style="color: var(--bs-body-bg);"><strong>Bimaselalubenar</strong></h5>
+                    <div style="display: inline-flex;position: static;transform: translate(0px);">
+                        <p class="fw-bold mb-2" id="typing" style="height: 24.6px;color: var(--bs-body-bg);">Random</p>
+                        <p class="fw-bold flash animated infinite mb-2" style="height: 24.6px;border-color: rgb(69,69,69);color: rgb(255,255,255);">|</p><script>
+              const words = ['Halo!!', 'Saya Bima', 'Saya seorang Fullstack Developer', 'FrontEnd Dev', '3D Artis Enthusiast'];
+              let index = 0;
+              let letterIndex = 0;
+              let isDeleting = false;
+              let typingText = '';
+
+              function type() {
+                  const currentWord = words[index % words.length];
+                  if (isDeleting) {
+                      typingText = currentWord.substring(0, letterIndex - 1);
+                      letterIndex--;
+                  } else {
+                      typingText = currentWord.substring(0, letterIndex + 1);
+                      letterIndex++;
+                  }
+
+                  document.getElementById('typing').textContent = typingText;
+
+                  let typingSpeed = 100;
+                  if (isDeleting) {
+                      typingSpeed /= 2;
+                  }
+
+                  if (!isDeleting && typingText === currentWord) {
+                      isDeleting = true;
+                      typingSpeed = 800;
+                  } else if (isDeleting && typingText === '') {
+                      isDeleting = false;
+                      index++;
+                      typingSpeed = 200;
+                  }
+
+                  setTimeout(type, typingSpeed);
+              }
+
+              type();
+            </script>
+                    </div>
+                    <p style="color: rgb(255,255,255);">Temukan kata kunci di sini</p>
+                    <div><button class="btn btn-primary d-flex justify-content-center align-items-center button-smooth" type="button" style="width: 100%;text-align: center;padding-top: 16px;padding-bottom: 16px;" data-bs-target="#srch" data-bs-toggle="modal"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-search" style="font-size: 21px;">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+                            </svg>&nbsp; Pencarian</button></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 d-flex flex-column" style="gap: 10px;text-align: center;"><button class="btn btn-primary d-flex justify-content-center align-items-center button-smooth" type="button" style="width: 100%;text-align: center;padding-top: 16px;padding-bottom: 16px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-globe2" style="font-size: 21px;">
+                            <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855-.143.268-.276.56-.395.872.705.157 1.472.257 2.282.287zM4.249 3.539c.142-.384.304-.744.481-1.078a6.7 6.7 0 0 1 .597-.933A7.01 7.01 0 0 0 3.051 3.05c.362.184.763.349 1.198.49zM3.509 7.5c.036-1.07.188-2.087.436-3.008a9.124 9.124 0 0 1-1.565-.667A6.964 6.964 0 0 0 1.018 7.5h2.49zm1.4-2.741a12.344 12.344 0 0 0-.4 2.741H7.5V5.091c-.91-.03-1.783-.145-2.591-.332M8.5 5.09V7.5h2.99a12.342 12.342 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5c.035.987.176 1.914.399 2.741A13.612 13.612 0 0 1 7.5 10.91V8.5zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741zm-3.282 3.696c.12.312.252.604.395.872.552 1.035 1.218 1.65 1.887 1.855V11.91c-.81.03-1.577.13-2.282.287zm.11 2.276a6.696 6.696 0 0 1-.598-.933 8.853 8.853 0 0 1-.481-1.079 8.38 8.38 0 0 0-1.198.49 7.01 7.01 0 0 0 2.276 1.522zm-1.383-2.964A13.36 13.36 0 0 1 3.508 8.5h-2.49a6.963 6.963 0 0 0 1.362 3.675c.47-.258.995-.482 1.565-.667zm6.728 2.964a7.009 7.009 0 0 0 2.275-1.521 8.376 8.376 0 0 0-1.197-.49 8.853 8.853 0 0 1-.481 1.078 6.688 6.688 0 0 1-.597.933zM8.5 11.909v3.014c.67-.204 1.335-.82 1.887-1.855.143-.268.276-.56.395-.872A12.63 12.63 0 0 0 8.5 11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.963 6.963 0 0 0 14.982 8.5h-2.49a13.36 13.36 0 0 1-.437 3.008zM14.982 7.5a6.963 6.963 0 0 0-1.362-3.675c-.47.258-.995.482-1.565.667.248.92.4 1.938.437 3.008zM11.27 2.461c.177.334.339.694.482 1.078a8.368 8.368 0 0 0 1.196-.49 7.01 7.01 0 0 0-2.275-1.52c.218.283.418.597.597.932zm-.488 1.343a7.765 7.765 0 0 0-.395-.872C9.835 1.897 9.17 1.282 8.5 1.077V4.09c.81-.03 1.577-.13 2.282-.287z"></path>
+                        </svg>&nbsp; Website Official</button><button class="btn btn-primary d-flex justify-content-center align-items-center button-smooth" type="button" style="width: 100%;text-align: center;padding-top: 16px;padding-bottom: 16px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-globe2" style="font-size: 21px;">
+                            <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855-.143.268-.276.56-.395.872.705.157 1.472.257 2.282.287zM4.249 3.539c.142-.384.304-.744.481-1.078a6.7 6.7 0 0 1 .597-.933A7.01 7.01 0 0 0 3.051 3.05c.362.184.763.349 1.198.49zM3.509 7.5c.036-1.07.188-2.087.436-3.008a9.124 9.124 0 0 1-1.565-.667A6.964 6.964 0 0 0 1.018 7.5h2.49zm1.4-2.741a12.344 12.344 0 0 0-.4 2.741H7.5V5.091c-.91-.03-1.783-.145-2.591-.332M8.5 5.09V7.5h2.99a12.342 12.342 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5c.035.987.176 1.914.399 2.741A13.612 13.612 0 0 1 7.5 10.91V8.5zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741zm-3.282 3.696c.12.312.252.604.395.872.552 1.035 1.218 1.65 1.887 1.855V11.91c-.81.03-1.577.13-2.282.287zm.11 2.276a6.696 6.696 0 0 1-.598-.933 8.853 8.853 0 0 1-.481-1.079 8.38 8.38 0 0 0-1.198.49 7.01 7.01 0 0 0 2.276 1.522zm-1.383-2.964A13.36 13.36 0 0 1 3.508 8.5h-2.49a6.963 6.963 0 0 0 1.362 3.675c.47-.258.995-.482 1.565-.667zm6.728 2.964a7.009 7.009 0 0 0 2.275-1.521 8.376 8.376 0 0 0-1.197-.49 8.853 8.853 0 0 1-.481 1.078 6.688 6.688 0 0 1-.597.933zM8.5 11.909v3.014c.67-.204 1.335-.82 1.887-1.855.143-.268.276-.56.395-.872A12.63 12.63 0 0 0 8.5 11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.963 6.963 0 0 0 14.982 8.5h-2.49a13.36 13.36 0 0 1-.437 3.008zM14.982 7.5a6.963 6.963 0 0 0-1.362-3.675c-.47.258-.995.482-1.565.667.248.92.4 1.938.437 3.008zM11.27 2.461c.177.334.339.694.482 1.078a8.368 8.368 0 0 0 1.196-.49 7.01 7.01 0 0 0-2.275-1.52c.218.283.418.597.597.932zm-.488 1.343a7.765 7.765 0 0 0-.395-.872C9.835 1.897 9.17 1.282 8.5 1.077V4.09c.81-.03 1.577-.13 2.282-.287z"></path>
+                        </svg>&nbsp; Dashboard MPM (Materi Socmed)</button></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12"></div>
+            </div>
+        </div>
+    </section>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bs-init.js"></script>
+    <script src="../assets/js/SDK%20OneSignal/OneSignalSDKWorker.js"></script>
+    <script src="../assets/js/App/cekkhodam.js"></script>
+    <script src="../assets/js/App/cektabungan.js"></script>
+    <script src="../assets/js/App/cektubuh.js"></script>
+    <script src="../assets/js/dashboard-socmed-bold-and-bright.js"></script>
+    <script src="../assets/js/formbima/berlangganan.js"></script>
+    <script src="../assets/js/formbima/daftar.js"></script>
+    <script src="../assets/js/formbima/form-bima.js"></script>
+    <script src="../assets/js/inspeksi/inspeksi.js"></script>
+    <script src="../assets/js/login/comment-umum.js"></script>
+    <script src="../assets/js/login/comment.js"></script>
+    <script src="../assets/js/login/login.js"></script>
+    <script src="../assets/js/One-Liner-Code-Editor-codeeditor.js"></script>
+    <script src="../assets/js/Simple-Slider-swiper-bundle.min.js"></script>
+    <script src="../assets/js/Simple-Slider.js"></script>
+</body>
+
+</html>
