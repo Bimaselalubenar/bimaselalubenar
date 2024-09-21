@@ -121,6 +121,9 @@ let users = [
     // SPESIAL
     { name: 'Taufik', email: 'User2@supper.com', password: 'User2supper', branch: '-', position: '-', cabang: '-', subscribed: false, expiryDate: '2024-08-30' },
     { name: 'Mourits', email: 'Mourits@supper.com', password: 'Mourits', branch: '-', position: '-', cabang: '-', subscribed: false, expiryDate: '2024-08-30' },
+    // Pengunjung
+    { name: 'LUCKY BAYUKURNIAWAN', email: 'luckybayu345@gmail.com', password: 'lucky123', branch: 'Kota Madiun', position: 'Pengunjung', cabang: 'MPM MOTOR MADIUN', subscribed: false, expiryDate: '2024-08-30' },
+    { name: '', email: '', password: '', branch: '', position: '', cabang: '', subscribed: false, expiryDate: '2024-08-30' },
     // KACAB
     { name: 'Diyah Megawati', email: 'Diyah@supper.com', password: 'Diyah123', branch: 'PONOROGO', position: 'KACAB', cabang: 'MPM PONOROGO', subscribed: false, expiryDate: '2024-08-30' },
     // Rapikan code dengan Shift + Alt + F
