@@ -20,9 +20,9 @@ p {
 .btn-default {
   background: rgb(255,255,255);
   color: rgb(0,0,0);
-  border-width: 2px;
-  border-color: rgb(0,0,0);
   transition: ease-in;
+  border-width: 2px;
+  border-color: rgb(169,169,169);
 }
 
 .btn-default:hover {

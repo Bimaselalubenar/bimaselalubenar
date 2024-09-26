@@ -119,12 +119,8 @@ let users = [
     { name: 'Zainal Abidin', email: 'zainalabdn10021996@gmail.com', password: 'Lovers46', branch: 'Kota Surabaya', position: 'SALES ONLINE', cabang: 'MPM MOTOR MASTRIP', subscribed: false, expiryDate: '2024-08-30' },
     { name: 'AGUS SETIA WULANDARI', email: 'wulan.mpmpare@gmail.com', password: 'Wulan1208', branch: 'KEDIRI', position: 'SALES ONLINE', cabang: 'MPM MOTOR PARE', subscribed: false, expiryDate: '2024-08-30' },
     // SPESIAL
-    { name: 'Erwanto', email: 'Erwanto@supper.com', password: 'Erwanto', branch: '-', position: '-', cabang: '-', subscribed: false, expiryDate: '2024-08-30' },
     { name: 'Taufik', email: 'User2@supper.com', password: 'User2supper', branch: '-', position: '-', cabang: '-', subscribed: false, expiryDate: '2024-08-30' },
     { name: 'Mourits', email: 'Mourits@supper.com', password: 'Mourits', branch: '-', position: '-', cabang: '-', subscribed: false, expiryDate: '2024-08-30' },
-    // Pengunjung
-    { name: 'LUCKY BAYUKURNIAWAN', email: 'luckybayu345@gmail.com', password: 'lucky123', branch: 'Kota Madiun', position: 'Pengunjung', cabang: 'MPM MOTOR MADIUN', subscribed: false, expiryDate: '2024-08-30' },
-    { name: '', email: '', password: '', branch: '', position: '', cabang: '', subscribed: false, expiryDate: '2024-08-30' },
     // KACAB
     { name: 'Diyah Megawati', email: 'Diyah@supper.com', password: 'Diyah123', branch: 'PONOROGO', position: 'KACAB', cabang: 'MPM PONOROGO', subscribed: false, expiryDate: '2024-08-30' },
     // Rapikan code dengan Shift + Alt + F
