@@ -56,3 +56,24 @@
   }
 }
 
+.resultsrc {
+  background: linear-gradient(45deg, #f39c12, #e74c3c);
+  height: auto;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 16px;
+}
+
+.tagsearch {
+  background: url("https://cdn.bootstrapstudio.io/placeholders/1400x800.png");
+  border-radius: 8px;
+  width: auto;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  margin-right: 5px;
+}
+
