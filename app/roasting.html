@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Roast by Gemini AI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        #roastPopup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 2px solid black;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        #closePopup {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Instagram Roast by Gemini AI</h1>
+    <form id="roastForm">
+        <label for="instagram">Enter your Instagram username:</label><br><br>
+        <input type="text" id="instagram" name="instagram" placeholder="Your Instagram username..." required><br><br>
+        <input type="submit" value="Get Roasted!">
+    </form>
+
+    <div id="roastPopup">
+        <p id="roastMessage"></p>
+        <button id="closePopup">Close</button>
+    </div>
+
+    <script>
+        document.getElementById('roastForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent form submission
+
+            let username = document.getElementById('instagram').value;
+
+            // Simulating a roast by Gemini AI
+            fetch('https://your-gemini-ai-endpoint.com/roast', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer YOUR_GEMINI_API_KEY'  // Your API key goes here
+                },
+                body: JSON.stringify({ username: username })
+            })
+            .then(response => response.json())
+            .then(data => {
+                let roastMessage = data.message;  // Adjust this according to the API's response format
+                document.getElementById('roastMessage').innerText = roastMessage;
+                document.getElementById('roastPopup').style.display = 'block';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('roastMessage').innerText = 'Oops, something went wrong!';
+                document.getElementById('roastPopup').style.display = 'block';
+            });
+        });
+
+        document.getElementById('closePopup').addEventListener('click', function() {
+            document.getElementById('roastPopup').style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>
