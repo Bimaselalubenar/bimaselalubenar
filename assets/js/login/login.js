@@ -31,7 +31,7 @@ loginForm.addEventListener("submit", function (event) {
     const user = getUserByEmail(email);
 
     if (captcha !== captchaInput) {
-        errorMessage.innerText = "CAPTCHA salah. coba lagi.";
+        errorMessage.innerText = "CAPTCHA salah. Coba lagi.";
         refreshCaptcha();
         return;
     }
@@ -45,8 +45,17 @@ loginForm.addEventListener("submit", function (event) {
         });
         // Akhir dari penambahan event tracking
 
-        localStorage.setItem("currentUser", JSON.stringify(user));
-        window.location.href = "dashboard.html";
+        // Show SweetAlert success notification
+        Swal.fire({
+            title: 'Success!',
+            text: 'Anda berhasil masuk.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            // Store the user information and redirect to dashboard
+            localStorage.setItem("currentUser", JSON.stringify(user));
+            window.location.href = "dashboard.html";
+        });
     } else {
         errorMessage.innerText = "Email dan Password salah.";
     }

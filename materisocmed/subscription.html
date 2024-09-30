@@ -853,7 +853,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     </div>
                 </div>
             </div>
-            <div class="shadow" style="background: #ffffff;padding: 16px;border-radius: 16px;width: 100%;height: auto;margin-right: 15px;margin-bottom: 15px;">
+            <div class="shadow" id="berlangganan" style="background: #ffffff;padding: 16px;border-radius: 16px;width: 100%;height: auto;margin-right: 15px;margin-bottom: 15px;">
                 <h6 style="width: 100%;max-width: 400px;padding: 0px;margin-bottom: 16px;"><strong>Mulai Berlangganan</strong></h6>
                 <form class="text-center" id="subscriptionForm" method="post" style="width: 100%;">
                     <div class="mb-3"><input class="form-control" type="text" id="name" name="name" placeholder="Nama" readonly=""></div>
@@ -1166,98 +1166,98 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <script>
-        // Mendapatkan user yang sedang login dari localStorage
-        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    // Mendapatkan user yang sedang login dari localStorage
+    const currentUser = JSON.parse(localStorage.getItem("currentUser")) || {};
 
-        // Daftar pengguna dan posisi yang memiliki akses ke masing-masing div
-        const accessControl = {
-            
-            // Menu
-            menutemplate: {
-                users: ['Bimaselalubenar', ''],      // Nama pengguna yang memiliki akses
-                positions: ['PDCA']  // Posisi yang memiliki akses
-            },
-            
-            // Dashboard
-            privatadmin: {
-                users: ['Bimaselalubenar',''],      // Nama pengguna yang memiliki akses
-                positions: ['KACAB']  // Posisi yang memiliki akses
-            },
-            
-            privatadmin2: {
-                users: ['Bimaselalubenar'],
-                positions: ['PDCA']
-            },
-            
-            // Template Digital
-            subsoff: {
-                users: ['Bimaselalubenar',''],      // Nama pengguna yang memiliki akses
-                positions: ['PDCA','SALES ONLINE']  // Posisi yang memiliki akses
-            },
-        };
-
-        // Fungsi untuk menonaktifkan tombol dalam div
-        function disableButtonsInDiv(div) {
-            const buttons = div.querySelectorAll("button");
-            buttons.forEach(button => {
-                button.disabled = true;  // Disable tombol, tetapi masih bisa mendeteksi klik
-            });
+    // Daftar pengguna dan posisi yang memiliki akses ke masing-masing div
+    const accessControl = {
+        menutemplate: {
+            users: ['Bimaselalubenar'],
+            positions: ['PDCA','SALES ONLINE']
+        },
+        privatadmin: {
+            users: ['Bimaselalubenar'],
+            positions: ['KACAB']
+        },
+        privatadmin2: {
+            users: ['Bimaselalubenar'],
+            positions: ['PDCA']
+        },
+        // New divs
+        menuTemplate1: {
+            users: ['Bimaselalubenar'],
+            positions: ['PDCA','SALES ONLINE']
+        },
+        berlangganan: {
+            users: ['Bimaselalubenar', ''],
+            positions: ['PDCA','SALES ONLINE']
         }
+        // Tambahkan jika ending hapus tanda ,
+    };
 
-        // Fungsi untuk menangani interaksi komponen di dalam div yang dibatasi
-        function setupDisabledInteraction(div) {
-            const elements = div.querySelectorAll("button, input, select, textarea"); // Semua elemen interaktif
-            elements.forEach(element => {
-                element.addEventListener("click", function(event) {
-                    event.preventDefault(); // Mencegah interaksi default
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Akses Ditolak',
-                        text: 'Anda tidak memiliki izin untuk mengakses bagian ini!',
-                    });
-                });
-            });
-        }
+    // Fungsi untuk menonaktifkan tombol dalam div
+    function disableButtonsInDiv(div) {
+        const buttons = div.querySelectorAll("button");
+        buttons.forEach(button => {
+            button.disabled = true;  // Disable tombol, tetapi masih bisa mendeteksi klik
+        });
+    }
 
-        // Fungsi untuk menangani klik pada div yang dibatasi
-        function setupDivClickAlert(div) {
-            div.addEventListener("click", function(event) {
-                event.preventDefault(); // Mencegah interaksi default
+    // Fungsi untuk menangani interaksi komponen di dalam div yang dibatasi
+    function setupDisabledInteraction(div) {
+        const elements = div.querySelectorAll("button, input, select, textarea");
+        elements.forEach(element => {
+            element.addEventListener("click", function(event) {
+                event.preventDefault();
                 Swal.fire({
                     icon: 'error',
                     title: 'Akses Ditolak',
                     text: 'Anda tidak memiliki izin untuk mengakses bagian ini!',
                 });
             });
-        }
+        });
+    }
 
-        // Fungsi untuk memeriksa apakah user yang sedang login memiliki akses berdasarkan nama atau posisi
-        function hasAccess(user, allowedUsers, allowedPositions) {
-            // Cek akses berdasarkan nama atau posisi
-            return allowedUsers.includes(user.name) || allowedPositions.includes(user.position);
-        }
+    // Fungsi untuk menangani klik pada div yang dibatasi
+    function setupDivClickAlert(div) {
+        div.addEventListener("click", function(event) {
+            event.preventDefault();
+            Swal.fire({
+                icon: 'error',
+                title: 'Akses Ditolak',
+                text: 'Anda tidak memiliki izin untuk mengakses bagian ini!',
+            });
+        });
+    }
 
-        // Fungsi untuk mengatur akses div berdasarkan currentUser
-        function checkAccessForDiv(divId, allowedUsers, allowedPositions) {
-            const div = document.getElementById(divId);
-            if (!hasAccess(currentUser, allowedUsers, allowedPositions)) {
-                div.classList.add("disabled");  // Menambahkan kelas 'disabled'
-                disableButtonsInDiv(div);       // Menonaktifkan tombol di dalam div
-                setupDisabledInteraction(div);  // Menampilkan alert ketika ada interaksi dengan elemen dalam div
-                setupDivClickAlert(div);        // Menampilkan alert ketika div di-klik
-            }
+    // Fungsi untuk memeriksa apakah user yang sedang login memiliki akses berdasarkan nama atau posisi
+    function hasAccess(user, allowedUsers, allowedPositions) {
+        return allowedUsers.includes(user.name) || allowedPositions.includes(user.position);
+    }
+
+    // Fungsi untuk mengatur akses div berdasarkan currentUser
+    function checkAccessForDiv(divId, allowedUsers, allowedPositions) {
+        const div = document.getElementById(divId);
+        if (div && !hasAccess(currentUser, allowedUsers, allowedPositions)) {
+            div.classList.add("disabled");  // Menambahkan kelas 'disabled'
+            disableButtonsInDiv(div);       // Menonaktifkan tombol di dalam div
+            setupDisabledInteraction(div);  // Menampilkan alert ketika ada interaksi dengan elemen dalam div
+            setupDivClickAlert(div);        // Menampilkan alert ketika div di-klik
         }
-        
-        // Menu
-        checkAccessForDiv('menutemplate', accessControl.menutemplate.users, accessControl.menutemplate.positions);
-        
-        // Halaman Dashboard
-        checkAccessForDiv('privatadmin', accessControl.privatadmin.users, accessControl.privatadmin.positions);
-        checkAccessForDiv('privatadmin2', accessControl.privatadmin2.users, accessControl.privatadmin2.positions);
+    }
+
+    // Menu
+    checkAccessForDiv('menutemplate', accessControl.menutemplate.users, accessControl.menutemplate.positions);
+    checkAccessForDiv('privatadmin', accessControl.privatadmin.users, accessControl.privatadmin.positions);
+    checkAccessForDiv('privatadmin2', accessControl.privatadmin2.users, accessControl.privatadmin2.positions);
     
-        // Halaman Template Digital
-        checkAccessForDiv('subsoff', accessControl.privatadmin.users, accessControl.privatadmin.positions);
+    // Template Digital
+    checkAccessForDiv('menuTemplate1', accessControl.menuTemplate1.users, accessControl.menuTemplate1.positions);
+    // Berlangganan
+    checkAccessForDiv('berlangganan', accessControl.berlangganan.users, accessControl.berlangganan.positions);
 </script>
+
+
 
 
     <script src="../assets/js/jquery.min.js"></script>
