@@ -47,10 +47,10 @@ loginForm.addEventListener("submit", function (event) {
 
         // Show SweetAlert success notification
         Swal.fire({
-            title: 'Success!',
-            text: 'Anda berhasil masuk.',
+            title: 'User tersedia',
+            text: 'Klik masuk untuk akses dashboard.',
             icon: 'success',
-            confirmButtonText: 'OK'
+            confirmButtonText: 'Masuk Sekarang'
         }).then(() => {
             // Store the user information and redirect to dashboard
             localStorage.setItem("currentUser", JSON.stringify(user));

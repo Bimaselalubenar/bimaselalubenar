@@ -480,7 +480,113 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </amp-ad>
 </head>
 
-<body class="scrollbarnone" style="font-family: Poppins, sans-serif;background: rgb(230,230,230);">
+<body class="scrollbarnone" style="font-family: Poppins, sans-serif;background: rgb(230,230,230);"><style>
+        /* Toast custom styling */
+        .toast-container {
+            background-color: white;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            z-index: 1050;
+            border-radius: 13px;
+        }
+        .banner-image {
+            Width:100px;
+            height:auto;
+        }
+        .profile-image {
+            width:50px;
+            height:auto;
+        }
+        .btn-info {
+            width: auto;
+            color: var(--bs-body-bg);
+            text-align: left;
+            background: #0f2f82;
+            padding: 8px;
+            margin-bottom: 0px;
+            border-radius: 13px;
+        }
+        .toast-header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .toast-body img.banner-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 8px; /* Optional: Add rounded corners */
+        }
+        .toast-body img.profile-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%; /* Ensure profile images are round */
+        }
+    </style>
+</head>
+<body>
+
+<div id="toast-container" class="toast-container"></div>
+
+<script>
+    // Function to load notifications from Google Apps Script
+    function loadNotifications() {
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzHev9qi-Lujjr9sVbBf5KkI-XCYYaSy9j3M1QWeHt5Em6f7416zaw8BZTbeiEiWNDvXg/exec'; // Ganti dengan URL Google Apps Script Anda
+
+        fetch(scriptURL)
+            .then(response => response.json())
+            .then(data => {
+                const toastContainer = document.getElementById('toast-container');
+
+                data.forEach(item => {
+                    // Create the toast element (notification)
+                    const toastDiv = document.createElement('div');
+                    toastDiv.classList.add('toast');
+                    toastDiv.setAttribute('role', 'alert');
+                    toastDiv.setAttribute('aria-live', 'assertive');
+                    toastDiv.setAttribute('aria-atomic', 'true');
+
+                    // Memeriksa apakah gambar profil dan gambar banner valid
+                    const profileImage = item.gambarProfil ? item.gambarProfil : '';
+                    const bannerImage = item.gambarBanner ? item.gambarBanner : '';
+
+                    // Insert the content into the toast
+                    toastDiv.innerHTML = `
+                        <div class="toast-header">
+                            ${profileImage ? `<img class="profile-image" src="${profileImage}" alt="Profile Image" />` : ''}
+                            <strong class="me-auto">${item.judul}</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            <p>${item.deskripsi}</p>
+                            ${bannerImage ? `<img class="banner-image" src="${bannerImage}" alt="Banner Image" />` : ''}
+                            <a href="${item.link}" target="_blank" class="btn-info">Lihat Selengkapnya</a>
+                        </div>
+                    `;
+
+                    // Append the toast to the container
+                    toastContainer.appendChild(toastDiv);
+
+                    // Show the toast after 1 second (1000 ms)
+                    setTimeout(() => {
+                        const toast = new bootstrap.Toast(toastDiv, { autohide: true, delay: 30000 }); // Auto-hide after 30 seconds
+                        toast.show();
+                    }, 1000); // 1 second delay before showing
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }
+
+    // Load notifications when the page is loaded
+    document.addEventListener('DOMContentLoaded', loadNotifications);
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toast-container" style="z-index: 11"></div>
     <div class="modal fade" role="dialog" tabindex="-1" id="mPengumuman" style="backdrop-filter: blur(11px);-webkit-backdrop-filter: blur(11px);position: absolute;padding: 0px;">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -535,7 +641,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;border-width: 0px;background: rgba(255,255,255,0);">
                                 <div class="d-flex flex-column resultsrc">
                                     <div class="d-flex flex-column"><span style="color: rgb(255,255,255);font-size: 20px;"><strong>Template canva gratis dan berbayar |</strong></span>
-                                        <div style="height: 2px;background: #ffffff;padding-top: 0px;margin-top: 7px;margin-bottom: 4px;"></div><span style="color: rgb(255,255,255);">Saya sediakan template gratis dan berbayar .&nbsp;<a href="cek-khodam.html" style="font-weight: bold;color: #ffe28b;" target="_parent">(Klik disini)</a></span>
+                                        <div style="height: 2px;background: #ffffff;padding-top: 0px;margin-top: 7px;margin-bottom: 4px;"></div><span style="color: rgb(255,255,255);">Gunakan template digital dengan sesuai kebutuhan mu.&nbsp;<a id="srcTemplate" href="template-digital.html" style="font-weight: bold;color: #ffe28b;" target="_parent">(Klik disini)</a></span>
+                                        <div style="gap: 5px;padding-top: 16px;"><span class="shadow tagsearch">#Template</span><span class="shadow tagsearch">#Motor</span><span class="shadow tagsearch">#Honda</span></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;border-width: 0px;background: rgba(255,255,255,0);">
+                                <div class="d-flex flex-column resultsrc">
+                                    <div class="d-flex flex-column"><span style="color: rgb(255,255,255);font-size: 20px;"><strong>Template canva gratis dan berbayar |</strong></span>
+                                        <div style="height: 2px;background: #ffffff;padding-top: 0px;margin-top: 7px;margin-bottom: 4px;"></div><span style="color: rgb(255,255,255);">Saya sediakan template gratis dan berbayar .&nbsp;<a href="template-digital.html" style="font-weight: bold;color: #ffe28b;" target="_parent">(Klik disini)</a></span>
                                         <div style="gap: 5px;padding-top: 16px;"><span class="shadow tagsearch">#Tag</span></div>
                                     </div>
                                 </div>
@@ -742,7 +856,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
         <div class="offcanvas offcanvas-start bg-body" tabindex="-1" data-bs-scroll="true" data-bs-backdrop="false" id="offcanvas-menu" style="z-index: 10;box-shadow: 16px 0px 20px rgba(45,45,45,0.5);border-top-right-radius: 16px;border-bottom-right-radius: 16px;">
             <div class="offcanvas-header"><a class="link-body-emphasis d-flex align-items-center me-md-auto mb-3 mb-md-0 text-decoration-none" href="/"><img style="height: 25px;width: auto;margin-right: 16px;" src="../assets/img/Logo/logo2.png"></a><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="offcanvas"></button></div>
-            <div class="offcanvas-body d-flex flex-column justify-content-between pt-0">
+            <div class="offcanvas-body d-flex flex-column justify-content-between pt-0 scrollbarnone">
                 <div>
                     <div></div>
                     <hr class="mt-0">
@@ -943,11 +1057,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     </div>
                 </div>
             </div>
-            <div class="shadow" style="background: #ffffff;padding: 16px;border-radius: 16px;width: 100%;height: auto;margin-right: 15px;margin-bottom: 15px;">
+            <div class="shadow" style="background: #ffffff;padding: 16px;border-radius: 16px;width: 100%;height: auto;margin-right: 15px;margin-bottom: 15px;padding-right: 16px;padding-left: 16px;">
                 <h6 style="width: 100%;max-width: 400px;padding: 0px;"><strong>Sharing materi dan tips</strong></h6>
                 <h6 style="width: 100%;max-width: 400px;padding: 0px;margin-bottom: 27px;">Aktivitas terakhir</h6>
-                <div class="container" style="width: 100%;max-width: initial;">
-                    <div class="row" style="width: 100%;">
+                <div class="container" style="max-width: 100%;">
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="shadow" style="display: flex;border-radius: 16px;background: #ffffff;margin-bottom: 16px;overflow: hidden;">
                                 <div style="background: #d38c01;border-radius: 0px;border-top-left-radius: 16px;border-top-right-radius: 0px;border-bottom-left-radius: 16px;width: 16px;"></div>
@@ -1022,7 +1136,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     </div>
                 </div>
             </div>
-            <div class="shadow" style="background: #ffffff;padding: 16px;border-radius: 16px;width: 100%;height: auto;margin-right: 15px;margin-bottom: 15px;">
+            <div class="shadow" style="background: #ffffff;padding: 16px;border-radius: 16px;width: 100%;height: auto;margin-right: 15px;margin-bottom: 15px;padding-right: 16px;padding-left: 16px;">
                 <h6 style="width: 100%;max-width: 400px;padding: 0px;"><strong>Mini kalender aktivitas sales online</strong></h6>
                 <h6 style="width: 100%;max-width: 400px;padding: 0px;margin-bottom: 27px;">Aktivitas bulan ini</h6>
                 <div class="container" style="width: 100%;max-width: initial;">
@@ -1384,6 +1498,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         berlangganan: {
             users: ['Bimaselalubenar', ''],
             positions: ['PDCA','SALES ONLINE']
+        },
+        srcTemplate: {
+            users: ['Bimaselalubenar', ''],
+            positions: ['PDCA','SALES ONLINE']
         }
         // Tambahkan jika ending hapus tanda ,
     };
@@ -1443,10 +1561,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     checkAccessForDiv('menutemplate', accessControl.menutemplate.users, accessControl.menutemplate.positions);
     checkAccessForDiv('privatadmin', accessControl.privatadmin.users, accessControl.privatadmin.positions);
     checkAccessForDiv('privatadmin2', accessControl.privatadmin2.users, accessControl.privatadmin2.positions);
-    
-    // Template Digital
+    // Halaman Template Digital
     checkAccessForDiv('menuTemplate1', accessControl.menuTemplate1.users, accessControl.menuTemplate1.positions);
-    // Berlangganan
+    // srch engine
+    checkAccessForDiv('srcTemplate', accessControl.srcTemplate.users, accessControl.srcTemplate.positions);
+    // Halaman Berlangganan
     checkAccessForDiv('berlangganan', accessControl.berlangganan.users, accessControl.berlangganan.positions);
 </script>
 

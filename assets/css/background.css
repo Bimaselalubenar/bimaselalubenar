@@ -71,15 +71,16 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 }
 
 .btn-cektinggibadan {
-  color: #c99d00;
+  color: #000000;
   border-radius: 10px;
-  border: 2px solid #c99d00 ;
+  background: #c99d0000;
+  border: 2px solid rgb(0,0,0) ;
 }
 
 .btn-cektinggibadan:hover {
-  color: #000000;
-  background: #ffffff00;
-  border-color: #000000;
+  color: #ffffff;
+  background: var(--swiper-theme-color);
+  border-color: var(--swiper-theme-color);
 }
 
 .load-pengeluaran {
