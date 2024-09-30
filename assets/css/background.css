@@ -109,3 +109,14 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   }
 }
 
+.bg-chatwhatsapp {
+  max-width: 600px;
+  width: 100%;
+  gap: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 13px;
+  padding-left: 13px;
+  background: #eeeeee;
+}
+
