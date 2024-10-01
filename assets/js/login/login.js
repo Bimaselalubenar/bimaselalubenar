@@ -136,6 +136,9 @@ let users = [
     // KACAB
     { name: 'Diyah Megawati', email: 'Diyah@supper.com', password: 'Diyah123', branch: 'PONOROGO', position: 'KACAB', cabang: 'MPM PONOROGO', subscribed: false, expiryDate: '2024-08-30' },
     { name: 'Muda wira', email: 'mudawira.rpm@gmail.com', password: 'Mudawira25', branch: 'Batama', position: 'KACAB', cabang: 'MPM MOTOR BATAM', subscribed: false, expiryDate: '2024-08-30' },
+    // Management Call
+    { name: 'Reni Kusumawati', email: 'Reni@supper.com', password: 'Reniq2d', branch: '-', position: '-', cabang: '-', subscribed: false, expiryDate: '2024-08-30' },
+    { name: 'Dita Susanti', email: 'Dita@supper.com', password: 'DitaLkq7', branch: '-', position: '-', cabang: '-', subscribed: false, expiryDate: '2024-08-30' },
     // Rapikan code dengan Shift + Alt + F
 ];
 

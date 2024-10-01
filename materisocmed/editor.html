@@ -397,7 +397,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <li class="nav-item"><a class="nav-link link-body-emphasis" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" href="Jadwal.html" title="Jadwal"><i class="fa fa-calendar" style="width: 21px;height: 21px;font-size: 21px;margin-right: 16px;"></i> Jadwal</a></li>
                         <li class="nav-item" id="menutemplate"><a class="nav-link link-body-emphasis" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" href="template-digital.html" title="Template Canva"><i class="fa fa-paint-brush" style="width: 21px;height: 21px;font-size: 21px;margin-right: 16px;"></i> Template Digital (belum siap)</a></li>
                         <li class="nav-item"><a class="nav-link link-body-emphasis" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" href="editor.html" title="Template Canva"><i class="fa fa-object-ungroup" style="width: 21px;height: 21px;font-size: 21px;margin-right: 16px;"></i> Editor</a></li>
-                        <li class="nav-item"><a class="nav-link link-body-emphasis" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" href="#" title="Tips &amp; Aticle"><i class="fa fa-newspaper-o" style="width: 21px;height: 21px;font-size: 21px;margin-right: 16px;"></i> Tips &amp; Article</a></li>
+                        <li class="nav-item"><a class="nav-link link-body-emphasis" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" href="Absensi-token1864839bfra6d91h37df7hdnb701nnx79345hfncvjdfoh.html" title="Tips &amp; Aticle"><i class="fa fa-newspaper-o" style="width: 21px;height: 21px;font-size: 21px;margin-right: 16px;"></i> Tips &amp; Article</a></li>
+                        <li class="nav-item" id="menuabsen"><a class="nav-link link-body-emphasis" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" href="Absensi-token1864839bfra6d91h37df7hdnb701nnx79345hfncvjdfoh.html" title="Tips &amp; Aticle"><i class="fa fa-clock-o" style="width: 21px;height: 21px;font-size: 21px;margin-right: 16px;"></i>Absensi</a></li>
                         <li class="nav-item"><a class="nav-link link-body-emphasis" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" href="#" title="Segera hadir"><i class="fa fa-group" style="width: 21px;height: 21px;font-size: 21px;margin-right: 16px;"></i> Update</a></li>
                     </ul>
                 </div>
@@ -776,10 +777,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     // Daftar pengguna dan posisi yang memiliki akses ke masing-masing div
     const accessControl = {
+        
+        //Absensi MPM
+        absenbima: {
+            users: ['Bimaselalubenar'],
+            positions: ['','']
+        },
+        absenreni: {
+            users: ['Reni Kusumawati'],
+            positions: ['','']
+        },
+        absendita: {
+            users: ['Dita Susanti'],
+            positions: ['','']
+        },
+        //
+        // Menu
         menutemplate: {
             users: ['Bimaselalubenar'],
             positions: ['PDCA','SALES ONLINE']
         },
+        menuabsen: {
+            users: ['Bimaselalubenar','Dita Susanti','Reni Kusumawati'],
+            positions: ['','']
+        },
+        //
         privatadmin: {
             users: ['Bimaselalubenar'],
             positions: ['KACAB']
@@ -859,12 +881,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     checkAccessForDiv('menutemplate', accessControl.menutemplate.users, accessControl.menutemplate.positions);
     checkAccessForDiv('privatadmin', accessControl.privatadmin.users, accessControl.privatadmin.positions);
     checkAccessForDiv('privatadmin2', accessControl.privatadmin2.users, accessControl.privatadmin2.positions);
+    checkAccessForDiv('menuabsen', accessControl.menuabsen.users, accessControl.menuabsen.positions);
     // Halaman Template Digital
     checkAccessForDiv('menuTemplate1', accessControl.menuTemplate1.users, accessControl.menuTemplate1.positions);
     // srch engine
     checkAccessForDiv('srcTemplate', accessControl.srcTemplate.users, accessControl.srcTemplate.positions);
     // Halaman Berlangganan
     checkAccessForDiv('berlangganan', accessControl.berlangganan.users, accessControl.berlangganan.positions);
+    // Halaman Berlangganan
+    checkAccessForDiv('absenbima', accessControl.absenbima.users, accessControl.absenbima.positions);
+    checkAccessForDiv('absenreni', accessControl.absenreni.users, accessControl.absenreni.positions);
+    checkAccessForDiv('absendita', accessControl.absendita.users, accessControl.absendita.positions);
 </script>
 
 
