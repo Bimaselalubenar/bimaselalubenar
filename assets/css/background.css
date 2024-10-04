@@ -1,0 +1,122 @@
+@media (min-width: 1400px) {
+  .b-cekberatbadan {
+    padding: 16px;
+    margin-bottom: 16px;
+    background: rgb(19,93,98);
+  }
+}
+
+.b-cekberatbadan {
+  background: #f9e814;
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 1200px) {
+  .b-cekberatbadan {
+    padding: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  .b-cekberatbadan {
+    padding: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .b-cekberatbadan {
+    padding: 16px;
+  }
+}
+
+@media (min-width: 576px) {
+  .b-cekberatbadan {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 300px) {
+  .b-cekberatbadan {
+    padding: 10px;
+  }
+}
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.result {
+  display: none;
+  background: #f9e214;
+  border-radius: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.loading {
+  display: none;
+  padding: 10px;
+  background: #ffffff;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  height: auto;
+  box-shadow: 2px 2px 12px rgba(45,45,45,0.43);
+}
+
+.btn-cektinggibadan {
+  color: #000000;
+  border-radius: 10px;
+  background: #c99d0000;
+  border: 2px solid rgb(0,0,0) ;
+}
+
+.btn-cektinggibadan:hover {
+  color: #ffffff;
+  background: var(--swiper-theme-color);
+  border-color: var(--swiper-theme-color);
+}
+
+.load-pengeluaran {
+  height: 40px;
+  width: 40px;
+}
+
+.output {
+  display: none;
+  padding: 10px;
+  background: #ffffff;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  height: auto;
+  box-shadow: 2px 2px 12px rgba(45,45,45,0.43);
+}
+
+.output, .loading, .error {
+  /*display: none;*/
+}
+
+@media (min-width: 1400px) {
+  .profiledashboardmateri {
+    display: flex;
+    margin-bottom: 16px;
+  }
+}
+
+.bg-chatwhatsapp {
+  max-width: 600px;
+  width: 100%;
+  gap: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 13px;
+  padding-left: 13px;
+  background: #eeeeee;
+}
+
