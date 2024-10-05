@@ -131,8 +131,10 @@ let users = [
     { name: 'abdus shomad', email: 'somadabdus811@gmail.com', password: 'banjarsari1', branch: 'kota pasuruan', position: 'SALES ONLINE', cabang: 'MPM MOTOR PASURUAN', subscribed: false, expiryDate: '2024-08-30' },
     { name: 'Muji Hidayat', email: 'mujihidayat99@gmail.com', password: 'alisha270284', branch: 'Bondowoso', position: 'SALES ONLINE', cabang: 'MPM MOTOR BONDOWOSO', subscribed: false, expiryDate: '2024-08-30' },
     { name: 'RISKY MPM MOTOR JOMBANG', email: 'riskyrace10@gmail.com', password: 'Cengngeng10', branch: 'Jombang', position: 'SALES ONLINE', cabang: 'MPM MOTORJOMBANG', subscribed: false, expiryDate: '2024-08-30' },
-    { name: 'MUCHAMMAD FATONI ', email: 'muchammadfatoni1@gmail.com', password: 'mpmlarangan1', branch: 'SIDOARJO ', position: 'SALES ONLINE', cabang: 'MPM MOTOR LARANGAN', subscribed: false, expiryDate: '2024-08-35' },
-    { name: 'PUTRI DWI PARWITASARI', email: 'putrikayana29@gmail.com', password: 'putri040791', branch: 'madiun', position: 'SALES ONLINE', cabang: 'MPM MOTOR MADIUN', subscribed: false, expiryDate: '2024-08-36' },
+    { name: 'MUCHAMMAD FATONI ', email: 'muchammadfatoni1@gmail.com', password: 'mpmlarangan1', branch: 'SIDOARJO ', position: 'SALES ONLINE', cabang: 'MPM MOTOR LARANGAN', subscribed: false, expiryDate: '2024-08-30' },
+    { name: 'PUTRI DWI PARWITASARI', email: 'putrikayana29@gmail.com', password: 'putri040791', branch: 'madiun', position: 'SALES ONLINE', cabang: 'MPM MOTOR MADIUN', subscribed: false, expiryDate: '2024-08-30' },
+    { name: 'DINAH MARWAH FADJRIAH', email: 'dinahmarwah@gmail.com', password: 'dinahasayangm', branch: 'Blitar', position: 'SALES ONLINE', cabang: 'MPM MOTOR BLITAR', subscribed: false, expiryDate: '2024-08-30' },
+    { name: 'Mir Alexander Yuza', email: 'miryuza116@gmail.com', password: '300905', branch: 'Kediri', position: 'SALES ONLINE', cabang: 'MPM MOTOR PARE', subscribed: false, expiryDate: '2024-08-30' },
     // SPESIAL
     { name: 'Taufik', email: 'User2@supper.com', password: 'User2supper', branch: '-', position: '-', cabang: '-', subscribed: false, expiryDate: '2024-08-30' },
     { name: 'Mourits', email: 'Mourits@supper.com', password: 'Mourits', branch: '-', position: '-', cabang: '-', subscribed: false, expiryDate: '2024-08-30' },
