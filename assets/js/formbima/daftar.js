@@ -18,7 +18,7 @@ const scriptURL1 = 'https://script.google.com/macros/s/AKfycbzr_2rLRbFSMH5gguctr
                         Swal.fire({
                             icon: 'success',
                             title: 'Data terkirim!',
-                            text: 'Tunggu 1x24 jam, atau lakukan konfirmasi ke admin',
+                            text: 'Tunggu, Pastikan email anda aktif, kami akan memberitahukan melalui email',
                         }).then(() => {
                             window.location.reload();
                         });
