@@ -109,6 +109,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Comment -->
 <script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
 <!-- selesai -->
+
+<!-- Offline -->
+<script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/service-worker.js')
+                .then(function (registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function (error) {
+                    console.log('ServiceWorker registration failed: ', error);
+                });
+            });
+        }
+    </script>
+<!-- Selesai -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>GUSTY KUKUH INDRIYANMURTY</title>
     <meta name="theme-color" content="#7d7878">
@@ -164,8 +179,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <!-- Google ADS -->
 <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8913081554574910"
      crossorigin="anonymous"></script>
+
 <meta name="google-adsense-account" content="ca-pub-8913081554574910">
 <!-- Selesai -->
 
@@ -447,6 +464,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="../../assets/js/login/comment-umum.js"></script>
     <script src="../../assets/js/login/comment.js"></script>
     <script src="../../assets/js/login/login.js"></script>
+    <script src="../../assets/js/offline/service-worker.js"></script>
     <script src="../../assets/js/One-Liner-Code-Editor-codeeditor.js"></script>
     <script src="../../assets/js/Simple-Slider-swiper-bundle.min.js"></script>
     <script src="../../assets/js/Simple-Slider.js"></script>
