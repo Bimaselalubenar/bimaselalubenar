@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="id">
+
+<head>
+    <meta charset="utf-8">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5HHF3VHW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script>
+        function copyTextById(id) {
+            // Mendapatkan elemen berdasarkan ID
+            var textElement = document.getElementById(id);
+
+            // Membuat elemen input sementara untuk menyalin teks
+            var tempInput = document.createElement("textarea");
+            tempInput.value = textElement.textContent;
+
+            // Menambahkan elemen input sementara ke body
+            document.body.appendChild(tempInput);
+
+            // Menyorot dan menyalin teks dari elemen input sementara
+            tempInput.select();
+            document.execCommand("copy");
+
+            // Menghapus elemen input sementara setelah menyalin teks
+            document.body.removeChild(tempInput);
+
+            // Memberikan umpan balik menggunakan SweetAlert
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: 'Teks berhasil disalin ke clipboard!',
+                confirmButtonText: 'OK'
+            });
+        }
+
+        // Menangkap kejadian keydown untuk mendeteksi Ctrl + C
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && event.key === 'c') {
+                // Menampilkan SweetAlert ketika Ctrl + C ditekan
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Anda menekan Ctrl + C',
+                    text: 'Text berhasil di salin!',
+                    confirmButtonText: 'OK'
+                });
+            }
+        });
+    </script>
+
+<!-- app -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- selesai -->
+
+<!-- animasi AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script>
+    AOS.init({
+        duration: 1200
+    });</script>
+<!-- Selesai -->
+
+<!-- onesignal -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "6ae2ed3c-f763-465d-8648-0538e5f7e40c",
+    });
+  });
+</script>
+<!-- selesai -->
+
+<!-- FireBase -->
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAGIm8fs-R4WuUMomDnaklskRsXg-82BfA",
+    authDomain: "bimaselalubenar-boostrap.firebaseapp.com",
+    databaseURL: "https://bimaselalubenar-boostrap-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "bimaselalubenar-boostrap",
+    storageBucket: "bimaselalubenar-boostrap.appspot.com",
+    messagingSenderId: "903484306924",
+    appId: "1:903484306924:web:8b0f8344d12a46fb20bcc9",
+    measurementId: "G-KSFJWG3HM5"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+<!-- selesai -->
+
+<!-- Comment -->
+<script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
+<!-- selesai -->
+
+<!-- Offline -->
+<script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/service-worker.js')
+                .then(function (registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function (error) {
+                    console.log('ServiceWorker registration failed: ', error);
+                });
+            });
+        }
+    </script>
+
+<!-- Selesai -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Services - Brand</title>
+    <meta name="theme-color" content="#7d7878">
+    <link rel="canonical" href="https://bimaselalubenar.my.id/Tentang.html">
+    <meta property="og:url" content="https://bimaselalubenar.my.id/Tentang.html">
+    <meta name="description" content="Saya Fullstack developer dengan pengalaman dalam mengembangkan aplikasi web dari sisi frontend hingga backend.">
+    <meta name="twitter:image" content="https://bimaselalubenar.my.id/assets/img/ceo/materisocmed/CEO Mainweb.png">
+    <meta property="og:title" content="Bimaselalubenar">
+    <meta property="og:description" content="Seorang fullstack developer dengan pengalaman dalam mengembangkan aplikasi web dari sisi frontend hingga backend.">
+    <meta property="og:image" content="https://bimaselalubenar.my.id/assets/img/ceo/materisocmed/CEO Mainweb.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" sizes="137x109" href="assets/img/Logo/logo2.png">
+    <link rel="icon" type="image/png" sizes="137x109" href="assets/img/Logo/logo2.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="137x109" href="assets/img/Logo/logo2.png">
+    <link rel="icon" type="image/png" sizes="137x109" href="assets/img/Logo/logo2.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="137x109" href="assets/img/Logo/logo2.png">
+    <link rel="icon" type="image/png" sizes="137x109" href="assets/img/Logo/logo2.png">
+    <link rel="icon" type="image/png" sizes="137x109" href="assets/img/Logo/logo2.png">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/swiper-icons.css">
+    <link rel="stylesheet" href="assets/css/background.css">
+    <link rel="stylesheet" href="assets/css/Banner-Heading-Image-images.css">
+    <link rel="stylesheet" href="assets/css/chat.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/Lightbox-Gallery-baguetteBox.min.css">
+    <link rel="stylesheet" href="assets/css/menu-dashboard.css">
+    <link rel="stylesheet" href="assets/css/One-Liner-Code-Editor.css">
+    <link rel="stylesheet" href="assets/css/PRE.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider-swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5HHF3VHW');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Analytic -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PNZTM564QN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PNZTM564QN');
+</script>
+<!-- Selelsai -->
+
+<!-- Google ADS -->
+<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8913081554574910"
+     crossorigin="anonymous"></script>
+
+<meta name="google-adsense-account" content="ca-pub-8913081554574910">
+<!-- Selesai -->
+
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "6ae2ed3c-f763-465d-8648-0538e5f7e40c",
+    });
+  });
+</script>
+
+<!-- Subscribe YT -->
+<script src="https://apis.google.com/js/platform.js"></script>
+
+<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+
+<!-- Fire Base -->
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+<!-- Selesai -->
+
+
+
+<!-- animasi AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script>
+    AOS.init({
+        duration: 1200
+    });</script>
+<!-- Selesai -->
+
+<amp-ad width="100vw" height="320" type="adsense" data-ad-client="ca-pub-8913081554574910" data-ad-slot="5303068928"
+    data-auto-format="rspv" data-full-width="">
+    <div overflow=""></div>
+</amp-ad>
+</head>
+
+<body class="scrollbarnone" style="font-family: Poppins, sans-serif;">
+    <nav class="navbar navbar-expand-md sticky-top navbar-shrink py-3" id="mainNav" style="box-shadow: 0px 10px 20px rgba(45,45,45,0.07);">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="../index.html"><span class="bs-icon-sm bs-icon-circle bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon" style="background: #00000000;width: auto;height: auto;border-radius: 5px;padding: 5px;"><img src="assets/img/Logo/logo2.png" width="38" height="30"></span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Tentang.html">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Keahlian.html">Keahlian</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Kontak.html">Kontak</a></li>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">Lainnya&nbsp;&nbsp;</a>
+                        <div class="dropdown-menu" style="margin-bottom: 10px;margin-top: 10px;padding: 0px;width: auto;"><a class="dropdown-item" href="../web-service.html" style="background: rgba(25,90,220,0);color: rgb(105,105,105);width: auto;margin-bottom: 7px;padding-top: 10px;padding-bottom: 10px;">Web Service</a><a class="dropdown-item" href="../materisocmed/dashboard.html" style="background: rgba(25,90,220,0);color: rgb(105,105,105);width: auto;margin-bottom: 7px;padding-top: 10px;padding-bottom: 10px;">MPM Motor</a><a class="dropdown-item" href="artikel/index.html" style="background: rgba(25,90,220,0);color: rgb(105,105,105);width: auto;margin-bottom: 7px;padding-top: 10px;padding-bottom: 10px;">Artikel</a></div>
+                    </li>
+                </ul>
+                <div></div><a class="btn btn-primary shadow" role="button" style="padding: 10.6px 20px;padding-top: 6px;padding-bottom: 6px;padding-right: 16px;padding-left: 16px;" data-bs-target="#srch" data-bs-toggle="modal"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-search" style="font-size: 21px;margin: 0;margin-right: 6px;">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+                    </svg>Cari</a>
+            </div>
+        </div>
+    </nav>
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row mb-4 mb-lg-5">
+                <div class="col-md-8 col-xl-6 text-center mx-auto">
+                    <p class="fw-bold text-success mb-2">Tentang Saya</p>
+                    <h3 class="fw-bold">Bimaselalubenar</h3>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+                <div class="col mb-5"><img class="rounded img-fluid shadow" src="assets/img/Page/Profile/2.png"></div>
+                <div class="col d-md-flex align-items-md-end align-items-lg-center mb-5">
+                    <div>
+                        <h5 class="fw-bold">Saya Bima</h5>
+                        <p class="text-muted mb-4">Saya sangat senang bisa berbagi perjalanan saya dalam dunia coding. Sejak tahun 2020, saya telah terjun ke dalam dunia pemrograman, dimulai dengan belajar struktur dasar HTML. Saat pertama kali mengenal HTML, saya terpesona oleh kemampuan untuk mengubah ide dan konsep menjadi halaman web yang nyata.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+                <div class="col order-md-last mb-5"><img class="rounded img-fluid shadow" src="assets/img/Page/Profile/Pulupuku.gif"></div>
+                <div class="col d-md-flex align-items-md-end align-items-lg-center mb-5">
+                    <div>
+                        <h5 class="fw-bold">&lt;/&gt;</h5>
+                        <p class="text-muted mb-4">Setiap elemen yang saya buat, mulai dari tag &lt;div&gt; sederhana hingga struktur yang lebih kompleks, memberi saya rasa pencapaian yang luar biasa. Saya menemukan kebebasan dalam bereksperimen dengan kode dan melihat bagaimana setiap perubahan dapat mempengaruhi tampilan dan fungsi suatu halaman.</p>
+                        <p class="text-muted mb-4">Seiring berjalannya waktu, kecintaan saya terhadap coding semakin berkembang. Saya mulai mengeksplorasi bahasa pemrograman lainnya, seperti CSS dan JavaScript, yang memungkinkan saya untuk menciptakan desain yang lebih menarik dan interaktif. Memahami JavaScript membuka pintu bagi saya untuk membuat elemen dinamis dan fungsional dalam situs web saya.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+                <div class="col mb-5"><img class="rounded img-fluid shadow" src="assets/img/Page/Profile/bostrap.gif"></div>
+                <div class="col d-md-flex align-items-md-end align-items-lg-center mb-5">
+                    <div>
+                        <h5 class="fw-bold">&lt;/&gt;</h5>
+                        <p class="text-muted mb-4">Keinginan saya untuk memperdalam keterampilan membawa saya pada belajar berbagai <strong>framework</strong> yang mendukung pengembangan web. Saya mulai bekerja dengan <strong>Bootstrap</strong>, yang sangat membantu dalam membuat desain responsif dengan cepat dan efisien. Kemampuan untuk membuat antarmuka yang menarik dengan sedikit usaha membuat saya semakin bersemangat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-primary-gradient" style="box-shadow: 0px -33px 20px 2px rgba(45,45,45,0.08);border-radius: 0px;"></footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/SDK%20OneSignal/OneSignalSDKWorker.js"></script>
+    <script src="assets/js/App/cekkhodam.js"></script>
+    <script src="assets/js/App/cektabungan.js"></script>
+    <script src="assets/js/App/cektubuh.js"></script>
+    <script src="assets/js/dashboard-socmed-bold-and-bright.js"></script>
+    <script src="assets/js/formbima/berlangganan.js"></script>
+    <script src="assets/js/formbima/daftar.js"></script>
+    <script src="assets/js/formbima/form-bima.js"></script>
+    <script src="assets/js/inspeksi/inspeksi.js"></script>
+    <script src="assets/js/Lightbox-Gallery-baguetteBox.min.js"></script>
+    <script src="assets/js/Lightbox-Gallery.js"></script>
+    <script src="assets/js/login/comment-umum.js"></script>
+    <script src="assets/js/login/comment.js"></script>
+    <script src="assets/js/login/login.js"></script>
+    <script src="assets/js/One-Liner-Code-Editor-codeeditor.js"></script>
+    <script src="assets/js/Simple-Slider-swiper-bundle.min.js"></script>
+    <script src="assets/js/Simple-Slider.js"></script>
+</body>
+
+</html>

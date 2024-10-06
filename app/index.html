@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="id">
+
+<head>
+    <meta charset="utf-8">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5HHF3VHW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script>
+        function copyTextById(id) {
+            // Mendapatkan elemen berdasarkan ID
+            var textElement = document.getElementById(id);
+
+            // Membuat elemen input sementara untuk menyalin teks
+            var tempInput = document.createElement("textarea");
+            tempInput.value = textElement.textContent;
+
+            // Menambahkan elemen input sementara ke body
+            document.body.appendChild(tempInput);
+
+            // Menyorot dan menyalin teks dari elemen input sementara
+            tempInput.select();
+            document.execCommand("copy");
+
+            // Menghapus elemen input sementara setelah menyalin teks
+            document.body.removeChild(tempInput);
+
+            // Memberikan umpan balik menggunakan SweetAlert
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: 'Teks berhasil disalin ke clipboard!',
+                confirmButtonText: 'OK'
+            });
+        }
+
+        // Menangkap kejadian keydown untuk mendeteksi Ctrl + C
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && event.key === 'c') {
+                // Menampilkan SweetAlert ketika Ctrl + C ditekan
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Anda menekan Ctrl + C',
+                    text: 'Text berhasil di salin!',
+                    confirmButtonText: 'OK'
+                });
+            }
+        });
+    </script>
+
+<!-- app -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- selesai -->
+
+<!-- animasi AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script>
+    AOS.init({
+        duration: 1200
+    });</script>
+<!-- Selesai -->
+
+<!-- onesignal -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "6ae2ed3c-f763-465d-8648-0538e5f7e40c",
+    });
+  });
+</script>
+<!-- selesai -->
+
+<!-- FireBase -->
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAGIm8fs-R4WuUMomDnaklskRsXg-82BfA",
+    authDomain: "bimaselalubenar-boostrap.firebaseapp.com",
+    databaseURL: "https://bimaselalubenar-boostrap-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "bimaselalubenar-boostrap",
+    storageBucket: "bimaselalubenar-boostrap.appspot.com",
+    messagingSenderId: "903484306924",
+    appId: "1:903484306924:web:8b0f8344d12a46fb20bcc9",
+    measurementId: "G-KSFJWG3HM5"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+<!-- selesai -->
+
+<!-- Comment -->
+<script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
+<!-- selesai -->
+
+<!-- Offline -->
+<script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/service-worker.js')
+                .then(function (registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function (error) {
+                    console.log('ServiceWorker registration failed: ', error);
+                });
+            });
+        }
+    </script>
+
+<!-- Selesai -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Bimaselalubenar</title>
+    <meta name="theme-color" content="#7d7878">
+    <link rel="canonical" href="https://bimaselalubenar.my.id/app/">
+    <meta property="og:url" content="https://bimaselalubenar.my.id/app/">
+    <meta name="description" content="Saya Fullstack developer dengan pengalaman dalam mengembangkan aplikasi web dari sisi frontend hingga backend.">
+    <meta name="twitter:image" content="https://bimaselalubenar.my.id/assets/img/ceo/materisocmed/CEO Mainweb.png">
+    <meta property="og:title" content="Bimaselalubenar">
+    <meta property="og:description" content="Seorang fullstack developer dengan pengalaman dalam mengembangkan aplikasi web dari sisi frontend hingga backend.">
+    <meta property="og:image" content="https://bimaselalubenar.my.id/assets/img/ceo/materisocmed/CEO Mainweb.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" sizes="137x109" href="../assets/img/Logo/logo2.png">
+    <link rel="icon" type="image/png" sizes="137x109" href="../assets/img/Logo/logo2.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="137x109" href="../assets/img/Logo/logo2.png">
+    <link rel="icon" type="image/png" sizes="137x109" href="../assets/img/Logo/logo2.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="137x109" href="../assets/img/Logo/logo2.png">
+    <link rel="icon" type="image/png" sizes="137x109" href="../assets/img/Logo/logo2.png">
+    <link rel="icon" type="image/png" sizes="137x109" href="../assets/img/Logo/logo2.png">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="manifest" href="../manifest.json" crossorigin="use-credentials">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/swiper-icons.css">
+    <link rel="stylesheet" href="../assets/css/animate.min.css">
+    <link rel="stylesheet" href="../assets/css/background.css">
+    <link rel="stylesheet" href="../assets/css/Banner-Heading-Image-images.css">
+    <link rel="stylesheet" href="../assets/css/chat.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/Lightbox-Gallery-baguetteBox.min.css">
+    <link rel="stylesheet" href="../assets/css/menu-dashboard.css">
+    <link rel="stylesheet" href="../assets/css/One-Liner-Code-Editor.css">
+    <link rel="stylesheet" href="../assets/css/PRE.css">
+    <link rel="stylesheet" href="../assets/css/Simple-Slider-swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/Simple-Slider.css">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5HHF3VHW');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Analytic -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PNZTM564QN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PNZTM564QN');
+</script>
+<!-- Selelsai -->
+
+<!-- Google ADS -->
+<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8913081554574910"
+     crossorigin="anonymous"></script>
+
+<meta name="google-adsense-account" content="ca-pub-8913081554574910">
+<!-- Selesai -->
+
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "6ae2ed3c-f763-465d-8648-0538e5f7e40c",
+    });
+  });
+</script>
+
+<!-- Subscribe YT -->
+<script src="https://apis.google.com/js/platform.js"></script>
+
+<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+
+<!-- Fire Base -->
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+<!-- Selesai -->
+
+
+
+<!-- animasi AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script>
+    AOS.init({
+        duration: 1200
+    });</script>
+<!-- Selesai -->
+
+<amp-ad width="100vw" height="320" type="adsense" data-ad-client="ca-pub-8913081554574910" data-ad-slot="5303068928"
+    data-auto-format="rspv" data-full-width="">
+    <div overflow=""></div>
+</amp-ad>
+</head>
+
+<body>
+    <section style="background: linear-gradient(-126deg, #000000, #3b3b3b);height: 100vh;padding-top: 39px;">
+        <div class="modal fade" role="dialog" tabindex="-1" id="srch">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header d-flex justify-content-between" style="background: linear-gradient(45deg, #f39c12, #e74c3c);">
+                        <h4 class="modal-title" style="color: rgb(255,255,255);">Cari sesuatu di sini</h4><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-x-circle-fill" type="button" aria-label="Close" data-dismiss="modal" style="color: rgb(255,255,255);width: 32px;height: 32px;">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"></path>
+                        </svg>
+                    </div>
+                    <div class="modal-body scrollbarnone" style="background: rgba(255,255,255,0);height: auto;max-height: 600px;">
+                        <p>Cari dengan kata kunci</p>
+                        <form class="input-group" style="margin-bottom: 16px;"><input class="form-control" type="text" id="searchInput" placeholder="Cari di sini ..."><button class="btn btn-success d-xxl-flex align-items-xxl-center" id="searchButton" type="button" style="color: rgb(255,255,255);border-top-right-radius: 16px;border-bottom-right-radius: 16px;">&nbsp;Cari</button></form>
+                        <ol class="flex-column-reverse list-group" id="searchResults" style="display: none;">
+                            <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;border-width: 0px;background: rgba(255,255,255,0);">
+                                <div class="d-flex flex-column resultsrc">
+                                    <div class="d-flex flex-column"><span style="color: rgb(255,255,255);font-size: 20px;"><strong>Gambar motor honda transparan | Google drive</strong></span>
+                                        <div style="height: 2px;background: #ffffff;padding-top: 0px;margin-top: 7px;margin-bottom: 4px;"></div><span style="color: rgb(255,255,255);">Download gambar motor Honda transparan. dari Honda matic, sport dan cub. download semua unit dengan klik di sini.&nbsp;<a href="https://drive.google.com/drive/folders/1NmGcOpHaxG1NsGl_QgDOhOoWi-U1v2lr?usp=sharing" style="font-weight: bold;color: #ffe28b;" target="_parent">(Klik disini)</a></span>
+                                    </div><span class="text-break shadow" style="padding-top: 16px;"><span class="shadow tagsearch">#Honda</span><span class="shadow tagsearch">#Transparan</span><span class="shadow tagsearch">#Motor</span>&nbsp;</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;border-width: 0px;background: rgba(255,255,255,0);">
+                                <div class="d-flex flex-column resultsrc">
+                                    <div class="d-flex flex-column"><span style="color: rgb(255,255,255);font-size: 20px;"><strong>Materi socmed MPM Motor |</strong></span>
+                                        <div style="height: 2px;background: #ffffff;padding-top: 0px;margin-top: 7px;margin-bottom: 4px;"></div><span style="color: rgb(255,255,255);">Unduh materi socmed all MSO untuk social media cabang, dapatkan materi video reels, TikTok, status Whatsapp, Feed Instagram. dengan format .zip.&nbsp;<a href="Jadwal.html" style="font-weight: bold;color: #ffe28b;" target="_parent">(Klik disini)</a></span>
+                                    </div><span class="text-break shadow" style="padding-top: 16px;"><span class="shadow tagsearch">#Jadwal</span><span class="shadow tagsearch">#Socmed</span><span class="shadow tagsearch">#Materi</span><span class="shadow tagsearch">#Honda</span><span class="shadow tagsearch">#Download</span>&nbsp;</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;border-width: 0px;background: rgba(255,255,255,0);">
+                                <div class="d-flex flex-column resultsrc">
+                                    <div class="d-flex flex-column"><span style="color: rgb(255,255,255);font-size: 20px;"><strong>Template canva gratis dan berbayar |</strong></span>
+                                        <div style="height: 2px;background: #ffffff;padding-top: 0px;margin-top: 7px;margin-bottom: 4px;"></div><span style="color: rgb(255,255,255);">Gunakan template digital dengan sesuai kebutuhan mu.&nbsp;<a id="srcTemplate" href="template-digital.html" style="font-weight: bold;color: #ffe28b;" target="_parent">(Klik disini)</a></span><span class="text-break shadow" style="padding-top: 16px;"><span class="shadow tagsearch">#Template</span><span class="shadow tagsearch">#Motor</span><span class="shadow tagsearch">#Honda</span>&nbsp;</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;border-width: 0px;background: rgba(255,255,255,0);">
+                                <div class="d-flex flex-column resultsrc">
+                                    <div class="d-flex flex-column"><span style="color: rgb(255,255,255);font-size: 20px;"><strong>.... |</strong></span>
+                                        <div style="height: 2px;background: #ffffff;padding-top: 0px;margin-top: 7px;margin-bottom: 4px;"></div><span style="color: rgb(255,255,255);">.. .&nbsp;<a style="font-weight: bold;color: #ffe28b;" target="_parent">(Klik disini)</a></span>
+                                    </div><span class="text-break shadow" style="padding-top: 16px;"><span class="shadow tagsearch">#Tag</span><span class="shadow tagsearch">#Tag</span>&nbsp;</span>
+                                </div>
+                            </li>
+                        </ol><span id="noResultsMessage" style="padding-top: 7px;display: none;color: rgb(255,255,255);background: linear-gradient(-172deg, #ff0000, #230000);padding-bottom: 7px;margin-top: 0px;padding-right: 16px;padding-left: 16px;border-radius: 10px;">Maaf, data tidak di temukan</span><script>
+    function searchItems() {
+      let input = document.getElementById('searchInput').value.toLowerCase();
+      let items = document.querySelectorAll('#searchResults li');
+      let found = false;
+
+      // Reset hasil sebelumnya
+      items.forEach(function(item) {
+        item.style.display = 'none';
+      });
+      document.getElementById('noResultsMessage').style.display = 'none';
+
+      // Jika input kosong, jangan tampilkan apa pun
+      if (input.trim() === "") {
+        document.getElementById('searchResults').style.display = 'none';
+        document.getElementById('noResultsMessage').style.display = 'none';
+        return;
+      }
+
+      // Pecahkan input menjadi array kata
+      let searchTerms = input.split(" ");
+
+      // Lakukan pencarian berdasarkan beberapa kata
+      items.forEach(function(item) {
+        let itemText = item.innerHTML.toLowerCase();
+        let match = searchTerms.every(function(term) {
+          return itemText.indexOf(term) !== -1;  // Cek semua kata ada di item
+        });
+        if (match) {
+          item.style.display = 'block';
+          found = true;
+        }
+      });
+
+      // Tampilkan hasil atau pesan 'data tidak ditemukan'
+      if (found) {
+        document.getElementById('searchResults').style.display = 'block';
+        document.getElementById('noResultsMessage').style.display = 'none';
+      } else {
+        document.getElementById('searchResults').style.display = 'none';
+        document.getElementById('noResultsMessage').style.display = 'block';
+      }
+    }
+
+    // Event listener untuk tombol Search
+    document.getElementById('searchButton').addEventListener('click', searchItems);
+
+    // Event listener untuk tombol Enter pada input
+    document.getElementById('searchInput').addEventListener('keypress', function(event) {
+      if (event.key === 'Enter') {
+        searchItems();
+      }
+    });
+  </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="max-width: 600px;">
+            <div class="row">
+                <div class="col-md-12 d-flex d-lg-flex flex-column align-items-center align-items-sm-center align-items-md-center align-items-lg-center align-items-xl-center align-items-xxl-center" style="padding-bottom: 20px;"><img src="../assets/img/Galery/Bima/Bima.webp" style="width: 30%;border-radius: 50%;height: auto;margin-bottom: 16px;">
+                    <h5 style="color: var(--bs-body-bg);"><strong>Bimaselalubenar</strong></h5>
+                    <div style="display: inline-flex;position: static;transform: translate(0px);">
+                        <p class="fw-bold mb-2" id="typing" style="height: 24.6px;color: var(--bs-body-bg);">Random</p>
+                        <p class="fw-bold flash animated infinite mb-2" style="height: 24.6px;border-color: rgb(69,69,69);color: rgb(255,255,255);">|</p><script>
+              const words = ['Halo!!', 'Saya Bima', 'Saya seorang Fullstack Developer', 'FrontEnd Dev', '3D Artis Enthusiast'];
+              let index = 0;
+              let letterIndex = 0;
+              let isDeleting = false;
+              let typingText = '';
+
+              function type() {
+                  const currentWord = words[index % words.length];
+                  if (isDeleting) {
+                      typingText = currentWord.substring(0, letterIndex - 1);
+                      letterIndex--;
+                  } else {
+                      typingText = currentWord.substring(0, letterIndex + 1);
+                      letterIndex++;
+                  }
+
+                  document.getElementById('typing').textContent = typingText;
+
+                  let typingSpeed = 100;
+                  if (isDeleting) {
+                      typingSpeed /= 2;
+                  }
+
+                  if (!isDeleting && typingText === currentWord) {
+                      isDeleting = true;
+                      typingSpeed = 800;
+                  } else if (isDeleting && typingText === '') {
+                      isDeleting = false;
+                      index++;
+                      typingSpeed = 200;
+                  }
+
+                  setTimeout(type, typingSpeed);
+              }
+
+              type();
+            </script>
+                    </div>
+                    <p style="color: rgb(255,255,255);">Temukan kata kunci di sini</p>
+                    <div><button class="btn btn-primary d-flex justify-content-center align-items-center button-smooth" type="button" style="width: 100%;text-align: center;padding-top: 8px;padding-bottom: 8px;padding-right: 20px;padding-left: 20px;" data-bs-target="#srch" data-bs-toggle="modal"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-search" style="font-size: 21px;">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+                            </svg>&nbsp; Pencarian</button></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 d-flex flex-column" style="gap: 10px;text-align: center;"><button class="btn btn-primary d-flex justify-content-center align-items-center button-smooth" type="button" style="width: 100%;text-align: center;padding-top: 16px;padding-bottom: 16px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-globe2" style="font-size: 21px;">
+                            <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855-.143.268-.276.56-.395.872.705.157 1.472.257 2.282.287zM4.249 3.539c.142-.384.304-.744.481-1.078a6.7 6.7 0 0 1 .597-.933A7.01 7.01 0 0 0 3.051 3.05c.362.184.763.349 1.198.49zM3.509 7.5c.036-1.07.188-2.087.436-3.008a9.124 9.124 0 0 1-1.565-.667A6.964 6.964 0 0 0 1.018 7.5h2.49zm1.4-2.741a12.344 12.344 0 0 0-.4 2.741H7.5V5.091c-.91-.03-1.783-.145-2.591-.332M8.5 5.09V7.5h2.99a12.342 12.342 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5c.035.987.176 1.914.399 2.741A13.612 13.612 0 0 1 7.5 10.91V8.5zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741zm-3.282 3.696c.12.312.252.604.395.872.552 1.035 1.218 1.65 1.887 1.855V11.91c-.81.03-1.577.13-2.282.287zm.11 2.276a6.696 6.696 0 0 1-.598-.933 8.853 8.853 0 0 1-.481-1.079 8.38 8.38 0 0 0-1.198.49 7.01 7.01 0 0 0 2.276 1.522zm-1.383-2.964A13.36 13.36 0 0 1 3.508 8.5h-2.49a6.963 6.963 0 0 0 1.362 3.675c.47-.258.995-.482 1.565-.667zm6.728 2.964a7.009 7.009 0 0 0 2.275-1.521 8.376 8.376 0 0 0-1.197-.49 8.853 8.853 0 0 1-.481 1.078 6.688 6.688 0 0 1-.597.933zM8.5 11.909v3.014c.67-.204 1.335-.82 1.887-1.855.143-.268.276-.56.395-.872A12.63 12.63 0 0 0 8.5 11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.963 6.963 0 0 0 14.982 8.5h-2.49a13.36 13.36 0 0 1-.437 3.008zM14.982 7.5a6.963 6.963 0 0 0-1.362-3.675c-.47.258-.995.482-1.565.667.248.92.4 1.938.437 3.008zM11.27 2.461c.177.334.339.694.482 1.078a8.368 8.368 0 0 0 1.196-.49 7.01 7.01 0 0 0-2.275-1.52c.218.283.418.597.597.932zm-.488 1.343a7.765 7.765 0 0 0-.395-.872C9.835 1.897 9.17 1.282 8.5 1.077V4.09c.81-.03 1.577-.13 2.282-.287z"></path>
+                        </svg>&nbsp; Website Official</button><button class="btn btn-primary d-flex justify-content-center align-items-center button-smooth" type="button" style="width: 100%;text-align: center;padding-top: 16px;padding-bottom: 16px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-globe2" style="font-size: 21px;">
+                            <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855-.143.268-.276.56-.395.872.705.157 1.472.257 2.282.287zM4.249 3.539c.142-.384.304-.744.481-1.078a6.7 6.7 0 0 1 .597-.933A7.01 7.01 0 0 0 3.051 3.05c.362.184.763.349 1.198.49zM3.509 7.5c.036-1.07.188-2.087.436-3.008a9.124 9.124 0 0 1-1.565-.667A6.964 6.964 0 0 0 1.018 7.5h2.49zm1.4-2.741a12.344 12.344 0 0 0-.4 2.741H7.5V5.091c-.91-.03-1.783-.145-2.591-.332M8.5 5.09V7.5h2.99a12.342 12.342 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5c.035.987.176 1.914.399 2.741A13.612 13.612 0 0 1 7.5 10.91V8.5zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741zm-3.282 3.696c.12.312.252.604.395.872.552 1.035 1.218 1.65 1.887 1.855V11.91c-.81.03-1.577.13-2.282.287zm.11 2.276a6.696 6.696 0 0 1-.598-.933 8.853 8.853 0 0 1-.481-1.079 8.38 8.38 0 0 0-1.198.49 7.01 7.01 0 0 0 2.276 1.522zm-1.383-2.964A13.36 13.36 0 0 1 3.508 8.5h-2.49a6.963 6.963 0 0 0 1.362 3.675c.47-.258.995-.482 1.565-.667zm6.728 2.964a7.009 7.009 0 0 0 2.275-1.521 8.376 8.376 0 0 0-1.197-.49 8.853 8.853 0 0 1-.481 1.078 6.688 6.688 0 0 1-.597.933zM8.5 11.909v3.014c.67-.204 1.335-.82 1.887-1.855.143-.268.276-.56.395-.872A12.63 12.63 0 0 0 8.5 11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.963 6.963 0 0 0 14.982 8.5h-2.49a13.36 13.36 0 0 1-.437 3.008zM14.982 7.5a6.963 6.963 0 0 0-1.362-3.675c-.47.258-.995.482-1.565.667.248.92.4 1.938.437 3.008zM11.27 2.461c.177.334.339.694.482 1.078a8.368 8.368 0 0 0 1.196-.49 7.01 7.01 0 0 0-2.275-1.52c.218.283.418.597.597.932zm-.488 1.343a7.765 7.765 0 0 0-.395-.872C9.835 1.897 9.17 1.282 8.5 1.077V4.09c.81-.03 1.577-.13 2.282-.287z"></path>
+                        </svg>&nbsp; Dashboard MPM (Materi Socmed)</button></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12"></div>
+            </div>
+        </div>
+    </section>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bs-init.js"></script>
+    <script src="../assets/js/SDK%20OneSignal/OneSignalSDKWorker.js"></script>
+    <script src="../assets/js/App/cekkhodam.js"></script>
+    <script src="../assets/js/App/cektabungan.js"></script>
+    <script src="../assets/js/App/cektubuh.js"></script>
+    <script src="../assets/js/dashboard-socmed-bold-and-bright.js"></script>
+    <script src="../assets/js/formbima/berlangganan.js"></script>
+    <script src="../assets/js/formbima/daftar.js"></script>
+    <script src="../assets/js/formbima/form-bima.js"></script>
+    <script src="../assets/js/inspeksi/inspeksi.js"></script>
+    <script src="../assets/js/Lightbox-Gallery-baguetteBox.min.js"></script>
+    <script src="../assets/js/Lightbox-Gallery.js"></script>
+    <script src="../assets/js/login/comment-umum.js"></script>
+    <script src="../assets/js/login/comment.js"></script>
+    <script src="../assets/js/login/login.js"></script>
+    <script src="../assets/js/One-Liner-Code-Editor-codeeditor.js"></script>
+    <script src="../assets/js/Simple-Slider-swiper-bundle.min.js"></script>
+    <script src="../assets/js/Simple-Slider.js"></script>
+</body>
+
+</html>
