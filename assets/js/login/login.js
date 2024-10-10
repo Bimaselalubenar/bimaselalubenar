@@ -146,6 +146,7 @@ let users = [
     { name: 'Naufal', email: 'naufalfthur@gmail.com', password: 'Naufal123', branch: 'Blitar', position: 'SALES ONLINE', cabang: 'MPM MOTOR BLITAR', subscribed: false, expiryDate: '2024-08-30' },
     { name: 'Wahyu adi candra', email: 'wahyuac24@gmail.com', password: 'MPM_ked1r1', branch: 'Kota kediri', position: 'SALES ONLINE', cabang: 'MPM MOTOR KEDIRI', subscribed: false, expiryDate: '2024-08-30' },
     { name: 'triana nana', email: 'nanastriana60@gmail.com', password: 'triananingrum28', branch: 'madiun', position: 'SALES ONLINE', cabang: 'MPM MOTOR MADIUN', subscribed: false, expiryDate: '2024-10-30' },
+    { name: 'Joko tungkul', email: 'jokotungkul84@gmail.com', password: 'cintaku', branch: 'Madiun ', position: 'SALES ONLINE', cabang: 'MPM MOTOR MADIUN', subscribed: false, expiryDate: '2024-10-11' },
     // SPESIAL
     { name: 'Taufik', email: 'User2@supper.com', password: 'User2supper', branch: '-', position: '-', cabang: '-', subscribed: false, expiryDate: '2024-08-30' },
     { name: 'Mourits', email: 'Mourits@supper.com', password: 'Mourits', branch: '-', position: '-', cabang: '-', subscribed: false, expiryDate: '2024-08-30' },
