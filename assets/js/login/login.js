@@ -112,6 +112,8 @@ let users = [
     { name: 'Nurazimah', email: 'nurazimahharuna@gmail.com', password: 'Imong220701', branch: 'Makassar', position: 'PDCA', cabang: 'MPM MOTOR MAKASSAR', subscribed: false, expiryDate: '2024-08-30' },
     { name: 'Ahmadkhoirunns', email: 'ahmadkhoirun92@gmail.com', password: 'akudewe01', branch: 'Pasuruan', position: 'PDCA', cabang: 'MPM MOTOR SUKOREJO', subscribed: false, expiryDate: '2024-08-30' },
     { name: 'NURAZIMAH', email: 'nurazimahharuna@gmil.com', password: 'MPM@13420', branch: 'MAKASSAR', position: 'PDCA', cabang: 'MPM MOTOR MAKASSAR', subscribed: false, expiryDate: '2024-08-30' },
+    { name: 'Riko Pusponagari', email: 'nagari.riko@gmail.com', password: 'riko140593', branch: 'Nganjuk', position: 'PDCA', cabang: 'MPM MOTOR NGANJUK', subscribed: false, expiryDate: '2024-08-30' },
+    { name: 'Bastian Setiawan', email: 'bhast14n@gmail.com', password: 'Sukorejo', branch: 'Pasuruan', position: 'PDCA', cabang: 'MPM MOTOR SUKOREJO', subscribed: false, expiryDate: '2024-08-27' },
     { name: '', email: '', password: '', branch: '', position: '', cabang: '', subscribed: false, expiryDate: '2024-08-30' },
     // SALES BATCH 1 & 2
     { name: 'DEDE MARLINA', email: 'dedechubbii@gmail.com', password: 'Dedempm203', branch: 'Kota Tangerang', position: 'SALES ONLINE', cabang: 'MPM Motor Tangerang', subscribed: false, expiryDate: '2024-08-30' },
@@ -172,6 +174,9 @@ let users = [
     { name: 'ELY KURNIA', email: 'ely.kurnia@mpm-motor.com', password: 'tb^WE&8k', branch: 'NGAWI', position: 'KACAB', cabang: 'MPM MOTOR NGAWI', subscribed: false, expiryDate: '2024-10-30' },
     { name: 'Amelia Saputri', email: 'saputriamelia26@gmail.com', password: 'Amel117872', branch: 'Jember', position: 'SALES ONLINE', cabang: 'MPM MOTOR JEMBER KEBONSARI', subscribed: false, expiryDate: '2024-10-30' },
     { name: 'HAIRUL UMAM', email: 'uhairul039@gmail.com', password: 'HairulUmam061896', branch: 'JEMBER', position: 'SALES ONLINE', cabang: 'MPM MOTOR JEMBER KEBONSARI', subscribed: false, expiryDate: '2024-10-30' },
+    { name: 'Eko Nur mawanto', email: 'ekonurmawanto@gmail.com', password: 'Ekonur040996', branch: 'Jember', position: 'SALES ONLINE', cabang: 'MPM MOTOR JEMBER DIPONEGORO', subscribed: false, expiryDate: '2024-08-26' },
+    { name: 'HENRY VIKA SULISTYANTO', email: 'henryonly003@gmail.com', password: 'mpmmadiun92', branch: 'MADIUN', position: 'SALES ONLINE', cabang: 'MPM MOTOR MADIUN', subscribed: false, expiryDate: '2024-08-28' },
+    { name: 'Muhammad risky hidayat', email: 'bangsinyo18@gmail.com', password: 'Sinyo007', branch: 'Sidoarjo', position: 'SALES ONLINE', cabang: 'MPM MOTOR GATEWAY', subscribed: false, expiryDate: '2024-08-29' },
     // SPESIAL
     { name: 'Taufik', email: 'User2@supper.com', password: 'User2supper', branch: '-', position: '-', cabang: '-', subscribed: false, expiryDate: '2024-08-30' },
     { name: 'Mourits', email: 'Mourits@supper.com', password: 'Mourits', branch: '-', position: '-', cabang: '-', subscribed: false, expiryDate: '2024-08-30' },
