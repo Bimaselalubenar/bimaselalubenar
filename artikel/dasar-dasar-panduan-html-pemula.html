@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="id">
+
+<head>
+    <meta charset="utf-8">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5HHF3VHW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script>
+        function copyTextById(id) {
+            // Mendapatkan elemen berdasarkan ID
+            var textElement = document.getElementById(id);
+
+            // Membuat elemen input sementara untuk menyalin teks
+            var tempInput = document.createElement("textarea");
+            tempInput.value = textElement.textContent;
+
+            // Menambahkan elemen input sementara ke body
+            document.body.appendChild(tempInput);
+
+            // Menyorot dan menyalin teks dari elemen input sementara
+            tempInput.select();
+            document.execCommand("copy");
+
+            // Menghapus elemen input sementara setelah menyalin teks
+            document.body.removeChild(tempInput);
+
+            // Memberikan umpan balik menggunakan SweetAlert
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: 'Teks berhasil disalin ke clipboard!',
+                confirmButtonText: 'OK'
+            });
+        }
+
+        // Menangkap kejadian keydown untuk mendeteksi Ctrl + C
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && event.key === 'c') {
+                // Menampilkan SweetAlert ketika Ctrl + C ditekan
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Copy Sukses!',
+                    text: 'Text berhasil di salin!',
+                    confirmButtonText: 'OK'
+                });
+            }
+        });
+    </script>
+
+<!-- app -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- selesai -->
+
+<!-- animasi AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script>
+    AOS.init({
+        duration: 1200
+    });</script>
+<!-- Selesai -->
+
+<!-- onesignal -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "6ae2ed3c-f763-465d-8648-0538e5f7e40c",
+    });
+  });
+</script>
+<!-- selesai -->
+
+<!-- FireBase -->
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAGIm8fs-R4WuUMomDnaklskRsXg-82BfA",
+    authDomain: "bimaselalubenar-boostrap.firebaseapp.com",
+    databaseURL: "https://bimaselalubenar-boostrap-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "bimaselalubenar-boostrap",
+    storageBucket: "bimaselalubenar-boostrap.appspot.com",
+    messagingSenderId: "903484306924",
+    appId: "1:903484306924:web:8b0f8344d12a46fb20bcc9",
+    measurementId: "G-KSFJWG3HM5"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+<!-- selesai -->
+
+<!-- Offline -->
+<script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/service-worker.js')
+                .then(function (registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function (error) {
+                    console.log('ServiceWorker registration failed: ', error);
+                });
+            });
+        }
+    </script>
+
+<!-- Selesai -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Dasar - dasar panduan HTML pemula</title>
+    <meta name="theme-color" content="#7d7878">
+    <link rel="canonical" href="https://bimaselalubenar.my.id/artikel/dasar-dasar-panduan-html-pemula.html">
+    <meta property="og:url" content="https://bimaselalubenar.my.id/artikel/dasar-dasar-panduan-html-pemula.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="https://bimaselalubenar.my.id/assets/img/Page/Artikel/code.jpg">
+    <meta property="og:title" content="Dasar - dasar panduan HTML pemula">
+    <meta name="description" content="HTML (HyperText Markup Language) adalah bahasa yang digunakan untuk membuat dan merancang halaman web. HTML menggunakan elemen-elemen yang disebut &quot;tag&quot; untuk menstrukturkan konten.">
+    <meta property="og:description" content="HTML (HyperText Markup Language) adalah bahasa yang digunakan untuk membuat dan merancang halaman web. HTML menggunakan elemen-elemen yang disebut &quot;tag&quot; untuk menstrukturkan konten.">
+    <meta name="twitter:image" content="https://bimaselalubenar.my.id/assets/img/Page/Artikel/code.jpg">
+    <link rel="icon" type="image/png" sizes="137x109" href="../assets/img/Logo/logo2.png">
+    <link rel="icon" type="image/png" sizes="137x109" href="../assets/img/Logo/logo2.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="137x109" href="../assets/img/Logo/logo2.png">
+    <link rel="icon" type="image/png" sizes="137x109" href="../assets/img/Logo/logo2.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="137x109" href="../assets/img/Logo/logo2.png">
+    <link rel="icon" type="image/png" sizes="137x109" href="../assets/img/Logo/logo2.png">
+    <link rel="icon" type="image/png" sizes="137x109" href="../assets/img/Logo/logo2.png">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="manifest" href="../manifest.json" crossorigin="use-credentials">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/swiper-icons.css">
+    <link rel="stylesheet" href="../assets/css/background.css">
+    <link rel="stylesheet" href="../assets/css/Banner-Heading-Image-images.css">
+    <link rel="stylesheet" href="../assets/css/chat.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/Lightbox-Gallery-baguetteBox.min.css">
+    <link rel="stylesheet" href="../assets/css/menu-dashboard.css">
+    <link rel="stylesheet" href="../assets/css/One-Liner-Code-Editor.css">
+    <link rel="stylesheet" href="../assets/css/PRE.css">
+    <link rel="stylesheet" href="../assets/css/Simple-Slider-swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/Simple-Slider.css">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5HHF3VHW');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Analytic -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PNZTM564QN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PNZTM564QN');
+</script>
+<!-- Selelsai -->
+
+<!-- Google ADS -->
+<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8913081554574910"
+     crossorigin="anonymous"></script>
+
+<meta name="google-adsense-account" content="ca-pub-8913081554574910">
+<!-- Selesai -->
+
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "6ae2ed3c-f763-465d-8648-0538e5f7e40c",
+    });
+  });
+</script>
+
+<!-- Subscribe YT -->
+<script src="https://apis.google.com/js/platform.js"></script>
+
+<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+
+<!-- Fire Base -->
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+<!-- Selesai -->
+
+
+
+<!-- animasi AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script>
+    AOS.init({
+        duration: 1200
+    });</script>
+<!-- Selesai -->
+
+<amp-ad width="100vw" height="320" type="adsense" data-ad-client="ca-pub-8913081554574910" data-ad-slot="5303068928"
+    data-auto-format="rspv" data-full-width="">
+    <div overflow=""></div>
+</amp-ad>
+</head>
+
+<body class="scrollbarnone" style="font-family: Poppins, sans-serif;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;">
+    <div class="modal fade" role="dialog" tabindex="-1" id="srch">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-between" style="background: linear-gradient(45deg, #f39c12, #e74c3c);">
+                    <h4 class="modal-title" style="color: rgb(255,255,255);">Cari sesuatu di sini</h4><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-x-circle-fill" type="button" aria-label="Close" data-bs-dismiss="modal" style="color: rgb(255,255,255);width: 32px;height: 32px;">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"></path>
+                    </svg>
+                </div>
+                <div class="modal-body scrollbarnone" style="background: rgba(255,255,255,0);height: auto;max-height: 600px;">
+                    <p>Cari dengan kata kunci</p>
+                    <form class="input-group" style="margin-bottom: 16px;"><input class="form-control" type="text" id="searchInput" placeholder="Cari di sini ..."><button class="btn btn-success d-xxl-flex align-items-xxl-center" id="searchButton" type="button" style="color: rgb(255,255,255);border-top-right-radius: 16px;border-bottom-right-radius: 16px;">&nbsp;Cari</button></form>
+                    <ol class="flex-column-reverse list-group" id="searchResults" style="display: non;">
+                        <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;border-width: 0px;background: rgba(255,255,255,0);">
+                            <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 16px;"><strong>Gambar motor Honda Transparan |</strong></span><span style="color: rgb(255,255,255);">Download gambar motor Honda transparan. dari Honda matic, sport dan cub. download semua unit dengan klik di sini.&nbsp;<a href="https://drive.google.com/drive/folders/1NmGcOpHaxG1NsGl_QgDOhOoWi-U1v2lr?usp=sharing" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a><span>&nbsp;#Honda #MPMMotor</span></span></div>
+                        </li>
+                        <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;border-width: 0px;background: rgba(255,255,255,0);">
+                            <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 16px;"><strong>Ai ChatGPT |</strong></span><span style="color: rgb(255,255,255);">ChatGPT adalah model AI berbasis deep learning yang dikembangkan oleh OpenAI, dirancang untuk memahami dan menghasilkan teks dalam percakapan manusia.&nbsp;<a href="https://chatgpt.com/" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a><span>&nbsp;#ChatGPT #Ai</span></span></div>
+                        </li>
+                        <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;border-width: 0px;background: rgba(255,255,255,0);">
+                            <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 16px;"><strong>Materi Promosi MPM Motor: Kumpulan Konten Eksklusif untuk Promosi Honda&nbsp;|</strong></span><span style="color: rgb(255,255,255);">Selamat datang di halaman Materi Sosial Media MPM Motor! Di sini, Anda akan menemukan berbagai konten promosi eksklusif yang didedikasikan untuk mendukung pemasaran motor Honda.&nbsp;<a href="../materisocmed/Jadwal.html" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a><span>&nbsp;#Materi #Socmed #Honda</span></span></div>
+                        </li>
+                        <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;border-width: 0px;background: rgba(255,255,255,0);">
+                            <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 16px;"><strong>Cek Khodam: Menemukan Khodam Pendamping Anda&nbsp;|</strong></span><span style="color: rgb(255,255,255);">Selamat datang di halaman Cek Khodam! Layanan ini membantu Anda mengetahui lebih dalam tentang keberadaan khodam pendamping yang mungkin setia menemani Anda dalam kehidupan.&nbsp;<a href="cek-khodam.html" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a><span>&nbsp;#Cek #Khodam</span></span></div>
+                        </li>
+                        <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;border-width: 0px;background: rgba(255,255,255,0);">
+                            <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 16px;"><strong>Chatbot AI&nbsp;|</strong></span><span style="color: rgb(255,255,255);">Membantu dalam layanan pelanggan, menjawab pertanyaan umum, dan memberikan informasi yang relevan. Chatbot juga digunakan untuk personalisasi pengalaman pengguna dalam aplikasi.&nbsp;<a href="https://openai.com/chatgpt" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a><span>&nbsp;#Ai #ChatGPT #GPT</span></span></div>
+                        </li>
+                        <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;border-width: 0px;background: rgba(255,255,255,0);"></li>
+                        <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;border-width: 0px;background: rgba(255,255,255,0);">
+                            <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 16px;"><strong>Generative AI&nbsp;|</strong></span><span style="color: rgb(255,255,255);">Mampu membuat konten baru seperti teks, gambar, video, dan musik. Generative AI digunakan dalam seni digital, pengembangan produk kreatif, serta simulasi dalam riset ilmiah.&nbsp;<a href="https://openai.com/dall-e-2" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a><span>&nbsp;#Ai #Gambar #GambarAi #Generate #Promt</span></span></div>
+                        </li>
+                        <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;border-width: 0px;background: rgba(255,255,255,0);">
+                            <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 16px;"><strong>Cek Berat Badan Ideal: Alat Kalkulator untuk Menentukan Berat Badan yang Sehat&nbsp;|</strong></span><span style="color: rgb(255,255,255);">Selamat datang di halaman Cek Berat Badan! Gunakan alat kalkulator kami yang mudah dan praktis untuk mengetahui apakah berat badan Anda sudah ideal berdasarkan tinggi badan dan usia Anda. Alat ini membantu Anda menghitung Indeks Massa Tubuh (IMT) secara otomatis, memberikan gambaran tentang kondisi kesehatan Anda berdasarkan berat badan.&nbsp;<a href="cek-pengeluaran-bulanan.html" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a><span>&nbsp;#Cek #Berat #Badan #Cekberatbadan</span></span></div>
+                        </li>
+                        <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;border-width: 0px;background: rgba(255,255,255,0);">
+                            <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 16px;"><strong>Cek Pengeluaran Bulanan: Alat untuk Mengelola Keuangan dengan Lebih Baik&nbsp;|</strong></span><span style="color: rgb(255,255,255);">Selamat datang di halaman Cek Pengeluaran Bulanan! Aplikasi ini dirancang untuk membantu Anda mengelola dan memantau pengeluaran bulanan secara efektif. Dengan alat ini, Anda dapat mencatat dan menghitung semua pengeluaran rutin Anda, seperti biaya makan, transportasi, tagihan, dan lain-lain.&nbsp;<a href="cek-pengeluaran-bulanan.html" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a><span>&nbsp;#Cek #Keuangan</span></span></div>
+                        </li>
+                        <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;border-width: 0px;background: rgba(255,255,255,0);">
+                            <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 16px;"><strong>Menggali Komitmen Kami: Misi dan Visi Bima selalu benar&nbsp;|</strong></span><span style="color: rgb(255,255,255);">Temukan lebih dalam tentang dedikasi Bimaselalu Benar dalam membimbing masyarakat menuju hidup sehat. Dari program edukatif hingga kegiatan penyuluhan, kami berkomitmen untuk membantu Anda membuat pilihan gaya hidup yang lebih baik dan bermanfaat.&nbsp;<a href="../Tentang.html" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a><span>&nbsp;#Bima #visi #Misi #Tentang #edukasi</span></span></div>
+                        </li>
+                        <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;border-width: 0px;background: rgba(255,255,255,0);">
+                            <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 16px;"><strong>Langganan Konten Sosial Media: Tingkatkan Kehadiran Digital Anda&nbsp;|</strong></span><span style="color: rgb(255,255,255);">Dapatkan akses eksklusif ke materi sosial media berkualitas melalui layanan berlangganan Bimaselalu Benar. Dengan konten strategis, desain kreatif, dan copywriting efektif, kami membantu bisnis Anda tumbuh dan terhubung lebih baik dengan audiens di platform sosial.&nbsp;<a href="../materisocmed/subscription.html" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a><span>&nbsp;#Berlangganan #socmed #materisocmed #social #media #berbayar #template</span></span></div>
+                        </li>
+                        <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;border-width: 0px;background: rgba(255,255,255,0);">
+                            <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 16px;"><strong>Template Digital Siap Pakai: Maksimalkan Branding Media Sosial Anda&nbsp;|</strong></span><span style="color: rgb(255,255,255);">Tingkatkan kualitas visual dan branding bisnis Anda dengan template digital siap pakai dari Bimaselalu Benar. Dirancang secara profesional untuk berbagai keperluan, template ini membantu memperkuat kehadiran Anda di media sosial dan menarik lebih banyak audiens.&nbsp;<a href="../materisocmed/template-digital.html" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a><span>&nbsp;#Template #canva #templatecanva #design #psd #png #transparan</span></span></div>
+                        </li>
+                        <li class="list-group-item" style="padding-left: 8px;padding-right: 8px;border-width: 0px;background: rgba(255,255,255,0);">
+                            <div class="d-flex flex-column" style="background: linear-gradient(45deg, #f39c12, #e74c3c);height: auto;padding-top: 16px;padding-bottom: 16px;padding-right: 10px;padding-left: 10px;border-radius: 16px;"><span style="color: rgb(255,255,255);font-size: 16px;"><strong>Berlangganan |</strong></span><span style="color: rgb(255,255,255);">contoh.&nbsp;<a href="cek-khodam.html" style="font-weight: bold;color: #ffe28b;" target="_blank">(Klik disini)</a><span>&nbsp;#Tag</span></span></div>
+                        </li>
+                    </ol><span id="noResultsMessage" style="padding-top: 7px;display: none;color: rgb(255,255,255);background: linear-gradient(-172deg, #ff0000, #230000);padding-bottom: 7px;margin-top: 0px;padding-right: 16px;padding-left: 16px;border-radius: 10px;">Maaf, data tidak di temukan</span><script>
+    document.getElementById('searchButton').addEventListener('click', function() {
+      let input = document.getElementById('searchInput').value.toLowerCase();
+      let items = document.querySelectorAll('#searchResults li');
+      let found = false;
+
+      // Reset hasil sebelumnya
+      items.forEach(function(item) {
+        item.style.display = 'none';
+      });
+      document.getElementById('noResultsMessage').style.display = 'none';
+
+      // Lakukan pencarian
+      if (input.trim() !== "") {
+        items.forEach(function(item) {
+          if (item.innerHTML.toLowerCase().indexOf(input) !== -1) {
+            item.style.display = 'block';
+            found = true;
+          }
+        });
+
+        // Tampilkan hasil atau pesan 'data tidak ditemukan'
+        if (found) {
+          document.getElementById('searchResults').style.display = 'block';
+          document.getElementById('noResultsMessage').style.display = 'none';
+        } else {
+          document.getElementById('searchResults').style.display = 'none';
+          document.getElementById('noResultsMessage').style.display = 'block';
+        }
+      } else {
+        // Jika input kosong, jangan tampilkan apa pun
+        document.getElementById('searchResults').style.display = 'none';
+        document.getElementById('noResultsMessage').style.display = 'none';
+      }
+    });
+  </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-md sticky-top navbar-shrink py-3" id="mainNav" style="box-shadow: 0px 10px 20px rgba(45,45,45,0.07);">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="../index.html"><span class="bs-icon-sm bs-icon-circle bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon" style="background: #00000000;width: auto;height: auto;border-radius: 5px;padding: 5px;"><img src="../assets/img/Logo/logo2.png" width="38" height="30"></span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Tentang.html">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Keahlian.html">Keahlian</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Kontak.html">Kontak</a></li>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">Lainnya&nbsp;&nbsp;</a>
+                        <div class="dropdown-menu" style="margin-bottom: 10px;margin-top: 10px;padding: 0px;width: auto;"><a class="dropdown-item" href="../web-service.html" style="background: rgba(25,90,220,0);color: rgb(105,105,105);width: auto;margin-bottom: 7px;padding-top: 10px;padding-bottom: 10px;">Web Service</a><a class="dropdown-item" href="../materisocmed/dashboard.html" style="background: rgba(25,90,220,0);color: rgb(105,105,105);width: auto;margin-bottom: 7px;padding-top: 10px;padding-bottom: 10px;">MPM Motor</a><a class="dropdown-item" href="artikel/index.html" style="background: rgba(25,90,220,0);color: rgb(105,105,105);width: auto;margin-bottom: 7px;padding-top: 10px;padding-bottom: 10px;">Artikel</a></div>
+                    </li>
+                </ul>
+                <div></div><a class="btn btn-primary shadow" role="button" style="padding: 10.6px 20px;padding-top: 6px;padding-bottom: 6px;padding-right: 16px;padding-left: 16px;" data-target="#srch" data-toggle="modal"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-search" style="font-size: 21px;margin: 0;margin-right: 6px;">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+                    </svg>Cari</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container" style="padding-top: 30px;">
+        <div class="row" style="overflow: hidden;">
+            <div class="col-md-4" style="width: 10%;"></div>
+            <div class="col-md-4 align-content-center justify-content-center" style="width: 80%;height: 400px;"><img src="../assets/img/Page/Artikel/code.jpg" style="width: 100%;"></div>
+            <div class="col-md-4" style="width: 10%;"></div>
+        </div>
+    </div>
+    <div class="container py-4 py-xl-5">
+        <div class="row mb-3">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <p class="fw-bold text-success mb-2">Post</p>
+                <h2 class="fw-bold" style="font-weight: bold;">Dasar - dasar panduan HTML pemula</h2>
+            </div>
+        </div>
+        <div class="row" style="padding-right: 12px;padding-left: 12px;margin-top: 0px;">
+            <div class="col d-block gap-3">
+                <h5 style="font-weight: bold;"><strong>1.&nbsp;Apa Itu HTML?</strong></h5>
+                <p>HTML (HyperText Markup Language) adalah bahasa yang digunakan untuk membuat dan merancang halaman web. HTML menggunakan elemen-elemen yang disebut "tag" untuk menstrukturkan konten.</p>
+                <h5 style="font-weight: bold;"><strong>2. Struktur HTML</strong></h5>
+                <p>Setiap dokumen HTML dimulai dengan elemen &lt;!DOCTYPE html&gt; dan diikuti oleh elemen-elemen dasar lainnya seperti html, head, dan body.</p>
+                <div style="margin-bottom: 16px;">
+                    <p class="font-monospace text-truncate text-break pre" id="code1" style="background: rgb(59,59,59);color: var(--bs-body-bg);">&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&lt;head&gt;<br> &lt;title&gt;Judul Halaman&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br> &lt;h1&gt;Halo, Dunia!&lt;/h1&gt;<br> &lt;p&gt;Ini adalah paragraf pertama saya.&lt;/p&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;</p><button class="btn btn-primary btn-sm" type="button" style="/*top: 30px;*/right: -0px;position: static;padding: 0px;padding-right: 8px;padding-left: 8px;border-radius: 2px;display: inline-block;overflow: clip;background: #3b3b3b;" onclick="copyTextById(&#39;code1&#39;)"><span style="font-weight: normal !important;">Copy</span></button>
+                </div>
+                <h5 style="font-weight: bold;">3. Tag HTML Dasar</h5>
+                <div style="margin-bottom: 16px;">
+                    <p class="font-monospace text-truncate text-break pre" id="code2" style="background: rgb(59,59,59);color: var(--bs-body-bg);"><strong>&lt;html&gt;</strong>: Elemen ini merupakan pembungkus untuk seluruh konten HTML.<br><strong>&lt;head&gt;</strong>: Bagian ini berisi informasi meta tentang halaman, seperti judul (&lt;title&gt;), dan link ke stylesheet atau script.<br><strong>&lt;body&gt;</strong>: Bagian ini berisi semua konten yang akan ditampilkan di halaman web, seperti teks, gambar, dan link.</p><button class="btn btn-primary btn-sm" type="button" style="/*top: 30px;*/right: -0px;position: static;padding: 0px;padding-right: 8px;padding-left: 8px;border-radius: 2px;display: inline-block;overflow: clip;background: #3b3b3b;" onclick="copyTextById(&#39;code2&#39;)"><span style="font-weight: normal !important;">Copy</span></button>
+                </div>
+                <h5 style="font-weight: bold;">4.&nbsp;Heading dan Paragraf</h5>
+                <ul>
+                    <li><strong>Heading</strong>: Tag &lt;h1&gt; hingga &lt;h6&gt; digunakan untuk judul, dengan &lt;h1&gt; sebagai yang terbesar dan &lt;h6&gt; sebagai yang terkecil.</li>
+                    <li><strong>Paragraf</strong>: Tag &lt;p&gt; digunakan untuk menulis paragraf.</li>
+                </ul>
+                <div style="margin-bottom: 16px;">
+                    <p class="font-monospace text-truncate text-break pre" id="code3" style="background: rgb(59,59,59);color: var(--bs-body-bg);">&lt;h1&gt;Ini adalah Judul Utama&lt;/h1&gt;<br>&lt;p&gt;Ini adalah sebuah paragraf teks.&lt;/p&gt;</p><button class="btn btn-primary btn-sm" type="button" style="/*top: 30px;*/right: -0px;position: static;padding: 0px;padding-right: 8px;padding-left: 8px;border-radius: 2px;display: inline-block;overflow: clip;background: #3b3b3b;" onclick="copyTextById(&#39;code3&#39;)"><span style="font-weight: normal !important;">Copy</span></button>
+                </div>
+                <h5 style="font-weight: bold;">5.&nbsp;Link dan Gambar</h5>
+                <ul>
+                    <li><strong>Link</strong>: Tag &lt;a&gt; digunakan untuk membuat link. Atribut href menentukan URL tujuan.<div style="margin-bottom: 16px;">
+                            <p class="font-monospace text-truncate text-break pre" id="code4" style="background: rgb(59,59,59);color: var(--bs-body-bg);">&lt;a href="https://www.example.com"&gt;Kunjungi Example.com&lt;/a&gt;</p><button class="btn btn-primary btn-sm" type="button" style="/*top: 30px;*/right: -0px;position: static;padding: 0px;padding-right: 8px;padding-left: 8px;border-radius: 2px;display: inline-block;overflow: clip;background: #3b3b3b;" onclick="copyTextById(&#39;code4&#39;)"><span style="font-weight: normal !important;">Copy</span></button>
+                        </div>
+                    </li>
+                    <li><strong>Gambar</strong>: Tag &lt;img&gt; digunakan untuk menampilkan gambar. Atribut src menentukan lokasi gambar, dan alt menyediakan teks alternatif jika gambar tidak dapat ditampilkan.<div style="margin-bottom: 16px;">
+                            <p class="font-monospace text-truncate text-break pre" id="code5" style="background: rgb(59,59,59);color: var(--bs-body-bg);">&lt;img src="gambar.jpg" alt="Deskripsi Gambar"&gt;</p><button class="btn btn-primary btn-sm" type="button" style="/*top: 30px;*/right: -0px;position: static;padding: 0px;padding-right: 8px;padding-left: 8px;border-radius: 2px;display: inline-block;overflow: clip;background: #3b3b3b;" onclick="copyTextById(&#39;code5&#39;)"><span style="font-weight: normal !important;">Copy</span></button>
+                        </div>
+                    </li>
+                </ul>
+                <h5 style="font-weight: bold;">6.&nbsp;Daftar (List)</h5>
+                <ul>
+                    <li><strong>Daftar Tak Berurutan</strong>: Tag &lt;ul&gt; digunakan untuk membuat daftar dengan bullet points, dan &lt;li&gt; untuk item dalam daftar.<div style="margin-bottom: 16px;">
+                            <p class="font-monospace text-truncate text-break pre" id="code6" style="background: rgb(59,59,59);color: var(--bs-body-bg);">&lt;ul&gt;<br> &lt;li&gt;Item 1&lt;/li&gt;<br> &lt;li&gt;Item 2&lt;/li&gt;<br> &lt;li&gt;Item 3&lt;/li&gt;<br>&lt;/ul&gt;</p><button class="btn btn-primary btn-sm" type="button" style="/*top: 30px;*/right: -0px;position: static;padding: 0px;padding-right: 8px;padding-left: 8px;border-radius: 2px;display: inline-block;overflow: clip;background: #3b3b3b;" onclick="copyTextById(&#39;code6&#39;)"><span style="font-weight: normal !important;">Copy</span></button>
+                        </div>
+                    </li>
+                    <li><strong>Daftar Berurutan</strong>: Tag &lt;ol&gt; digunakan untuk membuat daftar bernomor.<div style="margin-bottom: 16px;">
+                            <p class="font-monospace text-truncate text-break pre" id="code7" style="background: rgb(59,59,59);color: var(--bs-body-bg);">&lt;ol&gt;<br> &lt;li&gt;Item 1&lt;/li&gt;<br> &lt;li&gt;Item 2&lt;/li&gt;<br> &lt;li&gt;Item 3&lt;/li&gt;<br>&lt;/ol&gt;</p><button class="btn btn-primary btn-sm" type="button" style="/*top: 30px;*/right: -0px;position: static;padding: 0px;padding-right: 8px;padding-left: 8px;border-radius: 2px;display: inline-block;overflow: clip;background: #3b3b3b;" onclick="copyTextById(&#39;code7&#39;)"><span style="font-weight: normal !important;">Copy</span></button>
+                        </div>
+                    </li>
+                </ul>
+                <h5 style="font-weight: bold;">7.&nbsp;Formulir</h5>
+                <ul style="padding-left: 0px;">
+                    <li>Formulir digunakan untuk mengumpulkan data dari pengguna. Tag &lt;form&gt; membungkus elemen input seperti teks, tombol, dll.<div style="margin-bottom: 16px;">
+                            <p class="font-monospace text-truncate text-break pre" id="code8" style="background: rgb(59,59,59);color: var(--bs-body-bg);">&lt;form action="/submit" method="post"&gt;<br> &lt;label for="nama"&gt;Nama:&lt;/label&gt;<br> &lt;input type="text" id="nama" name="nama"&gt;&lt;br&gt;&lt;br&gt;<br> <br> &lt;label for="email"&gt;Email:&lt;/label&gt;<br> &lt;input type="email" id="email" name="email"&gt;&lt;br&gt;&lt;br&gt;<br> <br> &lt;input type="submit" value="Kirim"&gt;<br>&lt;/form&gt;</p><button class="btn btn-primary btn-sm" type="button" style="/*top: 30px;*/right: -0px;position: static;padding: 0px;padding-right: 8px;padding-left: 8px;border-radius: 2px;display: inline-block;overflow: clip;background: #3b3b3b;" onclick="copyTextById(&#39;code8&#39;)"><span style="font-weight: normal !important;">Copy</span></button>
+                        </div>
+                    </li>
+                    <li>Komentar digunakan untuk menyertakan catatan atau keterangan di dalam kode HTML, tetapi tidak akan ditampilkan di halaman web.<br>
+                        <div style="margin-bottom: 16px;">
+                            <p class="font-monospace text-truncate text-break pre" id="code9" style="background: rgb(59,59,59);color: var(--bs-body-bg);">&lt;!-- Ini adalah komentar --&gt;</p><button class="btn btn-primary btn-sm" type="button" style="/*top: 30px;*/right: -0px;position: static;padding: 0px;padding-right: 8px;padding-left: 8px;border-radius: 2px;display: inline-block;overflow: clip;background: #3b3b3b;" onclick="copyTextById(&#39;code9&#39;)"><span style="font-weight: normal !important;">Copy</span></button>
+                        </div>
+                    </li>
+                </ul>
+                <h5 style="font-weight: bold;">8. Pengaturan Teks</h5>
+                <ul>
+                    <li><strong>Teks Tebal</strong>: Gunakan tag &lt;strong&gt; atau &lt;b&gt; untuk teks tebal.</li>
+                    <li><strong>Teks Miring</strong>: Gunakan tag &lt;em&gt; atau &lt;i&gt; untuk teks miring.</li>
+                </ul>
+                <div style="margin-bottom: 16px;">
+                    <p class="font-monospace text-truncate text-break pre" id="code10" style="background: rgb(59,59,59);color: var(--bs-body-bg);">&lt;form action="/submit" method="post"&gt;<br> &lt;label for="nama"&gt;Nama:&lt;/label&gt;<br> &lt;input type="text" id="nama" name="nama"&gt;&lt;br&gt;&lt;br&gt;<br> <br> &lt;label for="email"&gt;Email:&lt;/label&gt;<br> &lt;input type="email" id="email" name="email"&gt;&lt;br&gt;&lt;br&gt;<br> <br> &lt;input type="submit" value="Kirim"&gt;<br>&lt;/form&gt;</p><button class="btn btn-primary btn-sm" type="button" style="/*top: 30px;*/right: -0px;position: static;padding: 0px;padding-right: 8px;padding-left: 8px;border-radius: 2px;display: inline-block;overflow: clip;background: #3b3b3b;" onclick="copyTextById(&#39;code10&#39;)"><span style="font-weight: normal !important;">Copy</span></button>
+                </div>
+                <p>Itulah dasar-dasar HTML yang perlu diketahui oleh pemula. Dengan menguasai elemen-elemen ini, Anda dapat mulai membuat halaman web sederhana. Selamat belajar!</p>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-primary-gradient" style="box-shadow: 0px -33px 20px 2px rgba(45,45,45,0.08);border-radius: 0px;">
+        <div class="container py-4 py-lg-5">
+            <div class="row justify-content-center">
+                <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
+                    <h3 class="fs-6 fw-bold">Menu</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Tentang</a></li>
+                        <li><a href="#">Keahlian</a></li>
+                        <li><a href="#">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
+                    <h3 class="fs-6 fw-bold">Layanan</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Dashboard MPM</a></li>
+                        <li><a href="#">Web Service</a></li>
+                        <li><a href="#">Artikel</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
+                    <h3 class="fs-6 fw-bold">Hiburan</h3>
+                    <ul class="list-unstyled">
+                        <li><a>Game</a></li>
+                        <li><a href="../app/index.html">App</a></li>
+                        <li><a href="../app/cek-khodam.html">Cek Khodam</a></li>
+                        <li><a href="../app/cek-berat-badan.html">Cek Ideal Badan</a></li>
+                        <li><a href="../app/cek-pengeluaran-bulanan.html">Cek Pengeluaran Bulanan</a></li>
+                        <li><a href="../app/whatsapp-generator.html">WhatsApp Generator</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 text-center text-lg-start d-flex flex-column align-items-center order-first align-items-lg-start order-lg-last">
+                    <div class="fw-bold d-flex align-items-center mb-2"><span class="bs-icon-sm bs-icon-circle bs-icon-primary d-flex justify-content-center align-items-center bs-icon me-2" style="padding: 6px;background: var(--bs-body-bg);box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.14);"><img src="../assets/img/Logo/logo2.png" style="width: 100%;height: auto;"></span><span>Bimaselalubenar</span></div>
+                    <p class="text-muted">Saya seorang cendikiawin</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-muted d-flex justify-content-between align-items-center pt-3">
+                <p class="mb-0">Copyright ©2024</p>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-instagram">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"></path>
+                        </svg></li>
+                    <li class="list-inline-item"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-threads-fill">
+                            <path d="M6.81 9.204c0-.41.197-1.062 1.727-1.062.469 0 .758.034 1.146.121-.124 1.606-.91 1.818-1.674 1.818-.418 0-1.2-.218-1.2-.877Z"></path>
+                            <path d="M2.59 16h10.82A2.59 2.59 0 0 0 16 13.41V2.59A2.59 2.59 0 0 0 13.41 0H2.59A2.59 2.59 0 0 0 0 2.59v10.82A2.59 2.59 0 0 0 2.59 16M5.866 5.91c.567-.81 1.315-1.126 2.35-1.126.73 0 1.351.246 1.795.711.443.466.696 1.132.754 1.983.245.103.472.224.678.363.832.559 1.29 1.395 1.29 2.353 0 2.037-1.67 3.806-4.692 3.806-2.595 0-5.291-1.51-5.291-6.004C2.75 3.526 5.361 2 8.033 2c1.234 0 4.129.182 5.217 3.777l-1.02.264c-.842-2.56-2.607-2.968-4.224-2.968-2.675 0-4.187 1.628-4.187 5.093 0 3.107 1.69 4.757 4.222 4.757 2.083 0 3.636-1.082 3.636-2.667 0-1.079-.906-1.595-.953-1.595-.177.925-.651 2.482-2.733 2.482-1.213 0-2.26-.838-2.26-1.936 0-1.568 1.488-2.136 2.663-2.136.44 0 .97.03 1.247.086 0-.478-.404-1.296-1.426-1.296-.911 0-1.16.288-1.45.624l-.024.027c-.202-.135-.875-.601-.875-.601Z"></path>
+                        </svg></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bs-init.js"></script>
+    <script src="../assets/js/SDK%20OneSignal/OneSignalSDKWorker.js"></script>
+    <script src="../assets/js/App/cekkhodam.js"></script>
+    <script src="../assets/js/App/cektabungan.js"></script>
+    <script src="../assets/js/App/cektubuh.js"></script>
+    <script src="../assets/js/dashboard-socmed-bold-and-bright.js"></script>
+    <script src="../assets/js/formbima/berlangganan.js"></script>
+    <script src="../assets/js/formbima/daftar.js"></script>
+    <script src="../assets/js/formbima/form-bima.js"></script>
+    <script src="../assets/js/inspeksi/inspeksi.js"></script>
+    <script src="../assets/js/Lightbox-Gallery-baguetteBox.min.js"></script>
+    <script src="../assets/js/Lightbox-Gallery.js"></script>
+    <script src="../assets/js/login/comment-umum.js"></script>
+    <script src="../assets/js/login/comment.js"></script>
+    <script src="../assets/js/login/login.js"></script>
+    <script src="../assets/js/One-Liner-Code-Editor-codeeditor.js"></script>
+    <script src="../assets/js/service-worker.js"></script>
+    <script src="../assets/js/Simple-Slider-swiper-bundle.min.js"></script>
+    <script src="../assets/js/Simple-Slider.js"></script>
+</body>
+
+</html>
